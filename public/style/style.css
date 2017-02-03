@@ -1,0 +1,168 @@
+@charset "utf-8";
+body {margin: 0px; font:12px Arial;*font:11px Arial;font-size:12px;color:#444; background:#fff ; background:url(../images/bg.jpg) top repeat-x}
+img{border:0; margin-bottom:2px}
+ul,li,ul li{ margin:0px;padding:0px;list-style:none; }
+.cl{ clear:both; display:block; overflow:hidden; font-size: 0px; line-height: 0; height: 0px;visibility: hidden;}
+.float {float:left;display:inline;}
+.mag01{ margin:0px 20px 15px 0px;}
+.a { text-decoration:none; color:#444}
+.a:hover{ color:#FF0000}
+#weapper{ width:100%; background:url(../images/main_bg.jpg) top repeat-x; padding-top:7px;}
+#neirong{width:1000px; margin:0 auto;}
+
+
+
+#top{ width:1000px; margin:0 auto;}
+.logo{ float:left}
+.banben{float:right; color:#959595; height:18px; line-height:18px; margin-top:33px; padding-right:10px}
+.banben a{ text-decoration:none; color:#959595}
+.banben a:hover { color:#FF0000}
+.span { color:#444; font-size:11px; margin:0px 10px}
+.span1 { color:#6b6b6b; font-size:11px; margin:0px 5px}
+#menu_bg{ width:100%; background:url(../images/menu_bg.jpg) top repeat-x;height:37px}
+.caidan{ width:1000px; margin:0 auto; height:37px; overflow:hidden}
+#inde_banner{width:1000px; margin:0 auto; height:398px; overflow:hidden}
+#in_news_bg{ background: url(../images/in_bg.jpg) repeat-x;}
+.in_news_l{ width:50px; float:left}
+.in_news_c{ width:933px; float:left}
+.in_news{ width:300px;height:32px; line-height:32px; color:#444444; }
+.in_news li{ padding-left:5px}
+.in_news li a{text-decoration:none;color:#444444; }
+.in_news li a:hover{ color:#0037a3}
+.in_news li span{ float:right;color:#949494; padding-right:5px} 
+.in_news_R{ float:right}
+
+#in_main{ width:1000px; margin-top:9px;}
+.in_left{ width:326px; float:left}
+.in_center{width:326px; float:left; margin:0px 11px}
+.in_right{width:326px; float:left}
+
+.in_tittle{ background:url(../images/in_tittle.jpg) left repeat-x; height:33px}
+.in_tittle_l{ float:left}
+.in_tittle_r{ background:url(../images/in_ttile_r.jpg) right no-repeat; padding-right:11px; float:right; height:22px; padding-top:11px;}
+
+.in_main_bg{ border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC; padding:11px 9px; height:90px;}
+.in_img{ width:125px; height:86px; float:left; margin-right:13px}
+.in_text{line-height:18px; color:#444444; text-indent:25px; }
+
+.in_bottom{ width:326px}
+
+#footer_bg{ width:100%; background:url(../images/footer.jpg) top repeat-x;height:68px; margin-top:11px}
+.footer{ width:1000px; margin:0 auto; color:#696969;text-align:center; line-height:18px; height:18px; padding-top:15px}
+
+.main_left{ width:242px; float:left; margin-right:22px}
+.main_menu{ width:242px;background:url(../images/left_menu_bg.jpg) repeat-y;}
+.menu_tittle{ height:50px; overflow:hidden}
+.menu {width:227; margin:5px 8px 30px 8px}
+.menu li{ background:url(../images/left.jpg) left no-repeat; width:227px;color:#444;}
+.menu li a {background:url(../images/left.jpg) left no-repeat;text-decoration:none; color:#444; display:block; line-height:28px; height:28px;text-indent:18px;}
+.menu li a:hover { background:url(../images/left_01.jpg) left no-repeat;font-weight:bold;text-decoration:none;color:#2b5698;cursor:pointer;}
+.menu li .lefton { background:url(../images/left_01.jpg) left no-repeat;font-weight:bold;color:#2b5698;}
+.menu_bottom{ height:10px; overflow:hidden}
+.main_right{width:734px; float:left}
+
+.left_contact{ margin-top:15px}
+.left_contact_tittle{ height:52px; overflow:hidden}
+.left_contact_menu {width:227; margin:5px 8px 0px 8px}
+.left_contact_menu li{ background:url(../images/left.jpg) left no-repeat; width:227px;color:#444;}
+.left_contact_menu li a {background:url(../images/left.jpg) left no-repeat;text-decoration:none; color:#444; display:block; line-height:28px; height:28px;text-indent:18px;}
+.left_contact_menu li a:hover { background:url(../images/left_01.jpg) left no-repeat;font-weight:bold;text-decoration:none;color:#2b5698;cursor:pointer;}
+.left_contact_menu li .lefton { background:url(../images/left_01.jpg) left no-repeat;font-weight:bold;color:#2b5698;}
+.left_contact_bottom{ height:106px; overflow:hidden}
+
+.right_tittle{ border-bottom:3px solid #dbdbdb; height:23px; margin-top:25px}
+.dangqian{ font:微软雅黑,Arial, Helvetica, sans-serif ; font-weight:bold; color:#b00000; font-size:20px; float:left; height:20px; line-height:20px; text-indent:5px}
+.weizhi{ background:url(../images/weizhi.jpg) left 50% no-repeat; text-indent:20px; float:right; color:#6b6b6b; padding-top:5px; height:12px; height:12px}
+
+.main_main{ padding:15px 5px 30px 5px;}
+.main{ color:#6c6b6b; line-height:20px;}
+.main a{text-decoration:none; color:#6c6b6b;}
+.main a:hover {color:#ff0000;}
+
+.news{line-height:25px;width:724px; margin-bottom:20px;}
+.news li{ color:#444; font-size:12px;text-indent:5px;padding-top:3px;width:724px; background:url(../images/xuxian.gif) bottom repeat-x ;}
+.news li a {text-decoration:none; color:#444;background:url(../images/icon.gif) no-repeat left 45%;padding-left:15px}
+.news li a:hover{color:#0037a3;}
+.news li span{ float:right;color:#7e7e7e; padding-right:5px} 
+
+.news_tittle{ text-align:center; font-size:16px; color:#012c6b; font-weight:bold; margin-bottom:15px; padding-top:15px; height:25px; line-height:25px;}
+
+.anli{ background:url(../images/anli.jpg) left repeat-x;font:微软雅黑,Arial, Helvetica, sans-serif ; font-size:16px; font-weight: bold; color:#002c6b; height:33px; line-height:33px; text-indent:5px}
+.fenlei{ background:url(../images/fenlei.jpg) left repeat-x;font:微软雅黑,Arial, Helvetica, sans-serif ; font-size:16px; font-weight: bold; color:#002c6b; height:41px; line-height:41px; text-indent:5px}
+.leibie{ width:240px; float:left; margin-right:20px; height:120px; display:block; margin-bottom:30px }
+.biaoti1{ color:#444444; font-size:14px; font-weight:bold;font:微软雅黑,Arial, Helvetica, sans-serif ;}
+.biaoti1 a{ text-decoration:none;color:#444444; }
+.biaoti1 a:hover{color:#444444;}
+.biaoti2 {width:240; margin-top:10px}
+.biaoti2 li{ width:240px;color:#444;}
+.biaoti2 li a {text-decoration:none; color:#444; display:block; line-height:20px; height:20px;}
+.biaoti2 li a:hover { font-weight:bold;text-decoration:none;color:#2b5698;cursor:pointer;}
+
+.leibie_r{ width:215px; float:left;height:120px; display:block; margin-bottom:30px }
+.biaoti1_r{ color:#444444; font-size:14px; font-weight:bold;font:微软雅黑,Arial, Helvetica, sans-serif ;}
+.biaoti1_r a{ text-decoration:none;color:#444444; }
+.biaoti1_r a:hover{color:#444444;}
+.biaoti2_r {width:215; margin-top:10px}
+.biaoti2_r li{ width:215px;color:#444;}
+.biaoti2_r li a {text-decoration:none; color:#444; display:block; line-height:20px; height:20px;}
+.biaoti2_r li a:hover { font-weight:bold;text-decoration:none;color:#2b5698;cursor:pointer;}
+
+.leibie2{ width:240px; float:left; margin-right:20px;display:block;height:50px}
+
+.honor { width:137px;border:1px solid #dadada;padding:2px; height:139px}
+.honor .tupian{ width:132px; height:134px; padding-top:2px; padding-left:2px}
+.honor_tittle{width:138px; background:url(../images/tu_bg.jpg) top no-repeat; height:37px;color:#444; line-height:37px; font-size:12px; text-align:center}
+.honor_tittle a{text-decoration:none;color:#444;}
+.honor_tittle a:hover{color:#0145a1;}
+
+.chanpin{ background:url(../images/xuxian.gif) bottom repeat-x; color:#6c6b6b; line-height:20px; padding-bottom:20px}
+.fenlei_H{ color:#ca0000; font-size:14px; font-weight:bold;line-height:25px; margin-top:20px}
+
+.more{ color:#b00000; line-height:20px;}
+.more a{text-decoration:none; color:#b00000;}
+.more a:hover {color:#b00000;}
+
+.lanse{width:165px; float:left; margin-right:10px; color:#002c6b; font-size:12px; font-weight:bold;font:微软雅黑,Arial, Helvetica, sans-serif ;display:block;}
+
+#about_banner{ width:100%; background:url(../images/about_banner.jpg) center no-repeat; height:230px; overflow:hidden}
+#news_banner{ width:100%; background:url(../images/news_banner.jpg) center no-repeat; height:230px; overflow:hidden}
+#products_banner{ width:100%; background:url(../images/products_banner.jpg) center no-repeat; height:230px; overflow:hidden}
+
+.fanye{ color:#666666; line-height:20px; height:20px}
+.fanye a {text-decoration:none;color:#666666;}
+.fanye a:hover{color:#0145a1;}
+
+.job{ color:#fff; line-height:20px; height:20px}
+.job a{ text-decoration:none;color:#fff;}
+.job a:hover{color:#fff;}
+
+.job_main{ color:#4b4b4b; line-height:20px; height:20px}
+.job_main a{ text-decoration:none;color:#4b4b4b;}
+.job_main a:hover{color:#0145a1;}
+
+.leftnav{}
+.leftnav li{}
+.leftnav a{background:url(../images/left.jpg) no-repeat;text-decoration:none; font-size:12px;color:#444; display:block; line-height:28px; height:28px;text-indent:18px;}
+.leftnav a:hover{background:url(../images/left_01.jpg)  no-repeat;text-decoration:none;font-weight:bold;text-decoration:none;color:#2b5698;}
+.leftnav .sel{background:url(../images/left_01.jpg) no-repeat;text-decoration:none;font-weight:bold;text-decoration:none;color:#2b5698;}
+
+
+.leftnav li ul{}
+.leftnav li ul li{}
+.leftnav li ul li a{background:url(../images/left_03.jpg) no-repeat;text-decoration:none; font-size:12px; color:#444444;display:block;line-height:29px; height:29px; text-indent:35px;padding-top:3px}
+.leftnav li ul li a:hover{background:url(../images/left_02.jpg)  no-repeat;text-decoration:none;font-weight:bold;text-decoration:none;color:#2b5698;}
+
+
+.leftnav li ul li ul li a{background:url(../images/left_03.jpg) no-repeat;text-decoration:none; font-size:12px; color:#444444;display:block;line-height:29px; height:29px; text-indent:45px;padding-top:3px}
+.leftnav li ul li ul li a:hover{background:url(../images/left_04.jpg)  no-repeat;text-decoration:none;color:#0960a8;cursor:pointer;line-height:29px; height:29px; text-indent:45px;padding-top:3px}
+
+
+.chufa{ width:796px; margin:0 auto; height:154px; border:1px solid #CCCCCC; background:#FFFFFF url(../images/chufa_bg.jpg) repeat-x; padding:15px 5px 15px 20px}
+.chufa_tittle{color:#375687; line-height:20px; height:20px; font-size:14px; font-weight: bold}
+.chufa_tittle a{text-decoration:none;color:#375687;}
+.chufa_tittle a:hover{color:#ff0000;}
+
+.chufa_menu { font:12px; margin-top:10px}
+.chufa_menu li{color:#444;}
+.chufa_menu li a {text-decoration:none; color:#444; display:block; line-height:20px;}
+.chufa_menu li a:hover { font-weight:bold;text-decoration:none;color:#2b5698;cursor:pointer;}
