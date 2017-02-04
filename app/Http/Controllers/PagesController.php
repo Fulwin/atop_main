@@ -20,6 +20,13 @@ class PagesController extends Controller
         $this->dataForView['banners'] = $this->_getHomeBanner();
         $this->dataForView['products'] = $this->_getNewProducts();
         $this->dataForView['isHome'] = true;
+
+        /**
+         * 首页上的产品区
+         */
+        $tree = $this->_getCategoriesTree($this->productsRootCategoryId, $this->currentLanguage);
+        $this->dataForView['tree'] = $tree;
+
         return view('pages.home',$this->dataForView);
     }
 

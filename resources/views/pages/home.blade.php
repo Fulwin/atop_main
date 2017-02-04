@@ -79,39 +79,34 @@
                         </div>
                     </li>
 
-                    <ul class="homecasect">
-                        <li class="" style="height:30px; width:100%; line-height:30px;"> <a href="Productsall.aspx?ProductsCateID=90&amp;CateID=90&amp;CurrCateID=90&showCateID=90" style=" font-family:微软雅黑; font-size:16px; color:#261E09;"><h3>Transmission</h3></a> </li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=105&IntroCateId=105&CateID=90&CurrCateID=105#100G CFP4"> 100G CFP4</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=216&IntroCateId=216&CateID=90&CurrCateID=216#100G CFP2"> 100G CFP2</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=106&IntroCateId=106&CateID=90&CurrCateID=106#40G QSFP"> 40G QSFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=107&IntroCateId=107&CateID=90&CurrCateID=107#10G SFP+"> 10G SFP+</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=108&IntroCateId=108&CateID=90&CurrCateID=108#10G XFP"> 10G XFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=110&IntroCateId=110&CateID=90&CurrCateID=110#BIDI SFP"> BIDI SFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=109&IntroCateId=109&CateID=90&CurrCateID=109#SFP"> SFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=112&IntroCateId=112&CateID=90&CurrCateID=112#CSFP"> CSFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=222&IntroCateId=222&CateID=90&CurrCateID=222#Copper SFP"> Copper SFP</a></li>
+                    <?php
+                        $showInHome = [
+                            'Transmission',
+                            'Data Center',
+                            'CPRI'
+                        ];
+                    ?>
 
-                    </ul>
-                    <ul class="homecasect">
-                        <li class="" style="height:30px; width:100%; line-height:30px;"> <a href="Productsall.aspx?ProductsCateID=91&amp;CateID=91&amp;CurrCateID=91&showCateID=91" style=" font-family:微软雅黑; font-size:16px; color:#261E09;"><h3>Data Center</h3></a> </li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=210&IntroCateId=210&CateID=91&CurrCateID=210#100G QSFP28"> 100G QSFP28</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=115&IntroCateId=115&CateID=91&CurrCateID=115#40G QSFP"> 40G QSFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=116&IntroCateId=116&CateID=91&CurrCateID=116#40G QSFP PSM"> 40G QSFP PSM</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=131&IntroCateId=131&CateID=91&CurrCateID=131#10G SFP+"> 10G SFP+</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=132&IntroCateId=132&CateID=91&CurrCateID=132#DAC Cable"> DAC Cable</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=133&IntroCateId=133&CateID=91&CurrCateID=133#AOC Cable"> AOC Cable</a></li>
-
-                    </ul>
-                    <ul class="homecasect">
-                        <li class="" style="height:30px; width:100%; line-height:30px;"> <a href="Productsall.aspx?ProductsCateID=100&amp;CateID=100&amp;CurrCateID=100&showCateID=100" style=" font-family:微软雅黑; font-size:16px; color:#261E09;"><h3>CPRI</h3></a> </li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=209&IntroCateId=209&CateID=100&CurrCateID=209#10G SFP+"> 10G SFP+</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=122&IntroCateId=122&CateID=100&CurrCateID=122#6G SFP+"> 6G SFP+</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=123&IntroCateId=123&CateID=100&CurrCateID=123#3G SFP"> 3G SFP</a></li>
-                        <li class="sites2"><a style="font-size:12px;" href="productsall.aspx?ProductsCateID=134&IntroCateId=134&CateID=100&CurrCateID=134#1.06G SFP"> 1.06G SFP</a></li>
-
-                    </ul>
-
-
+                    @foreach($tree as $categoryId=>$item)
+                        <?php $category = $item['data']; ?>
+                        @if(in_array($category->Cate_Title, $showInHome))
+                        <ul class="homecasect">
+                            <li class="" style="height:30px; width:100%; line-height:30px;">
+                                <a href="{{ url('/products/'.$categoryId) }}" style=" font-family:微软雅黑; font-size:16px; color:#261E09;">
+                                    <h3>{{ $category->Cate_Title }}</h3>
+                                </a>
+                            </li>
+                            <?php
+                                $subs = $item['subs'];
+                            ?>
+                            @foreach($subs as $subId => $subCategory)
+                                <li class="sites2">
+                                    <a style="font-size:12px;" href="{{ url('/products/'.$subId) }}"> {{ $subCategory['data']->Cate_Title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    @endforeach
                 </ul>
             </li>
         </div>

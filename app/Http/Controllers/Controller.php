@@ -18,6 +18,7 @@ class Controller extends BaseController
     ];
     public $sessionData = null;
     public $currentLanguage = 'EN';
+    public $productsRootCategoryId = 89;
 
     public function __construct(){
         $this->currentLanguage = session('lang') ? session('lang') : 'EN';
@@ -36,5 +37,50 @@ class Controller extends BaseController
             'data'  =>  $category,
             'subs'  =>  Category::LoadCategoriesByParentId($category->Cate_Id, $this->currentLanguage)
         ];
+    }
+
+    /**
+     * 根据给定的级别加载目录树
+     * @param int $parentId
+     * @param string $lang
+     * @return array
+     */
+    public function _getCategoriesTree($parentId = 0, $lang = 'EN'){
+        $tree = [];
+        $topLevelCategories = Category::LoadCategoriesByParentId($parentId,$lang);
+        foreach ($topLevelCategories as $topLevelCategory) {
+            // 第一级目录循环
+            $bean = [
+                'data' => $topLevelCategory,
+                'subs' => []
+            ];
+
+            $subs = Category::LoadCategoriesByParentId($topLevelCategory->Cate_Id, $lang);
+            if(count($subs)){
+                foreach ($subs as $secondLevelCategory) {
+                    // 第二级目录循环
+                    $subBeanSecond = [
+                        'data' => $secondLevelCategory,
+                        'subs' => []
+                    ];
+                    $subsSubs = Category::LoadCategoriesByParentId($secondLevelCategory->Cate_Id,$lang);
+                    if(count($subsSubs) > 0){
+                        // 第三级目录循环
+                        $subBeanThird = [];
+                        foreach ($subsSubs as $thirdLevelCategory) {
+                            $subBeanThird[$thirdLevelCategory->Cate_Id] = [
+                                'data' => $thirdLevelCategory,
+                                'subs' => []
+                            ];
+                        }
+                        $subBeanSecond['subs'] = $subBeanThird;
+                    }
+                    // 把包含所有子目录的数组添加到第一级的 subs 中
+                    $bean['subs'][$secondLevelCategory->Cate_Id] = $subBeanSecond;
+                }
+            }
+            $tree[$topLevelCategory->Cate_Id] = $bean;
+        }
+        return $tree;
     }
 }
