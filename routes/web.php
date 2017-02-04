@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('/about_us', 'PagesController@about_us');
+Route::get('/quality_control/{titleUrl?}', 'PagesController@quality_control');
 Route::get('/news/{titleUrl?}', 'PagesController@news');
 Route::get('/products/{categoryId?}', 'ProductsController@load_category');
 

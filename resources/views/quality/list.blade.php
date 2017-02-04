@@ -178,21 +178,24 @@
                             <div class="item masonry_brick">
                                 <div class="item_t">
                                     <div class="img">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">
-                                            <img width="250" src="{{ $upload_files_prefix.$article->News_Image }}" />
+                                        <a href="{{ url('/quality_control/'.$article->BaseInfo_Id) }}">
+                                            <img width="250" src="{{ $upload_files_prefix.$article->BaseInfo_Image }}" />
                                         </a>
                                     </div>
-                                    <div class="title"><span class="ccccc">{{ $article->News_Title }}</span>
+                                    <div class="title"><span class="ccccc">{{ $article->BaseInfo_Title }}</span>
                                         <br> <br>
-                                        {{ substr($article->News_Content,0, 100) }}
+                                        <?php
+                                            $tmp = str_replace('<p>','',$article->BaseInfo_Content);
+                                            $tmp = str_replace('</p>','',$tmp);
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="item_b clearfix">
                                     <div class="items_likes fl">
-                                        <em class="bold">{{ $article->News_AddTime }}</em>
+                                        <em class="bold">{{ $article->BaseInfo_AddTime }}</em>
                                     </div>
                                     <div class="items_comment fr">
-                                        <a href="{{ url('/news/'.$article->getArticleUrl()) }}">Learn more</a>
+                                        <a href="{{ url('/quality_control/'.$article->BaseInfo_Id) }}">Learn more</a>
                                     </div>
                                 </div>
                             </div>

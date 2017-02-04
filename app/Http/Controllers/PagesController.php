@@ -6,9 +6,45 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\News;
+use App\Models\BaseInfo;
 
 class PagesController extends Controller
 {
+    public function about_us(){
+        $newsCategory = Category::FetchByTitle('About',$this->currentLanguage);
+        $subs = $newsCategory->hasChild();
+        $baseInfos = [];
+        foreach ($subs as $sub) {
+            $items = $sub->baseInfos();
+            if($items) {
+                foreach ($items as $item) {
+                    $baseInfos[] = $item;
+                }
+            }
+        }
+        $this->dataForView['baseInfos'] = $baseInfos;
+        return view('pages.about_us',$this->dataForView);
+    }
+
+    public function quality_control($titleUrl=null){
+        // quality control
+        if(!$titleUrl){
+            // quality control
+            $category = Category::FetchByTitle('Quality Control', $this->currentLanguage);
+            $this->dataForView['category'] = $category;
+            $this->dataForView['isNews'] = true;
+            $this->dataForView['news'] = $category->baseInfos();
+            return view('quality.list',$this->dataForView);
+        } else {
+            // 新闻的细节页面, ID
+            $newsArticle = BaseInfo::Fetch($titleUrl);
+            $this->dataForView['category'] = $newsArticle->category();
+            $this->dataForView['isNews'] = true;
+            $this->dataForView['news'] = $newsArticle;
+            return view('quality.view',$this->dataForView);
+        }
+    }
+
     /**
      * 首页
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -42,6 +78,7 @@ class PagesController extends Controller
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
+            $this->dataForView['modelPrefix'] = 'News';
             return view('news.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID

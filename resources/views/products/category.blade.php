@@ -1,6 +1,7 @@
 @extends('layout_desktop')
 
 @section('content')
+    <div class="maincontent">
     <div class="maintext">
         @include('products.side_bar')
         <div class="rightpage">
@@ -164,5 +165,5 @@
                     </div>
             @endif
         </div>
-
+    </div>
 @stop

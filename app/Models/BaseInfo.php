@@ -23,6 +23,10 @@ class BaseInfo extends Model
         return str_replace(' ','__',$this->BaseInfo_Title);
     }
 
+    public function category(){
+        return Category::Fetch($this->BaseInfo_CateId);
+    }
+
     /**
      * 根据指定的 News Id 来删除一个记录
      * @param $news_Id

@@ -12,9 +12,8 @@
         @include('products.banner')
 @endif
 
-<div class="maincontent">
-        @yield('content')
-</div>
+
+@yield('content')
 
 @include('reusable_elements.desktop.foot')
 @include('reusable_elements.desktop.js')

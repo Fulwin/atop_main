@@ -1,6 +1,7 @@
 @extends('layout_desktop')
 
 @section('content')
+    <div class="maincontent">
         <div class="hovv">
             <li class="ccvv">News<span><a href="{{ url('/news/company') }}">Learn More</a></span></li>
             <li style="margin:0 auto; width:385px; float:none; ">
@@ -205,4 +206,5 @@
 
         </div>
         <div style="clear:both"></div>
+    </div>
 @stop
