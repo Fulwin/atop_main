@@ -1,0 +1,1 @@
+{"version":3,"sources":["_footer.scss"],"names":[],"mappings":"AAAA;EACE,eAAc;EACd,kBAAiB;EACjB,kBAAiB;EACjB,eAAe;CAKhB;;AATD;EAMI,sBAAsB;EACtB,WAAW;CACZ","file":"fix.css","sourcesContent":[".footer-wrap{\n  margin:0 auto;\n  min-width:1000px;\n  max-width:1200px;\n  display: block;\n  .homecase{\n    display: inline-block;\n    width: 15%;\n  }\n}"]}

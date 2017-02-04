@@ -2,7 +2,7 @@
 
 <div style="clear:both"></div>
 <div  style=" width:100%; background: url('{{ asset('img/413.jpg') }}') top left repeat; padding-top:35px; overflow:hidden;" >
-    <ul style="margin:0 auto; min-width:1000px; max-width:1200px;">
+    <ul class="footer-wrap">
         <li class="homecase">
             <ul>
                 <?php

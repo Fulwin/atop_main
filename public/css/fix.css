@@ -1,0 +1,13 @@
+.footer-wrap {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1200px;
+  display: block;
+}
+
+.footer-wrap .homecase {
+  display: inline-block;
+  width: 15%;
+}
+
+/*# sourceMappingURL=fix.css.map */

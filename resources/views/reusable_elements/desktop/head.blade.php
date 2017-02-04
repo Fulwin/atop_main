@@ -6,12 +6,13 @@
     <meta name="description" content="ATOP Corporation">
     <meta name="author" content="ATOP Corporation">
     <title>ATOP Corporation</title>
-    <link rel="stylesheet" href="{{ url('css/css.css') }}">
+
     <link rel="stylesheet" href="{{ url('jQuery/sexylightbox.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ url('style/cn.css') }}" type="text/css" media="screen, project, print">
     <link rel="stylesheet" href="{{ url('css/unslider.css') }}">
     <link rel="stylesheet" href="{{ url('css/unslider-dots.css') }}">
-
+    <link rel="stylesheet" href="{{ url('css/css.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fix.css') }}">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
