@@ -6,13 +6,10 @@
         <div class="rightpage2">
             <div class="textcontentt2"></div>
             <div class="contenttext2">
-                <h1 style="float: left; width: 100%; text-align: center">
+                <h1 style="float: left; width: 100%; text-align: center;font-size: 20px;font-weight: bold;">
                     {{ $news->BaseInfo_Title }}
                 </h1>
 
-                <div style="float: left; width: 100%; text-align: center; margin-top: 20px; margin-bottom: 50px; color:#ccc; border-bottom:#ccc dashed 1px;">
-                    Date：{{ $news->BaseInfo_AddTime }}
-                </div>
                 <div style="float: left; width: 100%; text-align: left">
                     {!! $news->BaseInfo_Content !!}
                 </div>

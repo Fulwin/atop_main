@@ -493,7 +493,7 @@
                                 <div class="cl"></div>
                             </ul>
                             <div class="more padt">
-                                <a href="culture.aspx">More</a>
+                                <a href="{{ url('/corporate_culture') }}">More</a>
                             </div>
 
                         </div>

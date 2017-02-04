@@ -178,7 +178,7 @@
                             <div class="item masonry_brick">
                                 <div class="item_t">
                                     <div class="img">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">
+                                        <a href="{{ url('/corporate_culture/'.$article->News_Id) }}">
                                             <img width="250" src="{{ $upload_files_prefix.$article->News_Image }}" />
                                         </a>
                                     </div>
@@ -192,7 +192,7 @@
                                         <em class="bold">{{ $article->News_AddTime }}</em>
                                     </div>
                                     <div class="items_comment fr">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">Learn more</a>
+                                        <a href="{{ url('/corporate_culture/'.$article->News_Id) }}">Learn more</a>
                                     </div>
                                 </div>
                             </div>

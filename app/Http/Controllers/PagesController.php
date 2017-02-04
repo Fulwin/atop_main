@@ -45,6 +45,25 @@ class PagesController extends Controller
         }
     }
 
+    public function corporate_culture($titleUrl=null){
+        // quality control
+        if(!$titleUrl){
+            // quality control
+            $category = Category::FetchByTitle('Corporate Culture', $this->currentLanguage);
+            $this->dataForView['category'] = $category;
+            $this->dataForView['isNews'] = true;
+            $this->dataForView['news'] = $category->news();
+            return view('culture.list',$this->dataForView);
+        } else {
+            // 新闻的细节页面, ID
+            $newsArticle = BaseInfo::Fetch($titleUrl);
+            $this->dataForView['category'] = $newsArticle->category();
+            $this->dataForView['isNews'] = true;
+            $this->dataForView['news'] = $newsArticle;
+            return view('culture.view',$this->dataForView);
+        }
+    }
+
     /**
      * 首页
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
