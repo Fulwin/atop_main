@@ -10,6 +10,13 @@ use App\Models\Download;
 class Category extends Model
 {
     //
+    public function getTitleUrl(){
+        return str_replace(' ','__',$this->Cate_Title);
+    }
+
+    public function parent(){
+        return self::Fetch($this->Cate_ParentID);
+    }
 
     /**
      * 根据给定的父级目录ID 加载子目录的静态方法

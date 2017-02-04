@@ -1,7 +1,7 @@
 <div class="headerdu">
     <div class="logo" >
         <ul>
-            <li style="float:left; "><a href="{{ url('/') }}"><img src="images/logo.jpg" width="385" height="108" alt=""></a></li>
+            <li style="float:left; "><a href="{{ url('/') }}"><img src="{{ url('images/logo.jpg') }}" width="385" height="108" alt=""></a></li>
             <li class="language" >
                 <ul>
                     <li class="langhome"><a href="{{ url('/cn') }}" >简体中文</a></li>
@@ -18,7 +18,7 @@
                     </li>
                     <li class="socil">
                         <a href="http://www.linkedin.com/company/atop-technology-co.-ltd?trk=top_nav_home" target="_blank">
-                            <img src="{{ asset('images/linkedin.jsp') }}" width="24" height="25" alt="">
+                            <img src="{{ asset('images/linkedin.jpg') }}" width="24" height="25" alt="">
                         </a>
                     </li>
                     <li class="socil">
@@ -57,7 +57,7 @@
                     <div class="mtop">
                         <li style="height:80px; width:100%;">
                             <a href="{{ url('/products/category/transmission') }}">
-                                <img src="/Upload/catebannar/1-11420239159.jpg" width="182" height="130" />
+                                <img src="{{ $upload_files_prefix }}Upload/catebannar/1-11420239159.jpg" width="182" height="130" />
                             </a>
                         </li>
                         <li style="line-height:16px; width:100%; font-weight:bold">Transmission</li>
@@ -67,7 +67,7 @@
                     <div class="mtop">
                         <li style="height:80px; width:100%;">
                             <a href="{{ url('/products/category/data_center') }}">
-                                <img src="/Upload/catebannar/2-11420239159.jpg" width="182" height="130" />
+                                <img src="{{ $upload_files_prefix }}Upload/catebannar/2-11420239159.jpg" width="182" height="130" />
                             </a>
                         </li>
                         <li style="line-height:16px; width:100%; font-weight:bold">Data Center</li>
@@ -77,7 +77,7 @@
                     <div class="mtop">
                         <li style="height:80px; width:100%;">
                             <a href="{{ url('/products/category/CPRI') }}">
-                                <img src="/Upload/catebannar/3-11420219312.jpg" width="182" height="130" />
+                                <img src="{{ $upload_files_prefix }}Upload/catebannar/3-11420219312.jpg" width="182" height="130" />
                             </a>
                         </li>
                         <li style="line-height:16px; width:100%; font-weight:bold">CPRI</li>
@@ -87,15 +87,12 @@
                     <div class="mtop">
                         <li style="height:80px; width:100%;">
                             <a href="{{ url('/products/category/broadband_access') }}">
-                                <img src="/Upload/catebannar/4-11420223281.jpg" width="182" height="130" />
+                                <img src="{{ $upload_files_prefix }}Upload/catebannar/4-11420223281.jpg" width="182" height="130" />
                             </a>
                         </li>
                         <li style="line-height:16px; width:100%; font-weight:bold">Broadband Access</li>
                         <li style="line-height:16px; padding-top:10px; width:100%; text-align:left">ATOP offers GPON OLT and ONU products fo…</li>
                     </div>
-
-
-
                 </ul>
             </li>
             <li><a href="{{ url('/solutions') }}">Solution</a></li>

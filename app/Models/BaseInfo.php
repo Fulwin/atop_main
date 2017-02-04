@@ -18,6 +18,11 @@ class BaseInfo extends Model
         return self::where('BaseInfo_Id',$news_Id)->first();
     }
 
+    public function getArticleUrl()
+    {
+        return str_replace(' ','__',$this->BaseInfo_Title);
+    }
+
     /**
      * 根据指定的 News Id 来删除一个记录
      * @param $news_Id

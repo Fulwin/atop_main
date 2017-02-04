@@ -54,7 +54,6 @@ document.getElementById("scrollfull").style.top=parseInt(document.getElementById
 
 lastScrollY=lastScrollY+percent; 
 }
-suspendcode='<div id="scrollfull" style="position:absolute; right:0px; top:250px;"><a href="javascript:window.scroll(0,0)" onfocus="blur()"><img src="images/top.png" /></a></div>';
+suspendcode='<div id="scrollfull" style="position:absolute; right:0px; top:250px;"><a href="javascript:window.scroll(0,0)" onfocus="blur()"><img src="/images/top.png" /></a></div>';
 document.write(suspendcode);
 window.setInterval("heartBeat()",10);
-//一流素材网收集整理：www.16sucai.com 代码来源：韩东雪设计工作室

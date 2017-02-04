@@ -2,19 +2,19 @@
 
 @section('content')
         <div class="hovv">
-            <li class="ccvv">News<span><a href="News.aspx">Learn More</a></span></li>
+            <li class="ccvv">News<span><a href="{{ url('/news/company') }}">Learn More</a></span></li>
             <li style="margin:0 auto; width:385px; float:none; ">
                 <ul>
                     @foreach($news as $key=>$article)
                         @if($key===0)
                             <li style="padding-top:10px; padding-bottom:20px;">
-                                <a href="{{ url('news/').$article->getArticleUrl() }}">
+                                <a href="{{ url('news/'.$article->News_Id) }}">
                                     <img src="{{ $upload_files_prefix.$article->News_Image }}" width="385" height="165" alt="">
                                 </a>
                             </li>
                             <li>
                                 <ul style="float:left; width:100%; text-align:left;">
-                                    <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/').$article->getArticleUrl() }}">
+                                    <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
                                         {{ $article->News_Title }}
                                     </a>
                                 </ul>
@@ -23,7 +23,9 @@
                                 </ul>
                             </li>
                         @else
-                            <li class="litext"><a href="{{ url('news/').$article->getArticleUrl() }}">{{ $article->News_Title }}</a> </li>
+                            <li class="litext">
+                                <a href="{{ url('news/'.$article->News_Id) }}">{{ $article->News_Title }}</a>
+                            </li>
                         @endif
                     @endforeach
                 </ul>
@@ -183,7 +185,7 @@
                     so.addParam("wmode","opaque");
                     so.addParam("quality","high");
                     so.addParam("salign","lt");
-                    so.addVariable("CuPlayerFile","/Upload/Honor/jieshao.flv");
+                    so.addVariable("CuPlayerFile","{{ $upload_files_prefix }}Upload/Honor/jieshao.flv");
                     so.addVariable("CuPlayerImage","Images/413_56.jpg");
                     so.addVariable("CuPlayerShowImage","true");
                     so.addVariable("CuPlayerWidth","385");
@@ -192,7 +194,7 @@
                     so.addVariable("CuPlayerAutoRepeat","true");
                     so.addVariable("CuPlayerShowControl","true");
                     so.addVariable("CuPlayerAutoHideControl","false");
-                    if("/Upload/Honor/jieshao.flv"!=""&&"/Upload/Honor/jieshao.flv"!=" ")
+                    if("{{ $upload_files_prefix }}Upload/Honor/jieshao.flv"!=""&&"{{ $upload_files_prefix }}Upload/Honor/jieshao.flv"!=" ")
                     {
                         so.write("CuPlayer");
                     }

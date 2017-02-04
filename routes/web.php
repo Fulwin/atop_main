@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('/news/{titleUrl?}', 'PagesController@news');

@@ -1,8 +1,11 @@
 @include('reusable_elements.desktop.head')
 
 @include('reusable_elements.desktop.top')
-@include('reusable_elements.desktop.slide')
-
+@if($isHome)
+        @include('reusable_elements.desktop.slide')
+@else
+        @include('reusable_elements.desktop.banner')
+@endif
 
 <div class="maincontent">
         @yield('content')

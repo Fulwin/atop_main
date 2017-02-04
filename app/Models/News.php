@@ -10,12 +10,28 @@ class News extends Model
 {
     //
     public function category(){
-        return $this->belongsTo('App\Models\Category');
+        return Category::Fetch($this->News_CateId);
     }
 
     public function getArticleUrl()
     {
         return str_replace(' ','__',$this->News_Title);
+    }
+
+    public static function FetchByTitle($title){
+        return self::where('News_Title',$title)->first();
+    }
+
+    public function prevOne(){
+        return self::where('News_CateId',$this->News_CateId)
+            ->where('News_Order','<', intval($this->News_Order)-1)
+            ->first();
+    }
+
+    public function nextOne(){
+        return self::where('News_CateId',$this->News_CateId)
+            ->where('News_Order','>', intval($this->News_Order)+1)
+            ->first();
     }
 
     /**
