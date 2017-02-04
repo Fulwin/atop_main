@@ -34,6 +34,17 @@ class Category extends Model
             ->get();
     }
 
+    /**
+     * 检查是否还有子目录
+     */
+    public function hasChild(){
+        if($this->Cate_HasChild == '1'){
+            return self::LoadCategoriesByParentId($this->Cate_Id);
+        }else{
+            return false;
+        }
+    }
+
     public static function Fetch($id){
         return self::where('Cate_Id',$id)->first();
     }

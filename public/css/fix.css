@@ -1,3 +1,169 @@
+.product-wrap .line {
+  width: 100%;
+  height: 1px;
+  border-bottom: solid 1px #ccc;
+  clear: both;
+}
+
+.product-wrap .clearfix {
+  display: block;
+  width: 100%;
+  height: 1px;
+  clear: both;
+}
+
+.product-wrap .mb40 {
+  margin-bottom: 40px;
+}
+
+.product-wrap .mt40 {
+  margin-top: 40px;
+}
+
+.product-wrap .row {
+  width: 100%;
+  display: block;
+  clear: right;
+}
+
+.product-wrap .row .image-wrap {
+  display: inline-block;
+  float: left;
+  width: 46%;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.product-wrap .row .image-wrap img {
+  margin-top: 20px;
+}
+
+.product-wrap .row .desc-wrap {
+  display: inline-block;
+  float: left;
+  width: 44%;
+}
+
+.product-wrap .row .desc-wrap h2 {
+  display: block;
+  margin-top: 20px;
+}
+
+.product-wrap .row .desc-wrap h2 .name {
+  font-size: 15px;
+  color: #2c3343;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: solid 3px #2c3343;
+  padding-bottom: 10px;
+}
+
+.product-wrap .row .desc-wrap .code {
+  color: #687172;
+  font-size: 12px;
+  margin-bottom: 33px;
+}
+
+.product-wrap .row .desc-wrap .general {
+  font-size: 14px;
+  color: #687172;
+  font-weight: bold;
+}
+
+.product-wrap .row .desc-wrap .extra .left {
+  float: left;
+  margin-right: 30px;
+  width: 46%;
+}
+
+.product-wrap .row .desc-wrap .extra .right {
+  float: left;
+  width: 30%;
+}
+
+.product-wrap .row .desc-wrap .extra .txt {
+  font-size: 11px;
+  height: 30px;
+  line-height: 30px;
+  color: #687172;
+}
+
+.product-wrap .row .feature-wrap, .product-wrap .row .application-wrap {
+  display: block;
+  float: left;
+  width: 40%;
+  margin-top: 27px;
+  padding-left: 80px;
+}
+
+.product-wrap .row .feature-wrap h4, .product-wrap .row .application-wrap h4 {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #687172;
+  font-weight: bold;
+}
+
+.product-wrap .row .feature-wrap ul li, .product-wrap .row .application-wrap ul li {
+  list-style: disc;
+  margin-left: 15px;
+  font-size: 12px;
+  height: 22px;
+  line-height: 22px;
+}
+
+.product-wrap .row .feature-wrap .download-btn, .product-wrap .row .application-wrap .download-btn {
+  background: #f1963b;
+  text-align: center;
+  width: 240px;
+  border-radius: 18px;
+  margin-top: 30px;
+}
+
+.product-wrap .row .feature-wrap .download-btn:hover, .product-wrap .row .application-wrap .download-btn:hover {
+  background: rgba(241, 150, 59, 0.9);
+}
+
+.product-wrap .row .feature-wrap .download-btn a, .product-wrap .row .application-wrap .download-btn a {
+  color: #fff;
+  text-decoration: none;
+  height: 36px;
+  line-height: 36px;
+  font-size: 17px;
+}
+
+.product-wrap .row .feature-wrap .request-btn, .product-wrap .row .application-wrap .request-btn {
+  background: #f4f1ee;
+  text-align: center;
+  width: 240px;
+  border-radius: 18px;
+  margin-top: 30px;
+}
+
+.product-wrap .row .feature-wrap .request-btn:hover, .product-wrap .row .application-wrap .request-btn:hover {
+  background: rgba(244, 241, 238, 0.9);
+}
+
+.product-wrap .row .feature-wrap .request-btn a, .product-wrap .row .application-wrap .request-btn a {
+  color: #687172;
+  text-decoration: none;
+  height: 36px;
+  line-height: 36px;
+  font-size: 17px;
+}
+
+.product-wrap .row .eye-diagram-wrap, .product-wrap .row .specification-wrap {
+  display: block;
+  padding-left: 80px;
+  width: 100%;
+}
+
+.product-wrap .row .eye-diagram-wrap h4, .product-wrap .row .specification-wrap h4 {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #687172;
+  font-weight: bold;
+}
+
 .footer-wrap {
   margin: 0 auto;
   min-width: 1000px;

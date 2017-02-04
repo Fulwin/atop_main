@@ -12,6 +12,13 @@ class Product extends Model
         return self::where('Products_ID',$news_Id)->first();
     }
 
+    /**
+     * 取得这个产品所属的目录
+     */
+    public function category(){
+        return Category::Fetch($this->Products_CateID);
+    }
+
     public static function GetNew($limit=null){
         if($limit)
             return self::where('Products_IsNew',1)->take($limit)->get();

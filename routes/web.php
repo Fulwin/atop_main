@@ -14,3 +14,8 @@
 Route::get('/', 'PagesController@home');
 Route::get('/news/{titleUrl?}', 'PagesController@news');
 Route::get('/products/{categoryId?}', 'ProductsController@load_category');
+
+/**
+ * 加载产品单页的路径
+ */
+Route::get('/product/view/{productId?}', 'ProductsController@view');
