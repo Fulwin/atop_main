@@ -47,8 +47,8 @@ class PagesController extends Controller
     }
 
     private function _getHomeBanner(){
-        $homeBannerCategory = Category::Fetch(103,$this->currentLanguage);
-        return $homeBannerCategory->news();
+        $homeBannerCategory = Category::Fetch(103);
+        return $homeBannerCategory->baseInfos();
     }
 
     /**
