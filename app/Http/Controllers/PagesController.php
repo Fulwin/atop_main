@@ -56,7 +56,7 @@ class PagesController extends Controller
             return view('culture.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID
-            $newsArticle = BaseInfo::Fetch($titleUrl);
+            $newsArticle = News::Fetch($titleUrl);
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;

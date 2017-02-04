@@ -448,27 +448,27 @@
 
 
 
-                                <li><a href="newsdetail.aspx?NewsID=19&CateID=141&NewsCateId=141">
+                                <li><a href="{{ url('/corporate_culture/19') }}">
                                         <div class="act_nor">
                                             <img src="{{ asset('newpicture/mb.jpg') }}" alt="">
                                         </div>
-                                    </a><div class="act_detail"><a href="newsdetail.aspx?NewsID=19&CateID=141&NewsCateId=141">
+                                    </a><div class="act_detail"><a href="{{ url('/corporate_culture/19') }}">
                                             <h6>Indian Overview</h6>
                                             <div class="act_txt"> <p style="text-align: justify;"></p></div>
-                                        </a><p class="act_more"><a href="newsdetail.aspx?NewsID=19&CateID=141&NewsCateId=141"></a><a href="newsdetail.aspx?NewsID=19&CateID=141&NewsCateId=141">Read More&gt;&gt;</a></p>
+                                        </a><p class="act_more"><a href="{{ url('/corporate_culture/19') }}"></a><a href="{{ url('/corporate_culture/19') }}">Read More&gt;&gt;</a></p>
                                     </div>
                                 </li>
 
 
 
-                                <li><a href="newsdetail.aspx?NewsID=18&CateID=141&NewsCateId=141">
+                                <li><a href="{{ url('/corporate_culture/18') }}">
                                         <div class="act_nor">
                                             <img src="{{ asset('newpicture/invest.jpg') }}" alt="">
                                         </div>
-                                    </a><div class="act_detail"><a href="newsdetail.aspx?NewsID=18&CateID=141&NewsCateId=141">
+                                    </a><div class="act_detail"><a href="{{ url('/corporate_culture/18') }}">
                                             <h6> Fucheng Dist Investme…</h6>
                                             <div class="act_txt"> <p style="text-align: justify;">15th JUNE 2015, the officer from Fucheng Dist Investment Promotion Bureau visited ATOP Corporation, …</p></div>
-                                        </a><p class="act_more"><a href="newsdetail.aspx?NewsID=18&CateID=141&NewsCateId=141"></a><a href="newsdetail.aspx?NewsID=18&CateID=141&NewsCateId=141">Read More&gt;&gt;</a></p>
+                                        </a><p class="act_more"><a href="{{ url('/corporate_culture/18') }}"></a><a href="{{ url('/corporate_culture/18') }}">Read More&gt;&gt;</a></p>
                                     </div>
                                 </li>
 
@@ -477,14 +477,14 @@
 
 
 
-                                <li class="last"><a href="newsdetail.aspx?NewsID=17&CateID=141&NewsCateId=141">
+                                <li class="last"><a href="{{ url('/corporate_culture/17') }}">
                                         <div class="act_nor">
                                             <img src="{{ $upload_files_prefix }}Upload/newspicture/IMG_0183-17245185932.jpg" alt="">
                                         </div>
-                                    </a><div class="act_detail"><a href="newsdetail.aspx?NewsID=17&CateID=141&NewsCateId=141">
+                                    </a><div class="act_detail"><a href="{{ url('/corporate_culture/17') }}">
                                             <h6>ATOP Corporation don…</h6>
                                             <div class="act_txt"> <p style="text-align: justify;">16th SEP 2013.ATOP Corporation arranged their first head office meeting with ATOP EU.Meantime the ma…</p></div>
-                                        </a><p class="act_more"><a href="newsdetail.aspx?NewsID=17&CateID=141&NewsCateId=141"></a><a href="newsdetail.aspx?NewsID=17&CateID=141&NewsCateId=141">Read More&gt;&gt;</a></p>
+                                        </a><p class="act_more"><a href="{{ url('/corporate_culture/17') }}"></a><a href="{{ url('/corporate_culture/17') }}">Read More&gt;&gt;</a></p>
                                     </div>
                                 </li>
 
