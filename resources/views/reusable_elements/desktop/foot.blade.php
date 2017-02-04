@@ -1,5 +1,7 @@
+</div>
+
 <div style="clear:both"></div>
-<div class="maincontent" style=" width:100%; background: url('{{ asset('img/413.jpg') }}') top left repeat; padding-top:35px; overflow:hidden;" >
+<div  style=" width:100%; background: url('{{ asset('img/413.jpg') }}') top left repeat; padding-top:35px; overflow:hidden;" >
     <ul style="margin:0 auto; min-width:1000px; max-width:1200px;">
         <li class="homecase">
             <ul>
@@ -77,11 +79,12 @@
 </div>
 
 
-<div class="footer" style=""> <ul style="margin:0 auto; width:1200px;">
+<div class="footer" style="">
+    <ul style="margin:0 auto; width:1200px;">
         <li style="">
             <a href="{{ url('/contact') }}">Contact Us</a> |
             <a href="{{ url('/solution') }}">Solution</a> |
-            <a href="{{ url('/service') }}">Services & Support</a> | Copyright © ATOP Corporation</li>
-
+            <a href="{{ url('/service') }}">Services & Support</a> | Copyright © ATOP Corporation
+        </li>
     </ul>
 </div>

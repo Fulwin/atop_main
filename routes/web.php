@@ -13,3 +13,4 @@
 
 Route::get('/', 'PagesController@home');
 Route::get('/news/{titleUrl?}', 'PagesController@news');
+Route::get('/products/{categoryId?}', 'ProductsController@load_category');

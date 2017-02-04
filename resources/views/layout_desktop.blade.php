@@ -3,8 +3,13 @@
 @include('reusable_elements.desktop.top')
 @if($isHome)
         @include('reusable_elements.desktop.slide')
-@else
+@endif
+@if(isset($isNews) && $isNews)
         @include('reusable_elements.desktop.banner')
+@endif
+
+@if(isset($isProducts) && $isProducts)
+        @include('products.banner')
 @endif
 
 <div class="maincontent">

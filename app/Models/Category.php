@@ -29,7 +29,7 @@ class Category extends Model
         return self::where('Cate_Lang',$lang)
             ->where('Cate_ParentId',$id)
 //            ->where('Cate_State',1)
-            ->select('Cate_Id','Cate_Title')
+            ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
             ->orderBy('Cate_Order','ASC')
             ->get();
     }

@@ -33,12 +33,14 @@ class PagesController extends Controller
             // 公司新闻
             $category = Category::FetchByTitle('Company News', $this->currentLanguage);
             $this->dataForView['category'] = $category;
+            $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
             return view('news.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID
             $newsArticle = News::Fetch($titleUrl);
             $this->dataForView['category'] = $newsArticle->category();
+            $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;
             $this->dataForView['prevOne'] = $newsArticle->prevOne();
             $this->dataForView['nextOne'] = $newsArticle->nextOne();
