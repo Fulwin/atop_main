@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bannarspicculture"
-         style="background:url('{{ asset('/Upload/catebannar/solutionsbanner-17475279305.jpg') }}') center top no-repeat;">
+         style="background:url('{{ asset('/Upload/catebannar/service&support-18444026038.jpg') }}') center top no-repeat;">
     </div>
     <div class="middle">
         <div style="margin:0 auto; width:1200px; padding:25px;">
