@@ -151,7 +151,7 @@ class PagesController extends Controller
     public function home(){
         // 新闻
         $newsCategory = Category::FetchByTitle('Company News',$this->currentLanguage);
-        $this->dataForView['news'] = $newsCategory->news(5);
+        $this->dataForView['news'] = $newsCategory->news(6);  // 只要6个就够了
         $this->dataForView['banners'] = $this->_getHomeBanner();
         $this->dataForView['products'] = $this->_getNewProducts();
         $this->dataForView['isHome'] = true;

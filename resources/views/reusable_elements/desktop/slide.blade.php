@@ -28,7 +28,7 @@
                 .rollTextMenus span { color: #999; padding-left:50px; font-size:11px;}
                 -->
             </style>
-            <SCRIPT type=text/javascript>
+            <script type=text/javascript>
                 <!--
                 var rollText_k=6; //菜单总数
                 var rollText_i=1; //菜单默认值
@@ -48,44 +48,34 @@
                     document.getElementById("pageShow").innerHTML = rollText_i+"/"+rollText_k;
                 }
                 //-->
-            </SCRIPT>
-            <TABLE height="52" border="0" cellspacing="0" class=rollboder>
-                <TBODY>
-                <TR>
-                    <TD height="52" class=rollleft>
-                        <DIV class=rollTextMenus>
-
-                            <DIV id=rollTextMenu6 style="DISPLAY: block; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=1&CateID=101&NewsCateId=101">ATOP Corporation (ATOP) will attend Sviaz - Expocomm 2013 MOSCOW</a><span>[2015-04-27]</span>
-                            </DIV>
-
-
-
-
-                            <DIV id=rollTextMenu1 style="DISPLAY: none; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=62&CateID=101&NewsCateId=101">ATOP will attend OFC Exhibition 2016</a> <span>[2015-11-12]</span>
-                            </DIV>
-
-                            <DIV id=rollTextMenu2 style="DISPLAY: none; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=4&CateID=101&NewsCateId=101">ATOP will attend ECOC Exhibition 2015</a> <span>[2015-07-16]</span>
-                            </DIV>
-
-                            <DIV id=rollTextMenu3 style="DISPLAY: none; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=6&CateID=101&NewsCateId=101">ATOP will attend OFC 2016</a> <span>[2015-07-16]</span>
-                            </DIV>
-
-                            <DIV id=rollTextMenu4 style="DISPLAY: none; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=45&CateID=101&NewsCateId=101">ATOP expand the sales network in China</a> <span>[2015-06-30]</span>
-                            </DIV>
-
-                            <DIV id=rollTextMenu5 style="DISPLAY: none; height:52px; line-height:52px;"><a style="" href="newsdetail.aspx?NewsID=46&CateID=101&NewsCateId=101">ATOP Pointed New CEO</a> <span>[2015-06-15]</span>
-                            </DIV>
-
-
-
-
-
-                        </DIV></TD>
-                    <TD class=rollcenter id=pageShow>3/6</TD>
-                    <TD class=rollright><A title=上一条 href="javascript:rollText(-1);"><IMG src="images/last.gif"
-                                                                                          alt=上一条 width="11" height="11" border="0"></A> <A title=下一条 href="javascript:rollText(1);"><IMG src="images/next.gif"
-                                                                                                                                                                                          alt=下一条 width="11" height="11" border="0"></A></TD>
-                </TR></TBODY></TABLE>
+            </script>
+            <table height="52" border="0" cellspacing="0" class="rollboder">
+                <tbody>
+                    <tr>
+                        <td height="52" class="rollleft">
+                            <div class="rollTextMenus">
+                                @foreach($news as $key=>$item)
+                                    <div id="rollTextMenu{{ $key+1 }}" style="display: {{ $key===0 ? 'block' : 'none' }}; height:52px; line-height:52px;">
+                                        <a style="" href="{{ url('/news/'.$item->News_Id) }}">
+                                            {{ $item->News_Title }}
+                                        </a>
+                                        <span>[{{ substr($item->News_AddTime,0,10) }}]</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </td>
+                        <td class="rollcenter" id="pageShow">1/6</td>
+                        <td class="rollright">
+                            <a title="上一条" href="javascript:rollText(-1);">
+                                <img src="{{ asset('images/last.gif') }}" alt="上一条" width="11" height="11" border="0">
+                            </a>
+                            <a title="下一条" href="javascript:rollText(1);">
+                                <img src="{{ asset('images/next.gif') }}">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </li>
     </div>
 </div>

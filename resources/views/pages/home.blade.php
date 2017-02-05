@@ -6,27 +6,32 @@
             <li class="ccvv">News<span><a href="{{ url('/news/company') }}">Learn More</a></span></li>
             <li style="margin:0 auto; width:385px; float:none; ">
                 <ul>
+                    <?php
+                        $newsIndex = 0;
+                    ?>
                     @foreach($news as $key=>$article)
-                        @if($key===0)
-                            <li style="padding-top:10px; padding-bottom:20px;">
-                                <a href="{{ url('news/'.$article->News_Id) }}">
-                                    <img src="{{ $upload_files_prefix.$article->News_Image }}" width="385" height="165" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <ul style="float:left; width:100%; text-align:left;">
-                                    <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
-                                        {{ $article->News_Title }}
+                        @if($newsIndex < 5)
+                            @if($key===0)
+                                <li style="padding-top:10px; padding-bottom:20px;">
+                                    <a href="{{ url('news/'.$article->News_Id) }}">
+                                        <img src="{{ $upload_files_prefix.$article->News_Image }}" width="385" height="165" alt="">
                                     </a>
-                                </ul>
-                                <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 90px;overflow: hidden;">
-                                    {!! $article->News_Content !!}
-                                </ul>
-                            </li>
-                        @else
-                            <li class="litext">
-                                <a href="{{ url('news/'.$article->News_Id) }}">{{ $article->News_Title }}</a>
-                            </li>
+                                </li>
+                                <li>
+                                    <ul style="float:left; width:100%; text-align:left;">
+                                        <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
+                                            {{ $article->News_Title }}
+                                        </a>
+                                    </ul>
+                                    <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 90px;overflow: hidden;">
+                                        {!! $article->News_Content !!}
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="litext">
+                                    <a href="{{ url('news/'.$article->News_Id) }}">{{ $article->News_Title }}</a>
+                                </li>
+                            @endif
                         @endif
                     @endforeach
                 </ul>
@@ -155,7 +160,6 @@
     <div class="maincontent" >
         <div style=" width:814px; float:left;">
             <ul>
-
                 <li style=" width:385px; padding-right:22px;"><a href="{{ url('/about_us') }}"><img src="{{$upload_files_prefix}}Upload/catebannar/413_5418475490113-10495845248.jpg" width="385" height="209" alt=""></a></li>
                 <li style=" width:380px; ">
                     <ul>
@@ -164,8 +168,6 @@
                         <li style="line-height:26px; width:380px; padding-top:50px; "><a href="{{ url('/about_us') }}"><img src="images/413_57.jpg" width="119" height="32" alt=""></a></li>
                     </ul>
                 </li>
-
-
             </ul>
         </div>
         <div style=" width:385px; float:left;"><div id="CuPlayer" style="">
@@ -193,10 +195,6 @@
                     {
                         document.write("");
                     }
-
-
-
-
                 </script></div>
 
         </div>
