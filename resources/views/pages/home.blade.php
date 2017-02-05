@@ -89,7 +89,9 @@
                         $showInHome = [
                             'Transmission',
                             'Data Center',
-                            'CPRI'
+                            'CPRI',
+                            '传输',
+                            '数据中心'
                         ];
                     ?>
 

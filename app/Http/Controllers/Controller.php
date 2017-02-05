@@ -55,6 +55,7 @@ class Controller extends BaseController
      */
     public function _getCategoriesTree($parentId = 0, $lang = 'EN'){
         $tree = [];
+
         $topLevelCategories = Category::LoadCategoriesByParentId($parentId,$lang);
         foreach ($topLevelCategories as $topLevelCategory) {
             // 第一级目录循环
@@ -89,6 +90,7 @@ class Controller extends BaseController
             }
             $tree[$topLevelCategory->Cate_Id] = $bean;
         }
+
         return $tree;
     }
 
