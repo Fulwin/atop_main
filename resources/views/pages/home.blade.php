@@ -17,7 +17,7 @@
                                         <img src="{{ $upload_files_prefix.$article->News_Image }}" width="385" height="165" alt="">
                                     </a>
                                 </li>
-                                <li>
+                                <li style="width: 385px;">
                                     <ul style="float:left; width:100%; text-align:left;height: 30px;overflow: hidden;">
                                         <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
                                             {{ $article->News_Title }}
