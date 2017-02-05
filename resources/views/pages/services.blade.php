@@ -47,7 +47,7 @@
                                     <a href="{{ url('/downloads/'.$download->Down_LocalPath) }}">
                                         <li>
                                             <div class="act_nor">
-                                                <img src="{{ url('/downloads/'.$download->Down_Image) }}" alt="">
+                                                <img src="{{ url($download->Down_Image) }}" alt="">
                                             </div>
                                             <div class="act_detail">
                                                 <h6>{{ $download->Down_Title }}</h6>
