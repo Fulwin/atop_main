@@ -18,13 +18,13 @@
                 </ul>
             </div>
             <div class="textcontentt2" style="width:1200px;"></div>
+            <article class="wrap">
+                <section class="sec content2" style="position: relative;">
+                    <div>
+                        {!! $download->Down_Content !!}
+                    </div>
+                </section>
+            </article>
         </div>
-        <article class="wrap">
-            <section class="sec content2" style="position: relative;">
-                <div>
-                    {!! $download->Down_Content !!}
-                </div>
-            </section>
-        </article>
     </div>
 @stop
