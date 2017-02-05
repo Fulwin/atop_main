@@ -162,6 +162,12 @@ class PagesController extends Controller
         $tree = $this->_getCategoriesTree($this->productsRootCategoryId, $this->currentLanguage);
         $this->dataForView['tree'] = $tree;
 
+        /*
+         *  Solutions 部分
+         */
+        $solutionCategory = Category::FetchByTitle('Solution',$this->currentLanguage);
+        $this->dataForView['downloads'] = $solutionCategory->downloads();
+
         return view('pages.home',$this->dataForView);
     }
 

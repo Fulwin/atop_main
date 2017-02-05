@@ -112,44 +112,39 @@
             </li>
         </div>
         <div class="hovv2">
-            <li class="ccvv2">Solution  <span><a href="solutiontop.aspx">Learn More</a></span></li>
+            <li class="ccvv2">Solution  <span><a href="{{ url('/solutions') }}">Learn More</a></span></li>
             <li style="margin:0 auto; width:385px; float:none;">
                 <ul>
-                    <li style="padding-top:10px; padding-bottom:20px;"><a href="solutiontop.aspx">
-                            <img src="{{ $upload_files_prefix }}Upload/Honor/Solution-10245893871.jpg" width="385" height="165" alt="">
-
-
-                        </a></li>
-
-
-
-                    <li class="litexthhhhhhhhh">
-                        <div style="float:left; width:320px;">
-                            <a href="solutionview2.aspx?DownID=16&CateID=87&DownCateID=87">
-                                <h3>PON</h3>
-                            </a>
-                            ATOP 10GEPON optical transceivers support a downstream at 10Gbps and upstream at 10Gbps or…
-                        </div>
-                        <div style="float: right;"><img src="{{ $upload_files_prefix }}Upload/quality/111111-17153658513.jpg" width="50" height="50" alt=""></div>
+                    <li style="padding-top:10px; padding-bottom:20px;">
+                        <a href="{{ url('/solutions') }}">
+                            <img src="{{ asset('/Upload/Honor/Solution-10245893871.jpg') }}" width="385" height="165" alt="">
+                        </a>
                     </li>
-
-
-                    <li class="litexthhhhhhhhh">
-                        <div style="float:left; width:320px;">
-                            <a href="solutionview2.aspx?DownID=13&CateID=87&DownCateID=87"><h3>Data center</h3></a>ATOP QSFP+ SR4 supports 100m transmission over OM3 Multimode fiber, the power consumption …
-                        </div>
-                        <div style="float: right;"><img src="{{ $upload_files_prefix }}Upload/quality/111-17153658513.jpg" width="50" height="50" alt=""></div></li>
-
-
-                    <li class="litexthhhhhhhhh">
-                        <div style="float:left; width:320px;"><a href="solutionview2.aspx?DownID=14&CateID=87&DownCateID=87"><h3>FTTX</h3></a>ATOP offers full line optical transmission products for FTTx applications.</div>
-                        <div style="float: right;"><img src="{{ $upload_files_prefix }}Upload/quality/1111-17153682330.jpg" width="50" height="50" alt=""></div></li>
-
-
-                    <li class="litexthhhhhhhhh"> <div style="float:left; width:320px;"><a href="solutionview2.aspx?DownID=15&CateID=87&DownCateID=87"><h3>Wireless</h3></a>The smart phone and other mobile device has been taken a more and more important roll in t…</div>
-                        <div style="float: right;"><img src="{{ $upload_files_prefix }}Upload/quality/11111-17153678361.jpg" width="50" height="50" alt=""></div></li>
-
-
+                    <?php
+                        $downloadsContent = [
+                            'ATOP QSFP+ SR4 supports 100m transmission over OM3 Multimode fiber, the power consumption …',
+                            'ATOP 10GEPON optical transceivers support a downstream at 10Gbps and upstream at 10Gbps or…',
+                            'The smart phone and other mobile device has been taken a more and more important roll in t…',
+                            'ATOP offers full line optical transmission products for FTTx applications.'
+                        ];
+                        $downloadsIcon = [
+                            'Upload/quality/111-17153658513.jpg',
+                            'Upload/quality/111111-17153658513.jpg',
+                            'Upload/quality/11111-17153678361.jpg',
+                            'Upload/quality/1111-17153682330.jpg'
+                        ];
+                    ?>
+                    @foreach($downloads as $key=>$download)
+                        <li class="litexthhhhhhhhh">
+                            <div style="float:left; width:320px;">
+                                <a href="{{ url('/solutions/'.$download->Down_ID) }}">
+                                    <h3>{{ $download->Down_Title }}</h3>
+                                </a>
+                                {{ $downloadsContent[$key] }}
+                            </div>
+                            <div style="float: right;"><img src="{{ $downloadsIcon[$key] }}" width="50" height="50" alt=""></div>
+                        </li>
+                    @endforeach
                 </ul>
             </li>
         </div>
