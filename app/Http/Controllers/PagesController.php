@@ -28,6 +28,19 @@ class PagesController extends Controller
     }
 
     /**
+     * 下载页面
+     * @param $downId
+     */
+    public function downloads($downId){
+        if(is_null($downId)){
+            $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
+            $downloads = $downloadCategory->downloads();
+            $this->dataForView['downloads'] = $downloads;
+            return view('pages.downloads',$this->dataForView);
+        }
+    }
+
+    /**
      * Service & Support 页面
      * @param null $techId
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

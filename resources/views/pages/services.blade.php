@@ -43,7 +43,7 @@
                         <ul>
                             @foreach($downloads as $key=>$download)
                                 @if($key < 3)
-                                    <a href="{{ url('/downloads/'.$download->Down_LocalPath) }}">
+                                    <a href="{{ url($download->Down_LocalPath) }}">
                                         <li>
                                             <div class="act_nor">
                                                 <img src="{{ url($download->Down_Image) }}" alt="">

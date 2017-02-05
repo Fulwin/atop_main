@@ -16,6 +16,7 @@ Route::get('/about_us', 'PagesController@about_us');
 Route::get('/contact_us', 'PagesController@contact_us');
 Route::get('/solutions', 'PagesController@solutions');
 Route::get('/services/{techId?}', 'PagesController@services');
+Route::get('/downloads/{downId?}', 'PagesController@downloads');
 Route::get('/support/{downId?}', 'PagesController@support');
 Route::get('/quality_control/{titleUrl?}', 'PagesController@quality_control');
 Route::get('/corporate_culture/{titleUrl?}', 'PagesController@corporate_culture');
