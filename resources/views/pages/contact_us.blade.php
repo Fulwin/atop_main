@@ -82,6 +82,30 @@
                 </div>
             </section>
         @endforeach
+
+        @if($joins = $joinUsCategory->baseInfos())
+            <?php $join = $joins[0]; ?>
+            <section class="ContactUs">
+                <div class="inner">
+                    <div class="CU por">
+                        <div class="MC_title">
+                            <h2>Join Us</h2>
+                            <p class="cu_t">Talent is the largest wealth of the company.</p>
+                        </div>
+                    </div>
+                    <div class="Contact_inn">
+                        <div class="fl contact_info" style="width:750px;">
+                            {!! $join->BaseInfo_Content !!}
+                        </div>
+                        <div class="fr"><img src="{{ $join->BaseInfo_Image }}" alt="" width="100%"></div>
+                        <div class="cl"></div>
+                    </div>
+                </div>
+                <div class="more padt">
+                    <a href="#" >More</a>
+                </div>
+            </section>
+        @endif
     </article>
     </div>
 @stop

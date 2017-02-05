@@ -12,6 +12,7 @@ class PagesController extends Controller
 {
     public function contact_us(){
         $contactUsCategory = Category::FetchByTitle('Contact',$this->currentLanguage);
+        $joinUsCategory = Category::FetchByTitle('Join Us',$this->currentLanguage);
         $contactSubsCategories = $contactUsCategory->hasChild();
 
         $baseInfos = [];
@@ -26,6 +27,7 @@ class PagesController extends Controller
         }
         $this->dataForView['baseInfos'] = $baseInfos;
         $this->dataForView['contactSubsCategories'] = $contactSubsCategories;
+        $this->dataForView['joinUsCategory'] = $joinUsCategory;
 
         return view('pages.contact_us',$this->dataForView);
     }
