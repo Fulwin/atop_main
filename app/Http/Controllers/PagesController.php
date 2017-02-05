@@ -13,8 +13,7 @@ class PagesController extends Controller
     public function services(){
         $techCategory = Category::FetchByTitle('Technology Support',$this->currentLanguage);
         $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
-        $techs = $techCategory->baseInfos();
-
+        $techs = $techCategory->downloads();
         $this->dataForView['techs'] = $techs;
         $this->dataForView['downloadCategory'] = $downloadCategory;
 
