@@ -32,7 +32,7 @@ class Controller extends BaseController
     }
 
     public function getCurrentLanguage(){
-        return session('lang');
+        return is_null(session('lang')) ? 'EN' : session('lang');
     }
 
     public function getRootCategoryId(){
