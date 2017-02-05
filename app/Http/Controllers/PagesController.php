@@ -10,6 +10,26 @@ use App\Models\BaseInfo;
 
 class PagesController extends Controller
 {
+    public function contact_us(){
+        $contactUsCategory = Category::FetchByTitle('Contact',$this->currentLanguage);
+        $contactSubsCategories = $contactUsCategory->hasChild();
+
+        $baseInfos = [];
+
+        foreach ($contactSubsCategories as $sub) {
+            $articles = $sub->baseInfos();
+            if($articles){
+                foreach ($articles as $item) {
+                    $baseInfos[] = $item;
+                }
+            }
+        }
+        $this->dataForView['baseInfos'] = $baseInfos;
+        $this->dataForView['contactSubsCategories'] = $contactSubsCategories;
+
+        return view('pages.contact_us',$this->dataForView);
+    }
+
     public function about_us(){
         $newsCategory = Category::FetchByTitle('About',$this->currentLanguage);
         $subs = $newsCategory->hasChild();
@@ -91,7 +111,7 @@ class PagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View公司新闻
      */
     public function news($titleUrl=null){
-        if($titleUrl == 'company'){
+        if($titleUrl == 'company' || is_null($titleUrl)){
             // 公司新闻
             $category = Category::FetchByTitle('Company News', $this->currentLanguage);
             $this->dataForView['category'] = $category;
