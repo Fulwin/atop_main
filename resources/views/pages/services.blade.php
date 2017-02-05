@@ -9,7 +9,7 @@
         @foreach($techs as $item)
             <section class="sec content2" style="position: relative;">
                 <div>
-                    <img id="dsImg" width="100%" src="{{ asset($item->Down_Image) }}">
+                    <img id="dsImg" width="100%" src="{{ asset($item->Down_LocalPath) }}">
                     <a style="width: 7%;height: 25px;position: absolute;bottom: 5%;left: 50%;margin-left: -4%;border-radius:5px; background:#fff;box-shadow:0 0 5px #ccc; font-size:14px; text-align:center;"
                        href="{{ url('/support/'.$item->Down_Id) }}" >More</a>
                 </div>
