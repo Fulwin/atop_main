@@ -11,6 +11,14 @@ use App\Models\Download;
 
 class PagesController extends Controller
 {
+    public function solutions($downId = null){
+        $download = Download::Fetch($downId);
+
+        $this->dataForView['download'] = $download;
+
+        return view('pages.service',$this->dataForView);
+    }
+
     public function support($downId = null){
         $download = Download::Fetch($downId);
 
@@ -19,14 +27,23 @@ class PagesController extends Controller
         return view('pages.support',$this->dataForView);
     }
 
-    public function services(){
-        $techCategory = Category::FetchByTitle('Technology Support',$this->currentLanguage);
-        $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
-        $techs = $techCategory->downloads();
-        $this->dataForView['techs'] = $techs;
-        $this->dataForView['downloadCategory'] = $downloadCategory;
-
-        return view('pages.services',$this->dataForView);
+    /**
+     * Service & Support 页面
+     * @param null $techId
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function services($techId = null){
+        if(is_null($techId)){
+            $techCategory = Category::FetchByTitle('Technology Support',$this->currentLanguage);
+            $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
+            $techs = $techCategory->downloads();
+            $this->dataForView['techs'] = $techs;
+            $this->dataForView['downloadCategory'] = $downloadCategory;
+            $this->dataForView['downloads'] = $downloadCategory->downloads();
+            return view('pages.services',$this->dataForView);
+        }else{
+            // 查看 Technology 的具体内容
+        }
     }
 
     public function contact_us(){
