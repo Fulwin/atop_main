@@ -69,7 +69,9 @@
                             </div>
 
                             <div class="fr">
-                                <img src="{{ url($sub->Cate_Image) }}" alt="" width="100%">
+                                @if(!empty($sub->Cate_Image))
+                                    <img src="{{ url($sub->Cate_Image) }}" alt="" width="100%">
+                                @endif
                             </div>
                             <div class="cl"></div>
                         </div>
