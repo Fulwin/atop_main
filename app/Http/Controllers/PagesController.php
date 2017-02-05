@@ -43,6 +43,9 @@ class PagesController extends Controller
             return view('pages.services',$this->dataForView);
         }else{
             // 查看 Technology 的具体内容
+            $tech = Download::Fetch($techId);
+            $this->dataForView['tech'] = $tech;
+            return view('pages.service_detail',$this->dataForView);
         }
     }
 

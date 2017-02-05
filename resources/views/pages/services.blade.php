@@ -36,7 +36,6 @@
                     <div class="line" style="background:none;">
                         <div class="MC_title" style="text-align:center; margin:0 auto; color:#fff; font-size:50px; border-left:0px; ">
                             <h2>Download</h2>
-
                         </div>
                     </div>
 
