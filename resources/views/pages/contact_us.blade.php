@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="middle">
-    <article class="wrap">
+    <article class="wrap contact-page-wrap">
         <section class="tab">
             <div class="tab_nav">
                 <div class="inner">
