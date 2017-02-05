@@ -7,9 +7,18 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\News;
 use App\Models\BaseInfo;
+use App\Models\Download;
 
 class PagesController extends Controller
 {
+    public function support($downId = null){
+        $download = Download::Fetch($downId);
+
+        $this->dataForView['download'] = $download;
+
+        return view('pages.support',$this->dataForView);
+    }
+
     public function services(){
         $techCategory = Category::FetchByTitle('Technology Support',$this->currentLanguage);
         $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
