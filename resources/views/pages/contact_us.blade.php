@@ -39,9 +39,10 @@
                                 <div class="fl contact_info">
                                     {!! $baseInfo->BaseInfo_Content !!}
                                 </div>
+                                <div class="fr"><img src="{{ url($baseInfo->BaseInfo_Image) }}" width="100%"></div>
+                                <div class="cl"></div>
                             @endforeach
-                            <div class="fr"><img src="{{ url($sub->Cate_Image) }}" alt="" width="100%"></div>
-                            <div class="cl"></div>
+
                     </div>
                 </div>
             </section>
