@@ -14,7 +14,7 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about_us', 'PagesController@about_us');
 Route::get('/contact_us', 'PagesController@contact_us');
-Route::get('/solutions', 'PagesController@solutions');
+Route::get('/solutions/{downId?}', 'PagesController@solutions');
 Route::get('/services/{techId?}', 'PagesController@services');
 Route::get('/downloads', 'PagesController@downloads');
 Route::get('/support/{downId?}', 'PagesController@support');
