@@ -31,6 +31,14 @@ class Controller extends BaseController
         ];
     }
 
+    public function getCurrentLanguage(){
+        return session('lang');
+    }
+
+    public function getRootCategoryId(){
+        return session('lang')==='EN' ? 89 : 157;
+    }
+
     public function getLinks($title){
         $category = Category::FetchByTitle($title,$this->currentLanguage);
         return [
@@ -82,5 +90,16 @@ class Controller extends BaseController
             $tree[$topLevelCategory->Cate_Id] = $bean;
         }
         return $tree;
+    }
+
+    public function getCategoryTitle($titleInEn){
+        if($this->getCurrentLanguage() === 'EN')
+            return $titleInEn;
+
+        $data = [
+            'Company News' => '公司新闻',
+            'Solution' => '解决方案',
+        ];
+        return $data[$titleInEn];
     }
 }

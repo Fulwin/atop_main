@@ -23,7 +23,7 @@ class ProductsController extends Controller
     public function load_category($categoryId=null){
         if(is_null($categoryId)){
             // 加载产品的根目录的请求
-            $category = Category::Fetch($this->productsRootCategoryId);
+            $category = Category::Fetch($this->getRootCategoryId());
             $this->dataForView['category'] = $category;
             return view('products.root', $this->dataForView);
         } else {
@@ -40,7 +40,7 @@ class ProductsController extends Controller
 
             // 检查是否还有子目录
             if($category->hasChild()){
-                $this->dataForView['subs'] = $this->_getCategoriesTree($categoryId, $this->currentLanguage);
+                $this->dataForView['subs'] = $this->_getCategoriesTree($categoryId, $this->getCurrentLanguage());
             }
 
             return view('products.category', $this->dataForView);

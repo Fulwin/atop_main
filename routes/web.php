@@ -23,6 +23,8 @@ Route::get('/corporate_culture/{titleUrl?}', 'PagesController@corporate_culture'
 Route::get('/news/{titleUrl?}', 'PagesController@news');
 Route::get('/products/{categoryId?}', 'ProductsController@load_category');
 
+Route::get('/switch_language/{lang}', 'PagesController@switch_language');
+
 /**
  * 加载产品单页的路径
  */

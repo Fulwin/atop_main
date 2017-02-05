@@ -18,12 +18,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <ul style="float:left; width:100%; text-align:left;">
+                                    <ul style="float:left; width:100%; text-align:left;height: 30px;overflow: hidden;">
                                         <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
                                             {{ $article->News_Title }}
                                         </a>
                                     </ul>
-                                    <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 90px;overflow: hidden;">
+                                    <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 55px;overflow: hidden;margin-bottom: 20px;">
                                         {!! $article->News_Content !!}
                                     </ul>
                                 </li>
