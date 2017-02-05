@@ -20,7 +20,7 @@
             <div class="textcontentt2" style="width:1200px;"></div>
             <article class="wrap">
                 <section class="sec content2" style="position: relative;">
-                    <div>
+                    <div style="padding-top: 40px;">
                         {!! $download->Down_Content !!}
                     </div>
                 </section>
