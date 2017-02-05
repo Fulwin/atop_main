@@ -58,12 +58,7 @@
                                     @foreach($baseInfos as $baseInfo)
                                         <li>
                                             <img src="{{ $baseInfo->BaseInfo_Image }}">
-                                            <div class="people_info">
-                                                <div class="fl MT_nam">
-                                                    <p>{{ $baseInfo->BaseInfo_Title }}</p>
-                                                </div>
-                                                <div class="fr MT_ico"><a href="#"></a></div>
-                                            </div>
+
                                             <div class="MT_details" style="left:182px;">
                                                 <h6>{{ $baseInfo->BaseInfo_Title }}</h6>
                                                 {!! $baseInfo->BaseInfo_Content !!}
