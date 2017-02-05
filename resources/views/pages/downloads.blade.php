@@ -8,7 +8,7 @@
         <div class="wrap">
             <a name="Download"></a>
             <section class="CorporateCulture" style=" background:#737373;">
-                <div class="inner" style="min-height: 100px;">
+                <div class="inner" style="min-height: 1000px;">
                     <div class="line" style="background:none;">
                         <div class="MC_title" style="text-align:center; margin:0 auto; color:#fff; font-size:50px; border-left:0px; ">
                             <h2>Download</h2>

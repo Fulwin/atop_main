@@ -13,10 +13,8 @@ class PagesController extends Controller
 {
     public function solutions($downId = null){
         $download = Download::Fetch($downId);
-
         $this->dataForView['download'] = $download;
-
-        return view('pages.service',$this->dataForView);
+        return view('pages.solutions',$this->dataForView);
     }
 
     public function support($downId = null){
@@ -29,7 +27,6 @@ class PagesController extends Controller
 
     /**
      * 下载页面
-     * @param $downId
      */
     public function downloads(){
         $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
