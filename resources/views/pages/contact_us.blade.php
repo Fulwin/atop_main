@@ -8,13 +8,13 @@
                 <div class="inner">
                     <ul class="about_tabul">
                         @foreach($contactSubsCategories as $key=>$sub)
-                            <?php
-                                $isLast = $key == count($contactSubsCategories) ? true : false;
-                            ?>
-                            <li class="{{ $isLast ? 'last no6' : 'no2' }}">
+                            <li class="no2">
                                 <a href="#{{ $sub->Cate_Title }}">{{ $sub->Cate_Title }}</a>
                             </li>
                         @endforeach
+                        <li class="last no6">
+                            <a href="#{{ $joinUsCategory->Cate_Title }}">{{ $joinUsCategory->Cate_Title }}</a>
+                        </li>
                     </ul>
                     <div class="cl"></div>
                 </div>
@@ -80,6 +80,7 @@
             </section>
         @endforeach
 
+        <a name="{{ $joinUsCategory->Cate_Title }}"></a>
         @if($joins = $joinUsCategory->baseInfos())
             <?php $join = $joins[0]; ?>
             <section class="ContactUs">
