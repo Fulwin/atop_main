@@ -18,7 +18,7 @@
             </div>
             <div class="textcontentt2" style="width:1200px;"></div>
         </div>
-        <article class="wrap">
+        <article class="wrap" style="margin:0 auto; width:1200px; padding:25px;">
             <section class="sec content2" style="position: relative;">
                 @if(isset($download) && $download)
                     {!! $download->Down_Content !!}
