@@ -10,6 +10,17 @@ use App\Models\BaseInfo;
 
 class PagesController extends Controller
 {
+    public function services(){
+        $techCategory = Category::FetchByTitle('Technology Support',$this->currentLanguage);
+        $downloadCategory = Category::FetchByTitle('Download',$this->currentLanguage);
+        $techs = $techCategory->baseInfos();
+
+        $this->dataForView['techs'] = $techs;
+        $this->dataForView['downloadCategory'] = $downloadCategory;
+
+        return view('pages.services',$this->dataForView);
+    }
+
     public function contact_us(){
         $contactUsCategory = Category::FetchByTitle('Contact',$this->currentLanguage);
         $joinUsCategory = Category::FetchByTitle('Join Us',$this->currentLanguage);
