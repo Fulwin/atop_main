@@ -11,10 +11,19 @@ use App\Models\Download;
 
 class PagesController extends Controller
 {
+    /**
+     * Solutions 页面
+     * @param null $downId
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function solutions($downId = null){
-        $download = Download::Fetch($downId);
-        $this->dataForView['download'] = $download;
-        return view('pages.solutions',$this->dataForView);
+        if(is_null($downId)){
+            return view('pages.solutions',$this->dataForView);
+        }else{
+            $download = Download::Fetch($downId);
+            $this->dataForView['download'] = $download;
+            return view('pages.solution_detail',$this->dataForView);
+        }
     }
 
     public function support($downId = null){
