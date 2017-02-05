@@ -18,6 +18,8 @@ class PagesController extends Controller
      */
     public function solutions($downId = null){
         if(is_null($downId)){
+            $solutionCategory = Category::FetchByTitle('Solution',$this->currentLanguage);
+            $this->dataForView['downloads'] = $solutionCategory->downloads();
             return view('pages.solutions',$this->dataForView);
         }else{
             $download = Download::Fetch($downId);
