@@ -4,8 +4,11 @@
             <li style="float:left; "><a href="{{ url('/') }}"><img src="{{ url('images/logo.jpg') }}" width="385" height="108" alt=""></a></li>
             <li class="language" >
                 <ul>
-                    <li class="langhome"><a href="{{ url('/switch_language/CN') }}" >简体中文</a></li>
-                    <li class="langhomecc"><a href="{{ url('/switch_language/EN') }}" >English</a></li>
+                    @if(session('lang') == 'EN')
+                        <li class="langhome"><a href="{{ url('/switch_language/CN') }}" >简体中文</a></li>
+                    @else
+                        <li class="langhomecc"><a href="{{ url('/switch_language/EN') }}" >English</a></li>
+                    @endif
                     <li class="socil">
                         <a href="https://twitter.com/ATOPCorporation" target="_blank">
                             <img src="{{ asset('images/twitter.jpg') }}" width="26" height="25" alt="">
@@ -41,7 +44,7 @@
 <div id="header">
     <div id="myslidemenu" class="jqueryslidemenu">
         <ul>
-            <li><a href="{{ url('/products') }}">Products</a>
+            <li><a href="{{ url('/products') }}">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</a>
                 <ul style="width:1010px; background:url(mmm/u6.png) top left no-repeat; margin-left:-6px; padding-left:6px; height:215px;">
                     <div style="width:142px; float:left; padding:10px 0 0 0">
                         <li>
@@ -95,11 +98,11 @@
                     </div>
                 </ul>
             </li>
-            <li><a href="{{ url('/solutions') }}">Solution</a></li>
-            <li><a style=" width:150px;" href="{{ url('/services') }}">Service & Support</a> </li>
-            <li><a href="{{ url('/news') }}">News</a> </li>
-            <li><a href="{{ url('/about_us') }}">About Us</a> </li>
-            <li><a href="{{ url('/contact_us') }}">Contact Us</a> </li>
+            <li><a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a></li>
+            <li><a style=" width:150px;" href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Service & Support' : '服务与支持' }}</a> </li>
+            <li><a href="{{ url('/news') }}">{{ session('lang')=='EN' ? 'News' : '新闻中心' }}</a> </li>
+            <li><a href="{{ url('/about_us') }}">{{ session('lang')=='EN' ? 'About Us' : '关于我们' }}</a> </li>
+            <li><a href="{{ url('/contact_us') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> </li>
         </ul>
         <div class="dianhu000" style="float:right; width:226px; padding-top:6px;">
             <script language="JavaScript" type="text/javascript">

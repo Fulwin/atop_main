@@ -24,6 +24,7 @@ class Controller extends BaseController
     public function __construct(){
         $this->currentLanguage = session('lang') ? session('lang') : 'EN';
         $this->dataForView['currentLanguage'] = $this->currentLanguage;
+
         $this->dataForView['footerLinks'] = [
             'about' => $this->getLinks('About'),
             'products' => $this->getLinks('Products'),
@@ -95,7 +96,8 @@ class Controller extends BaseController
     }
 
     public function getCategoryTitle($titleInEn){
-        if(session('lang') === 'EN')
+
+        if(session('lang') == 'EN')
             return $titleInEn;
 
         $data = [

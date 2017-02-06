@@ -11,21 +11,27 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-Route::get('/about_us', 'PagesController@about_us');
-Route::get('/contact_us', 'PagesController@contact_us');
-Route::get('/solutions/{downId?}', 'PagesController@solutions');
-Route::get('/services/{techId?}', 'PagesController@services');
-Route::get('/downloads', 'PagesController@downloads');
-Route::get('/support/{downId?}', 'PagesController@support');
-Route::get('/quality_control/{titleUrl?}', 'PagesController@quality_control');
-Route::get('/corporate_culture/{titleUrl?}', 'PagesController@corporate_culture');
-Route::get('/news/{titleUrl?}', 'PagesController@news');
-Route::get('/products/{categoryId?}', 'ProductsController@load_category');
 
-Route::get('/switch_language/{lang}', 'PagesController@switch_language');
 
-/**
- * 加载产品单页的路径
- */
-Route::get('/product/view/{productId?}', 'ProductsController@view');
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/', 'PagesController@home');
+    Route::get('/about_us', 'PagesController@about_us');
+    Route::get('/contact_us', 'PagesController@contact_us');
+    Route::get('/solutions/{downId?}', 'PagesController@solutions');
+    Route::get('/services/{techId?}', 'PagesController@services');
+    Route::get('/downloads', 'PagesController@downloads');
+    Route::get('/support/{downId?}', 'PagesController@support');
+    Route::get('/quality_control/{titleUrl?}', 'PagesController@quality_control');
+    Route::get('/corporate_culture/{titleUrl?}', 'PagesController@corporate_culture');
+    Route::get('/news/{titleUrl?}', 'PagesController@news');
+    Route::get('/products/{categoryId?}', 'ProductsController@load_category');
+
+    Route::get('/switch_language/{lang}', 'PagesController@switch_language');
+
+    /**
+     * 加载产品单页的路径
+     */
+    Route::get('/product/view/{productId?}', 'ProductsController@view');
+});

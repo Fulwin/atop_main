@@ -38,7 +38,7 @@
         <li class="homecase" >
             <ul>
                 <li class="sitesl"  style="">
-                    <a style="font-size:14px; font-weight:bold;" href="solutiontop.aspx" >Solution</a>
+                    <a style="font-size:14px; font-weight:bold;" href="solutiontop.aspx" >{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a>
                 </li>
                 <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=16&CateID=87&DownCateID=87">PON</a> </li>
                 <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=13&CateID=87&DownCateID=87">Data center</a> </li>
@@ -82,9 +82,10 @@
 <div class="footer" style="">
     <ul style="margin:0 auto; width:1200px;">
         <li style="">
-            <a href="{{ url('/contact') }}">Contact Us</a> |
-            <a href="{{ url('/solution') }}">Solution</a> |
-            <a href="{{ url('/service') }}">Services & Support</a> | Copyright © ATOP Corporation
+            <a href="{{ url('/contact') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> |
+            <a href="{{ url('/solution') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a> |
+            <a href="{{ url('/service') }}">{{ session('lang')=='EN' ? 'Services & Support' : '服务与支持' }}</a> |
+            {{ session('lang')=='EN' ? 'Copyright © ATOP Corporation' : 'Copyright © 四川华拓光通信股份有限公司深圳分公司' }}
         </li>
     </ul>
 </div>
