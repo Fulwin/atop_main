@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 @foreach($subs as $sub)
-                    <li class="sitesl"><a href="{{ url('/about') }}#{{ $sub->Cate_Title }}"> {{ $sub->Cate_Title }}</a></li>
+                    <li class="sitesl"><a href="{{ url('/about_us') }}#{{ $sub->Cate_Title }}"> {{ $sub->Cate_Title }}</a></li>
                 @endforeach
             </ul>
         </li>

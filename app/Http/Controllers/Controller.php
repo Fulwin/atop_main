@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
 
 class Controller extends BaseController
 {
@@ -31,19 +32,18 @@ class Controller extends BaseController
         ];
     }
 
-    public function getCurrentLanguage(){
-        return is_null(session('lang')) ? 'EN' : session('lang');
-    }
-
     public function getRootCategoryId(){
         return session('lang')==='EN' ? 89 : 157;
     }
 
     public function getLinks($title){
-        $category = Category::FetchByTitle($title,$this->currentLanguage);
+        $category = Category::FetchByTitle(
+            $this->getCategoryTitle($title),
+            session('lang','EN')
+        );
         return [
             'data'  =>  $category,
-            'subs'  =>  Category::LoadCategoriesByParentId($category->Cate_Id, $this->currentLanguage)
+            'subs'  =>  Category::LoadCategoriesByParentId($category->Cate_Id, session('lang', 'EN'))
         ];
     }
 
@@ -95,12 +95,16 @@ class Controller extends BaseController
     }
 
     public function getCategoryTitle($titleInEn){
-        if($this->getCurrentLanguage() === 'EN')
+        if(session('lang') === 'EN')
             return $titleInEn;
 
         $data = [
             'Company News' => '公司新闻',
             'Solution' => '解决方案',
+            'About' => '关于我们',
+            'Products' => '产品中心',
+            'Corporate Culture' => '企业文化',
+            'Contact'=>'联系我们'
         ];
         return $data[$titleInEn];
     }

@@ -26,8 +26,7 @@ class Category extends Model
      * @return mixed
      */
     public static function LoadCategoriesByParentId($id,$lang='EN') {
-        return self::where('Cate_Lang',$lang)
-            ->where('Cate_ParentId',$id)
+        return self::where('Cate_ParentId',$id)
 //            ->where('Cate_State',1)
             ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
             ->orderBy('Cate_Order','ASC')
@@ -50,7 +49,7 @@ class Category extends Model
     }
 
     public static function FetchByTitle($title,$lang='EN'){
-        return self::where('Cate_Title',$title)->where('Cate_Lang',$lang)->first();
+        return self::where('Cate_Title',$title)->first();
     }
 
     public function news($limit = null){
@@ -61,7 +60,7 @@ class Category extends Model
     }
 
     public function baseInfos(){
-        return BaseInfo::where('BaseInfo_CateId',$this->Cate_Id)->orderBy('BaseInfo_Order','Desc')->get();
+        return BaseInfo::where('BaseInfo_CateId',$this->Cate_Id)->orderBy('BaseInfo_Order','Desc')->where('BaseInfo_State','1')->get();
     }
 
     public function products(){

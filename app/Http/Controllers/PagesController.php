@@ -13,12 +13,15 @@ Use URL;
 
 class PagesController extends Controller
 {
+    public function __construct(Request $request){
+        parent::__construct($request);
+    }
     /**
      * 切换语言
      * @param string $lang
      */
-    public function switch_language($lang='EN'){
-        session(['lang' => $lang]);
+    public function switch_language($lang='EN', Request $request){
+        $request->session()->set('lang',$lang);
         return redirect(URL::previous());
     }
 
@@ -29,7 +32,7 @@ class PagesController extends Controller
      */
     public function solutions($downId = null){
         if(is_null($downId)){
-            $solutionCategory = Category::FetchByTitle('Solution',$this->getCurrentLanguage());
+            $solutionCategory = Category::FetchByTitle('Solution',session('lang', 'EN'));
             $this->dataForView['downloads'] = $solutionCategory->downloads();
             return view('pages.solutions',$this->dataForView);
         }else{
@@ -51,7 +54,7 @@ class PagesController extends Controller
      * 下载页面
      */
     public function downloads(){
-        $downloadCategory = Category::FetchByTitle('Download',$this->getCurrentLanguage());
+        $downloadCategory = Category::FetchByTitle('Download',session('lang', 'EN'));
         $downloads = $downloadCategory->downloads();
         $this->dataForView['downloads'] = $downloads;
         return view('pages.downloads',$this->dataForView);
@@ -64,8 +67,8 @@ class PagesController extends Controller
      */
     public function services($techId = null){
         if(is_null($techId)){
-            $techCategory = Category::FetchByTitle('Technology Support',$this->getCurrentLanguage());
-            $downloadCategory = Category::FetchByTitle('Download',$this->getCurrentLanguage());
+            $techCategory = Category::FetchByTitle('Technology Support',session('lang', 'EN'));
+            $downloadCategory = Category::FetchByTitle('Download',session('lang', 'EN'));
             $techs = $techCategory->downloads();
             $this->dataForView['techs'] = $techs;
             $this->dataForView['downloadCategory'] = $downloadCategory;
@@ -80,8 +83,8 @@ class PagesController extends Controller
     }
 
     public function contact_us(){
-        $contactUsCategory = Category::FetchByTitle('Contact',$this->getCurrentLanguage());
-        $joinUsCategory = Category::FetchByTitle('Join Us',$this->getCurrentLanguage());
+        $contactUsCategory = Category::FetchByTitle('Contact',session('lang', 'EN'));
+        $joinUsCategory = Category::FetchByTitle('Join Us',session('lang', 'EN'));
         $contactSubsCategories = $contactUsCategory->hasChild();
 
         $baseInfos = [];
@@ -101,19 +104,16 @@ class PagesController extends Controller
         return view('pages.contact_us',$this->dataForView);
     }
 
-    public function about_us(){
-        $newsCategory = Category::FetchByTitle('About',$this->getCurrentLanguage());
+    public function about_us(Request $request){
+        $newsCategory = Category::FetchByTitle(
+            $this->getCategoryTitle('About')
+        );
         $subs = $newsCategory->hasChild();
-        $baseInfos = [];
-        foreach ($subs as $sub) {
-            $items = $sub->baseInfos();
-            if($items) {
-                foreach ($items as $item) {
-                    $baseInfos[] = $item;
-                }
-            }
-        }
-        $this->dataForView['baseInfos'] = $baseInfos;
+
+        // 企业文化
+        $corporateCultureCategory = Category::FetchByTitle($this->getCategoryTitle('Corporate Culture'));
+        $this->dataForView['aboutCategories'] = $subs;
+        $this->dataForView['corporateCultureCategory'] = $corporateCultureCategory;
         return view('pages.about_us',$this->dataForView);
     }
 
@@ -121,7 +121,7 @@ class PagesController extends Controller
         // quality control
         if(!$titleUrl){
             // quality control
-            $category = Category::FetchByTitle('Quality Control', $this->getCurrentLanguage());
+            $category = Category::FetchByTitle('Quality Control', session('lang', 'EN'));
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->baseInfos();
@@ -140,7 +140,7 @@ class PagesController extends Controller
         // quality control
         if(!$titleUrl){
             // quality control
-            $category = Category::FetchByTitle('Corporate Culture', $this->getCurrentLanguage());
+            $category = Category::FetchByTitle('Corporate Culture', session('lang', 'EN'));
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
@@ -159,11 +159,11 @@ class PagesController extends Controller
      * 首页
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function home(){
+    public function home(Request $request){
         // 新闻
         $newsCategory = Category::FetchByTitle(
             $this->getCategoryTitle('Company News'),
-            $this->getCurrentLanguage()
+            session('lang','EN')
         );
         $this->dataForView['news'] = $newsCategory->news(6);  // 只要6个就够了
         $this->dataForView['banners'] = $this->_getHomeBanner();
@@ -173,7 +173,7 @@ class PagesController extends Controller
         /**
          * 首页上的产品区
          */
-        $tree = $this->_getCategoriesTree($this->getRootCategoryId(), $this->getCurrentLanguage());
+        $tree = $this->_getCategoriesTree($this->getRootCategoryId(), session('lang', 'EN'));
         $this->dataForView['tree'] = $tree;
 
         /*
@@ -181,7 +181,7 @@ class PagesController extends Controller
          */
         $solutionCategory = Category::FetchByTitle(
             $this->getCategoryTitle('Solution'),
-            $this->getCurrentLanguage()
+            session('lang', 'EN')
         );
         $this->dataForView['downloads'] = $solutionCategory->downloads();
 
@@ -196,7 +196,7 @@ class PagesController extends Controller
     public function news($titleUrl=null){
         if($titleUrl == 'company' || is_null($titleUrl)){
             // 公司新闻
-            $category = Category::FetchByTitle('Company News', $this->getCurrentLanguage());
+            $category = Category::FetchByTitle('Company News', session('lang', 'EN'));
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
@@ -215,7 +215,7 @@ class PagesController extends Controller
     }
 
     private function _getHomeBanner(){
-        $homeBannerCategory = Category::FetchByTitle('HomeBannar',$this->getCurrentLanguage());
+        $homeBannerCategory = Category::FetchByTitle('HomeBannar',session('lang', 'EN'));
         return $homeBannerCategory->baseInfos();
     }
 
