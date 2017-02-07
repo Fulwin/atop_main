@@ -45,7 +45,7 @@
     <div id="myslidemenu" class="jqueryslidemenu">
         <ul>
             <li><a href="{{ url('/products') }}">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</a>
-                <ul style="width:1010px; background:url(mmm/u6.png) top left no-repeat; margin-left:-6px; padding-left:6px; height:215px;">
+                <ul style="width:1010px; background:url('{{ url('/mmm/u6.png') }}') top left no-repeat; margin-left:-6px; padding-left:6px; height:215px;">
                     <div style="width:142px; float:left; padding:10px 0 0 0">
                         <li>
                             <a href="{{ url('/products/category/transmission') }}">

@@ -11,8 +11,10 @@ class ProductsController extends Controller
     public function __construct(){
         parent::__construct();
         $this->dataForView['isProducts'] = true;
-        $tree = $this->_getCategoriesTree($this->productsRootCategoryId, $this->currentLanguage);
-        $this->dataForView['tree'] = $tree;
+        $this->dataForView['tree'] = $this->_getCategoriesTree(
+            $this->productsRootCategoryId,
+            session('lang','EN')
+        );
     }
 
     /**
