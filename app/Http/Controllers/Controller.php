@@ -106,6 +106,7 @@ class Controller extends BaseController
             'About' => '关于我们',
             'Products' => '产品中心',
             'Corporate Culture' => '企业文化',
+            'Join Us' => '加入我们',
             'Contact'=>'联系我们'
         ];
         return $data[$titleInEn];

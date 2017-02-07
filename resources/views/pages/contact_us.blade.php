@@ -47,7 +47,6 @@
                     @else
                         <div class="MC_title">
                             <h2>{{ $sub->Cate_Title }}</h2>
-                            <p class="cu_t">{!! $sub->Cate_Intro !!}</p>
                         </div>
                         <div class="MT_inn">
                             <div class="fl">
@@ -87,8 +86,10 @@
                 <div class="inner">
                     <div class="CU por">
                         <div class="MC_title">
-                            <h2>Join Us</h2>
-                            <p class="cu_t">Talent is the largest wealth of the company.</p>
+                            <h2>{{ $joinUsCategory->Cate_Title }}</h2>
+                            <p class="cu_t">
+                                {{ session('lang')=='EN' ? 'Talent is the largest wealth of the company':'人才是公司最大的财富' }}
+                            </p>
                         </div>
                     </div>
                     <div class="Contact_inn">
@@ -98,9 +99,6 @@
                         <div class="fr"><img src="{{ $join->BaseInfo_Image }}" alt="" width="100%"></div>
                         <div class="cl"></div>
                     </div>
-                </div>
-                <div class="more padt">
-                    <a href="#" >More</a>
                 </div>
             </section>
         @endif

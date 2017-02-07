@@ -83,8 +83,12 @@ class PagesController extends Controller
     }
 
     public function contact_us(){
-        $contactUsCategory = Category::FetchByTitle('Contact',session('lang', 'EN'));
-        $joinUsCategory = Category::FetchByTitle('Join Us',session('lang', 'EN'));
+        $contactUsCategory = Category::FetchByTitle(
+            $this->getCategoryTitle('Contact')
+        );
+        $joinUsCategory = Category::FetchByTitle(
+            $this->getCategoryTitle('Join Us')
+        );
         $contactSubsCategories = $contactUsCategory->hasChild();
 
         $baseInfos = [];
