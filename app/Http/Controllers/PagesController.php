@@ -67,12 +67,17 @@ class PagesController extends Controller
      */
     public function services($techId = null){
         if(is_null($techId)){
-            $techCategory = Category::FetchByTitle('Technology Support',session('lang', 'EN'));
-            $downloadCategory = Category::FetchByTitle('Download',session('lang', 'EN'));
+            $techCategory = Category::FetchByTitle(
+                $this->getCategoryTitle('Technology Support')
+            );
+            $downloadCategory = Category::FetchByTitle(
+                $this->getCategoryTitle('Download')
+            );
             $techs = $techCategory->downloads();
             $this->dataForView['techs'] = $techs;
             $this->dataForView['downloadCategory'] = $downloadCategory;
             $this->dataForView['downloads'] = $downloadCategory->downloads();
+
             return view('pages.services',$this->dataForView);
         }else{
             // 查看 Technology 的具体内容

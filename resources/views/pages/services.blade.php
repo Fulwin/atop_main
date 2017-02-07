@@ -28,14 +28,13 @@
                        href="{{ url('/services/1003') }}" >More</a>
                 </div>
             </section>
-            <a name="Download"></a>
 
-
+            <a name="{{ $downloadCategory->Cate_Title }}"></a>
             <section class="CorporateCulture" style=" background:#737373;">
                 <div class="inner">
                     <div class="line" style="background:none;">
                         <div class="MC_title" style="text-align:center; margin:0 auto; color:#fff; font-size:50px; border-left:0px; ">
-                            <h2>Download</h2>
+                            <h2>{{ $downloadCategory->Cate_Title }}</h2>
                         </div>
                     </div>
 
@@ -57,11 +56,13 @@
                                     </a>
                                 @endif
                             @endforeach
-                            <span id='DcmsPage_PageInfo' style='display:none;'>3|9</span>
+                            <span id='DcmsPage_PageInfo' style='display:none;'></span>
                             <div class="cl"></div>
                         </ul>
                         <div class="more padt">
-                            <a href="{{ url('/downloads') }}">More</a>
+                            <a href="{{ url('/downloads') }}">
+                                {{ session('lang')=='EN' ? 'More' : '更多' }}
+                            </a>
                         </div>
                     </div>
                 </div>
