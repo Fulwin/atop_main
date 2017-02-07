@@ -19,6 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'PagesController@home');
     Route::get('/about_us', 'PagesController@about_us');
     Route::get('/contact_us', 'PagesController@contact_us');
+    Route::get('/load_wechat_image', 'PagesController@load_wechat_image');
     Route::get('/solutions/{downId?}', 'PagesController@solutions');
     Route::get('/services/{techId?}', 'PagesController@services');
     Route::get('/downloads', 'PagesController@downloads');

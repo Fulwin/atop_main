@@ -240,4 +240,8 @@ class PagesController extends Controller
 //        $ids = [652,449,444,427,34];
         return Product::GetNew();
     }
+
+    public function load_wechat_image(){
+        return view('pages.wechat');
+    }
 }
