@@ -45,7 +45,7 @@
                     $subs = $footerLinks['solution']['subs'];
                 ?>
                 @foreach($subs as $sub)
-                    <li class="sitesl"><a href="{{ url('/solution/'.$sub->BaseInfo_Id) }}"> {{ $sub->BaseInfo_Title }}</a></li>
+                    <li class="sitesl"><a href="{{ url('/solution/'.$sub->Down_ID) }}"> {{ $sub->Down_Title }}</a></li>
                 @endforeach
             </ul>
         </li>
