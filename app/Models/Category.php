@@ -70,4 +70,8 @@ class Category extends Model
     public function downloads(){
         return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->get();
     }
+
+    public function solutions(){
+        return $this->baseInfos();
+    }
 }

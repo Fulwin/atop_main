@@ -40,16 +40,12 @@
                 <li class="sitesl"  style="">
                     <a style="font-size:14px; font-weight:bold;" href="{{ url('/solutions') }}" >{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a>
                 </li>
-                <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=16&CateID=87&DownCateID=87">PON</a> </li>
-                <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=13&CateID=87&DownCateID=87">Data center</a> </li>
-                <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=14&CateID=87&DownCateID=87">FTTX</a> </li>
-                <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=15&CateID=87&DownCateID=87">Wireless</a> </li>
                 <?php
                     $category = $footerLinks['solution']['data'];
                     $subs = $footerLinks['solution']['subs'];
                 ?>
                 @foreach($subs as $sub)
-                    <li class="sitesl"><a href="{{ url('/solution/'.$sub->getTitleUrl()) }}"> {{ $sub->Cate_Title }}</a></li>
+                    <li class="sitesl"><a href="{{ url('/solution/'.$sub->BaseInfo_Id) }}"> {{ $sub->BaseInfo_Title }}</a></li>
                 @endforeach
             </ul>
         </li>
