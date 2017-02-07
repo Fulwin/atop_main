@@ -78,9 +78,9 @@
 <div class="footer" style="">
     <ul style="margin:0 auto; width:1200px;">
         <li style="">
-            <a href="{{ url('/contact') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> |
+            <a href="{{ url('/contact_us') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> |
             <a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a> |
-            <a href="{{ url('/service') }}">{{ session('lang')=='EN' ? 'Services & Support' : '服务与支持' }}</a> |
+            <a href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Services & Support' : '服务与支持' }}</a> |
             {{ session('lang')=='EN' ? 'Copyright © ATOP Corporation' : 'Copyright © 四川华拓光通信股份有限公司深圳分公司' }}
         </li>
     </ul>
