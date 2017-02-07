@@ -60,7 +60,10 @@ class Category extends Model
     }
 
     public function baseInfos(){
-        return BaseInfo::where('BaseInfo_CateId',$this->Cate_Id)->orderBy('BaseInfo_Order','Desc')->where('BaseInfo_State','1')->get();
+        return BaseInfo::where('BaseInfo_CateId',$this->Cate_Id)
+            ->where('BaseInfo_State','1')
+            ->orderBy('BaseInfo_Order','Desc')
+            ->get();
     }
 
     public function products(){

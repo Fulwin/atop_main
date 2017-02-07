@@ -45,7 +45,7 @@ class Controller extends BaseController
         if($title=='Solution'){
             return [
                 'data' => $category,
-                'subs' => $category->solutions()
+                'subs' => $category->downloads()
             ];
         }
 
