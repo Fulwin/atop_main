@@ -10,7 +10,7 @@
                     $subs = $footerLinks['about']['subs'];
                 ?>
                 <li class="sitesl">
-                    <a style="font-size:14px; font-weight:bold;" href="{{ url('/about') }}" >
+                    <a style="font-size:14px; font-weight:bold;" href="{{ url('/about_us') }}" >
                         {{ $category->Cate_Title }}
                     </a>
                 </li>
@@ -38,7 +38,7 @@
         <li class="homecase" >
             <ul>
                 <li class="sitesl"  style="">
-                    <a style="font-size:14px; font-weight:bold;" href="solutiontop.aspx" >{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a>
+                    <a style="font-size:14px; font-weight:bold;" href="{{ url('/solutions') }}" >{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a>
                 </li>
                 <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=16&CateID=87&DownCateID=87">PON</a> </li>
                 <li class="sitesl"><a style="" href="solutionview2.aspx?DownID=13&CateID=87&DownCateID=87">Data center</a> </li>
@@ -61,12 +61,12 @@
                         $subs = $footerLinks['contact']['subs'];
                     ?>
                     <li class="sitesl">
-                        <a style="font-size:14px; font-weight:bold;" href="{{ url('/contact') }}" >
+                        <a style="font-size:14px; font-weight:bold;" href="{{ url('/contact_us') }}" >
                             {{ $category->Cate_Title }}
                         </a>
                     </li>
                     @foreach($subs as $sub)
-                        <li class="sitesl"><a href="{{ url('/contact/'.$sub->getTitleUrl()) }}"> {{ $sub->Cate_Title }}</a></li>
+                        <li class="sitesl"><a href="{{ url('/contact_us#'.$sub->getTitleUrl()) }}"> {{ $sub->Cate_Title }}</a></li>
                     @endforeach
                 </ul>
 
