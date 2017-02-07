@@ -182,9 +182,12 @@
                                             <img width="250" src="{{ $upload_files_prefix.$article->News_Image }}" />
                                         </a>
                                     </div>
-                                    <div class="title"><span class="ccccc">{{ $article->News_Title }}</span>
+                                    <div class="title">
+                                        <span class="ccccc">{{ $article->News_Title }}</span>
                                         <br> <br>
-                                        {{ substr($article->News_Content,0, 100) }}
+                                        <div style="height: 70px; overflow: hidden; display: block;">
+                                            {!! $article->News_Content !!}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="item_b clearfix">

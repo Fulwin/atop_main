@@ -200,7 +200,9 @@ class PagesController extends Controller
     public function news($titleUrl=null){
         if($titleUrl == 'company' || is_null($titleUrl)){
             // 公司新闻
-            $category = Category::FetchByTitle('Company News', session('lang', 'EN'));
+            $category = Category::FetchByTitle(
+                $this->getCategoryTitle('Company News')
+            );
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
