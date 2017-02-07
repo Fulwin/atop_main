@@ -32,7 +32,9 @@ class PagesController extends Controller
      */
     public function solutions($downId = null){
         if(is_null($downId)){
-            $solutionCategory = Category::FetchByTitle('Solution',session('lang', 'EN'));
+            $solutionCategory = Category::FetchByTitle(
+                $this->getCategoryTitle('Solution')
+            );
             $this->dataForView['downloads'] = $solutionCategory->downloads();
             return view('pages.solutions',$this->dataForView);
         }else{
