@@ -31,6 +31,12 @@ class Controller extends BaseController
             'solution' => $this->getLinks('Solution'),
             'contact' => $this->getLinks('Contact')
         ];
+
+        $this->dataForView['tree'] = $this->_getCategoriesTree(
+            $this->getRootCategoryId(),
+            session('lang','EN')
+        );
+
     }
 
     public function getRootCategoryId(){

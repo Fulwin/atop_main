@@ -27,7 +27,7 @@ class Category extends Model
      */
     public static function LoadCategoriesByParentId($id,$lang='EN') {
         return self::where('Cate_ParentId',$id)
-//            ->where('Cate_State',1)
+            ->where('Cate_Lang',$lang)
             ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
             ->orderBy('Cate_Order','ASC')
             ->get();

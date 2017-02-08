@@ -42,68 +42,91 @@
 </div>
 
 <div id="header">
-    <div id="myslidemenu" class="jqueryslidemenu">
-        <ul>
-            <li><a href="{{ url('/products') }}">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</a>
-                <ul style="width:1010px; background:url('{{ url('/mmm/u6.png') }}') top left no-repeat; margin-left:-6px; padding-left:6px; height:215px;">
-                    <div style="width:142px; float:left; padding:10px 0 0 0">
-                        <li>
-                            <a href="{{ url('/products/category/transmission') }}">
-                                Transmission
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/products/category/data_center') }}">Data Center</a> </li>
-                        <li><a href="{{ url('/products/category/CPRI') }}">CPRI</a> </li>
-                        <li><a href="{{ url('/products/category/broadband_access') }}">Broadband Access</a> </li>
-                    </div>
-                    <div class="mtop">
-                        <li style="height:80px; width:100%;">
-                            <a href="{{ url('/products/category/transmission') }}">
-                                <img src="{{ $upload_files_prefix }}Upload/catebannar/1-11420239159.jpg" width="182" height="130" />
-                            </a>
-                        </li>
-                        <li style="line-height:16px; width:100%; font-weight:bold">Transmission</li>
-                        <li style="line-height:16px; padding-top:10px; width:100%; text-align:left">ATOP offers a full range of optical tran…</li>
-                    </div>
-
-                    <div class="mtop">
-                        <li style="height:80px; width:100%;">
-                            <a href="{{ url('/products/category/data_center') }}">
-                                <img src="{{ $upload_files_prefix }}Upload/catebannar/2-11420239159.jpg" width="182" height="130" />
-                            </a>
-                        </li>
-                        <li style="line-height:16px; width:100%; font-weight:bold">Data Center</li>
-                        <li style="line-height:16px; padding-top:10px; width:100%; text-align:left">Our firm is dedicated to supporting gree…</li>
-                    </div>
-
-                    <div class="mtop">
-                        <li style="height:80px; width:100%;">
-                            <a href="{{ url('/products/category/CPRI') }}">
-                                <img src="{{ $upload_files_prefix }}Upload/catebannar/3-11420219312.jpg" width="182" height="130" />
-                            </a>
-                        </li>
-                        <li style="line-height:16px; width:100%; font-weight:bold">CPRI</li>
-                        <li style="line-height:16px; padding-top:10px; width:100%; text-align:left">With the development of LTE network and …</li>
-                    </div>
-
-                    <div class="mtop">
-                        <li style="height:80px; width:100%;">
-                            <a href="{{ url('/products/category/broadband_access') }}">
-                                <img src="{{ $upload_files_prefix }}Upload/catebannar/4-11420223281.jpg" width="182" height="130" />
-                            </a>
-                        </li>
-                        <li style="line-height:16px; width:100%; font-weight:bold">Broadband Access</li>
-                        <li style="line-height:16px; padding-top:10px; width:100%; text-align:left">ATOP offers GPON OLT and ONU products fo…</li>
-                    </div>
-                </ul>
+    <div id="" class="sf-menu-wrap">
+        <ul class="sf-menu" id="new-navi">
+            <?php
+                $cateAvatars = [
+                    'Upload/catebannar/1-11420239159.jpg',
+                    'Upload/catebannar/2-11420239159.jpg',
+                    'Upload/catebannar/2-11420239159.jpg',
+                    'Upload/catebannar/4-11420223281.jpg'
+                ];
+                $cateAvatarIndex = 0;
+            ?>
+            <li class="menu-level-first">
+                <a href="{{ url('/products') }}">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</a>
+                <div class="sf-mega">
+                    @foreach($tree as $topCategoryId=>$item)
+                        <?php
+                            $topCategory = $item['data'];
+                            $topSubs = $item['subs'];
+                        ?>
+                        <div class="sf-mega-section">
+                            <h2 class="cate-title">
+                                <a href="{{ url('/products/'.$topCategoryId) }}">
+                                    {{ $topCategory->Cate_Title }}
+                                </a>
+                            </h2>
+                            <ul class="sub-cate-wrap">
+                                <li class="cate-avatar">
+                                    <a href="{{ url('/products/'.$topCategoryId) }}">
+                                        <img src="{{ $upload_files_prefix.$cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
+                                    </a>
+                                </li>
+                                @foreach($topSubs as $subId=>$subCategory)
+                                    <li class="sub-cate">
+                                        <a class="sub-cate-item" href="{{ url('/products/'.$subId) }}">
+                                            {{ $subCategory['data']->Cate_Title }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <?php $cateAvatarIndex++; ?>
+                    @endforeach
+                </div>
             </li>
-            <li><a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a></li>
-            <li><a style=" width:150px;" href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Service & Support' : '服务与支持' }}</a> </li>
-            <li><a href="{{ url('/news') }}">{{ session('lang')=='EN' ? 'News' : '新闻中心' }}</a> </li>
-            <li><a href="{{ url('/about_us') }}">{{ session('lang')=='EN' ? 'About Us' : '关于我们' }}</a> </li>
-            <li><a href="{{ url('/contact_us') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a></li>
+            <li class="menu-level-first"><a style=" width:150px;" href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Service & Support' : '服务与支持' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/news') }}">{{ session('lang')=='EN' ? 'News' : '新闻中心' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/about_us') }}">{{ session('lang')=='EN' ? 'About Us' : '关于我们' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/contact_us') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> </li>
         </ul>
+        <script>
+
+            (function($){ //create closure so we can safely use $ as alias for jQuery
+
+                $(document).ready(function(){
+
+                    var exampleOptions = {
+                        speed: 'fast'
+                    }
+                    // initialise plugin
+                    var example = $('#new-navi').superfish(exampleOptions);
+
+                    // buttons to demonstrate Superfish's public methods
+                    $('.destroy').on('click', function(){
+                        example.superfish('destroy');
+                    });
+
+                    $('.init').on('click', function(){
+                        example.superfish(exampleOptions);
+                    });
+
+                    $('.open').on('click', function(){
+                        example.children('li:first').superfish('show');
+                    });
+
+                    $('.close').on('click', function(){
+                        example.children('li:first').superfish('hide');
+                    });
+                });
+
+            })(jQuery);
+
+
+        </script>
+
         <div class="dianhu000" style="float:right; width:226px; padding-top:6px;">
             <script language="JavaScript" type="text/javascript">
                 function search_OnSubmit(){

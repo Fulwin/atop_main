@@ -11,10 +11,6 @@ class ProductsController extends Controller
     public function __construct(){
         parent::__construct();
         $this->dataForView['isProducts'] = true;
-        $this->dataForView['tree'] = $this->_getCategoriesTree(
-            $this->productsRootCategoryId,
-            session('lang','EN')
-        );
     }
 
     /**
@@ -42,7 +38,7 @@ class ProductsController extends Controller
 
             // 检查是否还有子目录
             if($category->hasChild()){
-                $this->dataForView['subs'] = $this->_getCategoriesTree($categoryId, $this->getCurrentLanguage());
+                $this->dataForView['subs'] = $this->_getCategoriesTree($categoryId, session('lang','EN'));
             }
 
             return view('products.category', $this->dataForView);

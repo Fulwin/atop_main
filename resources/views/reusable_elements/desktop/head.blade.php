@@ -12,10 +12,15 @@
     <link rel="stylesheet" href="{{ url('css/unslider.css') }}">
     <link rel="stylesheet" href="{{ url('css/unslider-dots.css') }}">
     <link rel="stylesheet" href="{{ url('css/css.css') }}">
+    <link rel="stylesheet" href="{{ url('css/megafish.css') }}">
     <link rel="stylesheet" href="{{ url('css/fix.css') }}">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    {{-- Super fish --}}
+    <script src="{{ asset('js/hoverIntent.js') }}"></script>
+    <script src="{{ asset('js/superfish.min.js') }}"></script>
+    {{-- Super fish end --}}
     <script src="{{ asset('scripts/unslider-min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.SuperSlide.2.1.1.js') }}"></script>
     <script src="{{ asset('scripts/AC_RunActiveContent.js') }}" type="text/javascript"></script>

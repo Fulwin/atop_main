@@ -1,0 +1,48 @@
+.menu-level-first{
+  text-align: center;
+  a{
+    color: #fff;
+    font-size: 16px;
+    line-height: 42px;
+  }
+  .sf-mega{
+    .sf-mega-section{
+      .cate-title{
+        text-align: left !important;
+        line-height: 36px;
+        display: block;
+        a{
+          color: #333;
+          font-size: 18px;
+          &:hover{
+            color: #f78500;
+          }
+        }
+      }
+      .sub-cate-wrap{
+        .cate-avatar{
+          padding-top: 10px;
+          &:hover{
+            opacity: 0.9;
+          }
+        }
+        .sub-cate{
+          width: 90%;
+          display: block;
+          text-align: left !important;
+          padding-left: 10px;
+          .sub-cate-item{
+            height: 36px;
+            line-height: 36px;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 15px;
+            &:hover{
+              color: #f78500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
