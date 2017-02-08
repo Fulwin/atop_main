@@ -127,19 +127,30 @@
 
         </script>
 
-        <div class="dianhu000" style="float:right; width:226px; padding-top:6px;">
+        <div class="dianhu000" style="float:right; width:326px; padding-top:6px;margin-right:20px;">
             <script language="JavaScript" type="text/javascript">
                 function search_OnSubmit(){
                     var KeyWord=get("KeyWord").value;
                     if(KeyWord.length<1){alert("Search Products Keywords");return false;}
                 }
+                $( function() {
+                    $( "#KeyWord" ).autocomplete({
+                        source: "{{ url('/products/search_ajax') }}",
+                        minLength: 2,
+                        select: function( event, ui ) {
+//                            console.log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+                            window.location.href = '/product/view/' + ui.item.id;
+                        }
+                    });
+                } );
             </script>
             <form style="margin:0px;padding:0px;" action="{{ url('/search') }}" method="get" onsubmit="javascript:return search_OnSubmit(this);">
-                <table width="226" height="29" border="0" cellpadding="0" cellspacing="0">
+                <table width="326" height="29" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td width="185" height="29" style=" "><input name="KeyWord" type="text" class="input2" id="KeyWord" onfocus="if (this.value=='Search Products Keywords') this.value='';"  onblur="if (this.value=='') this.value='Search Products Keywords';" value="Search Products Keywords"  style=""  /></td>
-                        <td width="41" align="left">
-                            <input type="image" name="submit" img="img" src="{{ asset('images/search_btn.jpg') }}"  align="absmiddle"/>
+                        <td width="300" height="29" style="text-align: right;">
+                            <input name="KeyWord" type="text" class="input2"
+                                   id="KeyWord"
+                                   placeholder="{{ session('lang','EN')=='EN' ? 'Search Products' : '按产品名称搜索' }}"  />
                         </td>
                     </tr>
                 </table>

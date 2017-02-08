@@ -46,3 +46,16 @@
     }
   }
 }
+
+#KeyWord{
+  &:focus{
+    width: 300px;
+  }
+}
+.ui-autocomplete{
+  width: 173px;
+  .ui-menu-item{
+    width: 100%;
+    display: block;
+  }
+}

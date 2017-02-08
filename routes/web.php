@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-
-
 Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'PagesController@home');
     Route::get('/about_us', 'PagesController@about_us');
@@ -27,12 +22,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/quality_control/{titleUrl?}', 'PagesController@quality_control');
     Route::get('/corporate_culture/{titleUrl?}', 'PagesController@corporate_culture');
     Route::get('/news/{titleUrl?}', 'PagesController@news');
-    Route::get('/products/{categoryId?}', 'ProductsController@load_category');
+
 
     Route::get('/switch_language/{lang}', 'PagesController@switch_language');
-
+    Route::get('/products/search_ajax', 'AjaxController@search_ajax');
+    Route::get('/product/view/{productId?}', 'ProductsController@view');
     /**
      * 加载产品单页的路径
      */
-    Route::get('/product/view/{productId?}', 'ProductsController@view');
+    Route::get('/products/{categoryId?}', 'ProductsController@load_category');
 });
