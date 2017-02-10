@@ -61,6 +61,9 @@
                             $topCategory = $item['data'];
                             $topSubs = $item['subs'];
                         ?>
+                        @if($cateAvatarIndex>0 && $cateAvatarIndex%4 == 0)
+                            <div class="cl"></div>
+                        @endif
                         <div class="sf-mega-section">
                             <h2 class="cate-title">
                                 <a href="{{ url('/products/'.$topCategoryId) }}">
@@ -91,9 +94,6 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @if($cateAvatarIndex>2 && $cateAvatarIndex%4 == 0)
-                            <div class="cl"></div>
-                        @endif
                         <?php $cateAvatarIndex++; ?>
                     @endforeach
                 </div>
