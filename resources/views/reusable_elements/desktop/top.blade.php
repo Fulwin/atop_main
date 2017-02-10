@@ -91,7 +91,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @if($cateAvatarIndex>3 && $cateAvatarIndex%4 == 0)
+                        @if($cateAvatarIndex>2 && $cateAvatarIndex%4 == 0)
                             <div class="cl"></div>
                         @endif
                         <?php $cateAvatarIndex++; ?>
