@@ -38,6 +38,7 @@ class Category extends Model
      */
     public function hasChild(){
         if(true){
+            // 使用与父目录相同的语言
             return self::LoadCategoriesByParentId($this->Cate_Id, $this->Cate_Lang);
         }else{
             return false;

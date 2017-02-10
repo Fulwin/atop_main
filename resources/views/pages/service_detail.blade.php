@@ -9,7 +9,7 @@
             <div class="newscate">
                 <ul>
                     <li class="catename">
-                        Solution
+                        {{ $tech->Down_Title }}
                     </li>
                     <li class="cateposition">Your current location is：<a href="{{ url('/') }}">Home</a> >
                         <a href="">Solution</a>&nbsp; >&nbsp;
