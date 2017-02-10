@@ -68,11 +68,20 @@
                                 </a>
                             </h2>
                             <ul class="sub-cate-wrap">
-                                <li class="cate-avatar">
-                                    <a href="{{ url('/products/'.$topCategoryId) }}">
-                                        <img src="{{ $upload_files_prefix.$cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
-                                    </a>
-                                </li>
+                                @if( !empty($topCategory->Cate_Image) )
+                                    <li class="cate-avatar">
+                                        <a href="{{ url('/products/'.$topCategoryId) }}">
+                                            <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
+                                        </a>
+                                    </li>
+                                @elseif( isset($cateAvatars[$cateAvatarIndex])) )
+                                    <li class="cate-avatar">
+                                        <a href="{{ url('/products/'.$topCategoryId) }}">
+                                            <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
+                                        </a>
+                                    </li>
+                                @endif
+
                                 @foreach($topSubs as $subId=>$subCategory)
                                     <li class="sub-cate">
                                         <a class="sub-cate-item" href="{{ url('/products/'.$subId) }}">
