@@ -47,6 +47,12 @@ class ProductsController extends Controller
                 $this->dataForView['subs'] = $this->_getCategoriesTree($categoryId, session('lang','EN'));
             }
 
+            $this->dataForView['seo'] = [
+                'keywords' => $category->Cate_Title,
+                'title' => $category->Cate_Title,
+                'description' => $category->Cate_Title,
+            ];
+
             return view('products.category', $this->dataForView);
         }
     }
@@ -60,6 +66,16 @@ class ProductsController extends Controller
         $product = Product::Fetch($productId);
         $this->dataForView['product'] = $product;
         $this->dataForView['category'] = $product->category();
+
+        $Microdata = [
+            'type' => 'http://schema.org/Product'
+//            'image' => 'image',
+//            'description' => 'description',
+//            'name' => 'name',
+//            'sku' => 'sku', // <div class="value" itemprop="sku">SFP-1000BASE-T</div>
+//            'category' => 'category' // <div class="value" itemprop="sku">SFP-1000BASE-T</div>
+        ];
+        $this->dataForView['Microdata'] = $Microdata;
         return view('products.view', $this->dataForView);
     }
 }

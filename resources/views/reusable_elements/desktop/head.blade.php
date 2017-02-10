@@ -44,4 +44,7 @@
     <script type="text/javascript" src="{{ url('js/cn.js') }}"></script>
     <script type=text/javascript src="{{ url('images/scroll.js') }}"></script>
 </head>
-<body>
+<?php
+
+?>
+<body {{ isset($Microdata)  ? ('itemscope itemtype="'.$Microdata['type'].'"') : null }}>

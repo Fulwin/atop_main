@@ -8,7 +8,7 @@
             <div class="newscate">
                 <ul>
                     <li class="cateposition">Your current location is：<a href="{{ url('/products') }}">Products</a> >
-                        <a href="{{ url('/products/'.$category->Cate_Id) }}">{{ $category->Cate_Title }}</a>&nbsp; &nbsp;
+                        <a itemprop="category" href="{{ url('/products/'.$category->Cate_Id) }}">{{ $category->Cate_Title }}</a>&nbsp; &nbsp;
                     </li>
                 </ul>
             </div>
@@ -19,44 +19,24 @@
             <div class="product-wrap">
                 <div class="row">
                     <div class="image-wrap">
-                        <img src="{{ $upload_files_prefix.$product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+                        <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+
                     </div>
                     <div class="desc-wrap mb40">
                         <h2>
-                            <span class="name">
-                            {{ $product->Products_Title }}
-                        </span>
+                            <span class="name" itemprop="name">
+                                Name: {{ $product->Products_Title }}
+                            </span>
                         </h2>
-                        <p class="code">
-                            {{ $product->Products_CodeName }}
+                        <p class="code" itemprop="sku">
+                            Product Code: {{ $product->Products_CodeName }}
                         </p>
                         <p class="general">
-                            GENERAL
+                            Description
                         </p>
-                        <div class="short">
-                            {!! $product->Products_Introduction !!}
-                        </div>
-
                         <div class="line"></div>
-                        <div class="extra">
-                            <div class="left">
-                                <ul>
-                                    <li class="txt">Package: {{ $product->Products_ExFlag1 }}</li>
-                                    <li class="txt">Data Rate: {{ $product->Products_ExFlag2 }}</li>
-                                    <li class="txt">Wavelength: {{ $product->Products_ExFlag3 }}</li>
-                                    <li class="txt">Component: {{ $product->Products_ExFlag4 }}</li>
-                                    <li class="txt">Output Power: {{ $product->Products_ExFlag5 }}</li>
-                                </ul>
-                            </div>
-                            <div class="right">
-                                <ul>
-                                    <li class="txt">Rec. Sens: {{ $product->Products_ExFlag6 }}</li>
-                                    <li class="txt">Connector: {{ $product->Products_ExFlag7 }}</li>
-                                    <li class="txt">Case Temp.: {{ $product->Products_ExFlag8 }}</li>
-                                    <li class="txt">Reach: {{ $product->Products_ExFlag9 }}</li>
-                                    <li class="txt">Multi-rate: {{ $product->Products_ExFlag10 }}</li>
-                                </ul>
-                            </div>
+                        <div class="short" itemprop="description">
+                            {!! $product->Products_Introduction !!}
                         </div>
                     </div>
                 </div>
@@ -70,9 +50,16 @@
                             PRODUCT FEATURES
                         </h4>
                         <ul>
-                            <li>
-                                Product feature
-                            </li>
+                            <li class="txt cl">Package: {{ $product->Products_ExFlag1 }}</li>
+                            <li class="txt cl">Data Rate: {{ $product->Products_ExFlag2 }}</li>
+                            <li class="txt cl">Wavelength: {{ $product->Products_ExFlag3 }}</li>
+                            <li class="txt cl">Component: {{ $product->Products_ExFlag4 }}</li>
+                            <li class="txt cl">Output Power: {{ $product->Products_ExFlag5 }}</li>
+                            <li class="txt cl">Rec. Sens: {{ $product->Products_ExFlag6 }}</li>
+                            <li class="txt cl">Connector: {{ $product->Products_ExFlag7 }}</li>
+                            <li class="txt cl">Case Temp.: {{ $product->Products_ExFlag8 }}</li>
+                            <li class="txt cl">Reach: {{ $product->Products_ExFlag9 }}</li>
+                            <li class="txt cl">Multi-rate: {{ $product->Products_ExFlag10 }}</li>
                         </ul>
                     </div>
                     <div class="application-wrap">
