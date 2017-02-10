@@ -36,10 +36,22 @@ class PagesController extends Controller
                 $this->getCategoryTitle('Solution')
             );
             $this->dataForView['downloads'] = $solutionCategory->downloads();
+
+            $this->dataForView['seo'] = [
+              'keywords' => $solutionCategory->Cate_Title,
+              'title' => $solutionCategory->Cate_Title,
+              'description' => $solutionCategory->Cate_Title,
+            ];
             return view('pages.solutions',$this->dataForView);
         }else{
             $download = Download::Fetch($downId);
             $this->dataForView['download'] = $download;
+
+            $this->dataForView['seo'] = [
+              'keywords' => $download->Down_Title,
+              'title' => $download->Down_Title,
+              'description' => $download->Down_Title,
+            ];
             return view('pages.solution_detail',$this->dataForView);
         }
     }
@@ -49,6 +61,11 @@ class PagesController extends Controller
 
         $this->dataForView['download'] = $download;
 
+        $this->dataForView['seo'] = [
+          'keywords' => $download->Down_Title,
+          'title' => $download->Down_Title,
+          'description' => $download->Down_Title,
+        ];
         return view('pages.support',$this->dataForView);
     }
 
