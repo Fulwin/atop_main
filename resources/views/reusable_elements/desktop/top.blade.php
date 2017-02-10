@@ -71,13 +71,13 @@
                                 @if( !empty($topCategory->Cate_Image) )
                                     <li class="cate-avatar">
                                         <a href="{{ url('/products/'.$topCategoryId) }}">
-                                            <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
+                                            <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
                                         </a>
                                     </li>
                                 @elseif( isset($cateAvatars[$cateAvatarIndex])) )
                                     <li class="cate-avatar">
                                         <a href="{{ url('/products/'.$topCategoryId) }}">
-                                            <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
+                                            <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
                                         </a>
                                     </li>
                                 @endif
