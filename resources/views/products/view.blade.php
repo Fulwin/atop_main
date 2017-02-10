@@ -33,6 +33,9 @@
                             ?>
                         @endforeach
                       </div>
+                      <script>
+                          $(function() { $('.fotorama').unslider({autoplay: true, arrows: false, nav: false}) })
+                      </script>
                     </div>
 
                     <div class="desc-wrap mb40">
