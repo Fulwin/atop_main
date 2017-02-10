@@ -41,7 +41,7 @@
                       </div>
                     </div>
                     <script>
-                        $(function() { $('.product-slider').unslider({autoplay: true, arrows: false, speed: 2000}) });
+                        $(function() { $('.product-slider').unslider({autoplay: true, arrows: false, delay: 5000}) });
                     </script>
 
                     <div class="desc-wrap mb40">
