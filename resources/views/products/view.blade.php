@@ -40,7 +40,7 @@
                         </ul>
                       </div>
                       <script>
-                          $(function() { $('.unslider').unslider({autoplay: true, arrows: false, nav: false}) });
+                          $(function() { $('.unslider').unslider({autoplay: true}) });
                       </script>
                     </div>
 
