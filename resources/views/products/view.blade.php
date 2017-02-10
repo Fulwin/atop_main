@@ -19,6 +19,7 @@
             <div class="product-wrap">
                 <div class="row">
                     <div class="image-wrap">
+                      <div class="product-slider">
                         <ul>
                           <li>
                             <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
@@ -37,9 +38,10 @@
                               ?>
                           @endforeach
                         </ul>
+                      </div>
                     </div>
                     <script>
-                        $(function() { $('.image-wrap').unslider({autoplay: true, arrows: false}) });
+                        $(function() { $('.product-slider').unslider({autoplay: true, arrows: false}) });
                     </script>
 
                     <div class="desc-wrap mb40">

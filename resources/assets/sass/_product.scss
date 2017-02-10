@@ -32,13 +32,15 @@
         width: 340px;
         margin-bottom: 20px;
       }
-      .unslider{
-        .unslider-nav{
-          ol{
-            li{
-              background-color: #f78500;
-              &.unslider-active{
-                background-color: #333;
+      .product-slider{
+        .unslider{
+          .unslider-nav{
+            ol{
+              li{
+                background-color: #f78500;
+                &.unslider-active{
+                  background-color: #333;
+                }
               }
             }
           }
