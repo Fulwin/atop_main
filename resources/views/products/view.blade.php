@@ -19,7 +19,6 @@
             <div class="product-wrap">
                 <div class="row">
                     <div class="image-wrap">
-                      <div class="unslider">
                         <ul>
                           <li>
                             <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
@@ -38,11 +37,10 @@
                               ?>
                           @endforeach
                         </ul>
-                      </div>
-                      <script>
-                          $(function() { $('.unslider').unslider({autoplay: true, arrows: false}) });
-                      </script>
                     </div>
+                    <script>
+                        $(function() { $('.image-wrap').unslider({autoplay: true, arrows: false}) });
+                    </script>
 
                     <div class="desc-wrap mb40">
                         <h2>
