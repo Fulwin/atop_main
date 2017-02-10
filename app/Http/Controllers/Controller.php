@@ -23,7 +23,7 @@ class Controller extends BaseController
     public $productsRootCategoryId = 89;
 
     public function __construct(){
-        $this->currentLanguage = session('lang') ? session('lang') : 'EN';
+        $this->currentLanguage = session('lang') ? session('lang','EN') : 'EN';
         $this->dataForView['currentLanguage'] = $this->currentLanguage;
 
         $this->dataForView['footerLinks'] = [
@@ -42,7 +42,7 @@ class Controller extends BaseController
     }
 
     public function getRootCategoryId(){
-        return session('lang')==='EN' ? 89 : 157;
+        return session('lang','EN')==='EN' ? 89 : 157;
     }
 
     public function getLinks($title){
@@ -112,7 +112,7 @@ class Controller extends BaseController
 
     public function getCategoryTitle($titleInEn){
 
-        if(session('lang') == 'EN')
+        if(session('lang','EN') == 'EN')
             return $titleInEn;
 
         $data = [
