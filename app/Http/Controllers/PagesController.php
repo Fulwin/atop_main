@@ -80,11 +80,22 @@ class PagesController extends Controller
             $this->dataForView['downloadCategory'] = $downloadCategory;
             $this->dataForView['downloads'] = $downloadCategory->downloads();
 
+            $this->dataForView['seo'] = [
+              'keywords' => $techCategory->Cate_Title,
+              'title' => $techCategory->Cate_Title,
+              'description' => $techCategory->Cate_Title,
+            ];
             return view('pages.services',$this->dataForView);
         }else{
             // 查看 Technology 的具体内容
             $tech = Download::Fetch($techId);
             $this->dataForView['tech'] = $tech;
+
+            $this->dataForView['seo'] = [
+              'keywords' => $tech->Down_Title,
+              'title' => $tech->Down_Title,
+              'description' => $tech->Down_Title,
+            ];
             return view('pages.service_detail',$this->dataForView);
         }
     }
@@ -112,6 +123,11 @@ class PagesController extends Controller
         $this->dataForView['contactSubsCategories'] = $contactSubsCategories;
         $this->dataForView['joinUsCategory'] = $joinUsCategory;
 
+        $this->dataForView['seo'] = [
+          'keywords' => $contactUsCategory->Cate_Title,
+          'title' => $contactUsCategory->Cate_Title,
+          'description' => $contactUsCategory->Cate_Title,
+        ];
         return view('pages.contact_us',$this->dataForView);
     }
 
@@ -125,6 +141,12 @@ class PagesController extends Controller
         $corporateCultureCategory = Category::FetchByTitle($this->getCategoryTitle('Corporate Culture'));
         $this->dataForView['aboutCategories'] = $subs;
         $this->dataForView['corporateCultureCategory'] = $corporateCultureCategory;
+
+        $this->dataForView['seo'] = [
+          'keywords' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+          'title' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+          'description' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+        ];
         return view('pages.about_us',$this->dataForView);
     }
 
@@ -136,6 +158,12 @@ class PagesController extends Controller
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->baseInfos();
+
+            $this->dataForView['seo'] = [
+              'keywords' => $category->Cate_Title,
+              'title' => $category->Cate_Title,
+              'description' => $category->Cate_Title,
+            ];
             return view('quality.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID
@@ -143,6 +171,12 @@ class PagesController extends Controller
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;
+
+            $this->dataForView['seo'] = [
+              'keywords' => $newsArticle->News_Title,
+              'title' => $newsArticle->News_Title,
+              'description' => $newsArticle->News_Title,
+            ];
             return view('quality.view',$this->dataForView);
         }
     }
@@ -155,6 +189,13 @@ class PagesController extends Controller
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
+
+            $this->dataForView['seo'] = [
+              'keywords' => $category->Cate_Title,
+              'title' => $category->Cate_Title,
+              'description' => $category->Cate_Title,
+            ];
+
             return view('culture.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID
@@ -162,6 +203,12 @@ class PagesController extends Controller
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;
+
+            $this->dataForView['seo'] = [
+              'keywords' => $newsArticle->News_Title,
+              'title' => $newsArticle->News_Title,
+              'description' => $newsArticle->News_Title,
+            ];
             return view('culture.view',$this->dataForView);
         }
     }
@@ -214,6 +261,11 @@ class PagesController extends Controller
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $category->news();
             $this->dataForView['modelPrefix'] = 'News';
+            $this->dataForView['seo'] = [
+              'keywords' => $category->Cate_Title,
+              'title' => $category->Cate_Title,
+              'description' => $category->Cate_Title,
+            ];
             return view('news.list',$this->dataForView);
         } else {
             // 新闻的细节页面, ID
@@ -223,6 +275,13 @@ class PagesController extends Controller
             $this->dataForView['news'] = $newsArticle;
             $this->dataForView['prevOne'] = $newsArticle->prevOne();
             $this->dataForView['nextOne'] = $newsArticle->nextOne();
+
+            $this->dataForView['seo'] = [
+              'keywords' => $newsArticle->News_Title,
+              'title' => $newsArticle->News_Title,
+              'description' => $newsArticle->News_Title,
+            ];
+
             return view('news.view',$this->dataForView);
         }
     }

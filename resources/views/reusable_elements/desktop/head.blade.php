@@ -3,9 +3,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="ATOP Corporation">
-    <meta name="author" content="ATOP Corporation">
-    <title>ATOP Corporation</title>
+    <meta name="description" content="{{ isset($seo) ? $seo['description'] : $site->description }}">
+    <meta name="author" content="{{ $site->author }}">
+    <meta name="keywords" content="{{ isset($seo) ? $seo['keywords'] : $site->keyword }}">
+    <title>{{ isset($seo) ? ($seo['title'].' - '.$site->title) : $site->title }}</title>
 
     <link rel="stylesheet" href="{{ url('jQuery/sexylightbox.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ url('style/cn.css') }}" type="text/css" media="screen, project, print">

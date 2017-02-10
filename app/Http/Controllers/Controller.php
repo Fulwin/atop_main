@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Site;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -37,6 +38,7 @@ class Controller extends BaseController
             session('lang','EN')
         );
 
+        $this->dataForView['site'] = Site::find(1);
     }
 
     public function getRootCategoryId(){
