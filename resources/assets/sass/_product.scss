@@ -32,6 +32,18 @@
         width: 340px;
         margin-bottom: 20px;
       }
+      .unslider-nav{
+        .unslider-nav{
+          ol{
+            li{
+              background-color: #f78500;
+              &.unslider-active{
+                background-color: #333;
+              }
+            }
+          }
+        }
+      }
     }
     .desc-wrap{
       display: inline-block;
