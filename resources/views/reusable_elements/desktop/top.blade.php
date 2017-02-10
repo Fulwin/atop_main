@@ -63,6 +63,7 @@
                         ?>
                         @if($cateAvatarIndex>0 && $cateAvatarIndex%4 == 0)
                             <div class="cl"></div>
+                            <hr>
                         @endif
                         <div class="sf-mega-section">
                             <h2 class="cate-title">
