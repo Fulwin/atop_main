@@ -47,4 +47,4 @@
 <?php
 
 ?>
-<body {{ isset($Microdata)  ? ('itemscope itemtype="'.$Microdata['type'].'"') : null }}>
+<body {!! isset($Microdata)  ? ('itemscope itemtype="'.$Microdata['type'].'"') : null !!}>
