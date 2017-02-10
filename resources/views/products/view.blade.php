@@ -19,22 +19,28 @@
             <div class="product-wrap">
                 <div class="row">
                     <div class="image-wrap">
-                      <div class="fotorama" data-width="800" data-height="600">
-                        <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
-                        <?php $imageIndexRange = range(1,9); ?>
-                        @foreach ($imageIndexRange as $index)
-                            <?php
-                              $fieldName = 'Products_BigImage' . $index;
-                              if(!empty(trim($product->$fieldName))){
-                                ?>
-                                <img itemprop="image" src="{{ $product->$fieldName }}" alt="{{ $product->Products_Title }}">
-                                <?php
-                              }
-                            ?>
-                        @endforeach
+                      <div class="unslider">
+                        <ul>
+                          <li>
+                            <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+                          </li>
+                          <?php $imageIndexRange = range(1,9); ?>
+                          @foreach ($imageIndexRange as $index)
+                              <?php
+                                $fieldName = 'Products_BigImage' . $index;
+                                if(!empty(trim($product->$fieldName))){
+                                  ?>
+                                  <li>
+                                    <img itemprop="image" src="{{ $product->$fieldName }}" alt="{{ $product->Products_Title }}">
+                                  </li>
+                                  <?php
+                                }
+                              ?>
+                          @endforeach
+                        </ul>
                       </div>
                       <script>
-                          $(function() { $('.fotorama').unslider({autoplay: true, arrows: false, nav: false}) })
+                          $(function() { $('.unslider').unslider({autoplay: true, arrows: false, nav: false}) });
                       </script>
                     </div>
 
