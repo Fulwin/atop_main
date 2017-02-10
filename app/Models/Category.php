@@ -37,8 +37,8 @@ class Category extends Model
      * 检查是否还有子目录
      */
     public function hasChild(){
-        if($this->Cate_HasChild == '1'){
-            return self::LoadCategoriesByParentId($this->Cate_Id);
+        if(true){
+            return self::LoadCategoriesByParentId($this->Cate_Id, $this->Cate_Lang);
         }else{
             return false;
         }

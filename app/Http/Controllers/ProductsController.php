@@ -23,6 +23,12 @@ class ProductsController extends Controller
             // 加载产品的根目录的请求
             $category = Category::Fetch($this->getRootCategoryId());
             $this->dataForView['category'] = $category;
+
+            $this->dataForView['seo'] = [
+              'keywords' => $category->Cate_Title,
+              'title' => $category->Cate_Title,
+              'description' => $category->Cate_Title,
+            ];
             return view('products.root', $this->dataForView);
         } else {
             // 加载子目录
