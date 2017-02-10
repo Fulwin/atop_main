@@ -35,6 +35,9 @@
       .unslider{
         .unslider-nav{
           ol{
+            width: 80px;
+            margin: 0 auto;
+            padding-bottom: 30px;
             li{
               background-color: #f78500;
               &.unslider-active{
