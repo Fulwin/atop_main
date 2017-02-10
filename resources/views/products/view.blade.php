@@ -19,9 +19,22 @@
             <div class="product-wrap">
                 <div class="row">
                     <div class="image-wrap">
+                      <div class="fotorama" data-width="800" data-height="600">
                         <img itemprop="image" src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
-
+                        <?php $imageIndexRange = range(1,9); ?>
+                        @foreach ($imageIndexRange as $index)
+                            <?php
+                              $fieldName = 'Products_BigImage' . $index;
+                              if(!empty(trim($product->$fieldName))){
+                                ?>
+                                <img itemprop="image" src="{{ $product->$fieldName }}" alt="{{ $product->Products_Title }}">
+                                <?php
+                              }
+                            ?>
+                        @endforeach
+                      </div>
                     </div>
+
                     <div class="desc-wrap mb40">
                         <h2>
                             <span class="name" itemprop="name">
