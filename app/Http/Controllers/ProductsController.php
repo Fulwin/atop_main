@@ -97,6 +97,6 @@ class ProductsController extends Controller
     // 产品文件下载链接
     public function download_brochure($productId=null){
         $product = Product::Fetch($productId);
-        return response()->download($product->Products_FileIntro);
+        return response()->download('/var/www/html/atop-backend/public'.$product->Products_FileIntro);
     }
 }
