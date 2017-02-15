@@ -114,6 +114,17 @@
                 <div class="row mt40">
                     <div class="eye-diagram-wrap">
                         <h4>EYE DIAGRAM</h4>
+                        <?php
+                          $keys = range(1,3);
+                        ?>
+                        @foreach ($keys as $index)
+                          <?php
+                            $fieldName = 'Products_EyeDiagram' . $index;
+                          ?>
+                          @if(!empty(trim($product->$fieldName)))
+                            <img src="{{ asset($product->$fieldName) }}" alt="" style="width: 90%; margin-bottom: 10px;">
+                          @endif
+                        @endforeach
                     </div>
                 </div>
 
@@ -124,6 +135,9 @@
                 <div class="row mt40">
                     <div class="specification-wrap">
                         <h4>MECHANICAL SPECIFICATIONS</h4>
+                        @if(!empty(trim($product->Products_MechanicalSpecification)))
+                          <img src="{{ asset($product->Products_MechanicalSpecification) }}" alt="" style="width: 90%; margin-bottom: 10px;">
+                        @endif
                     </div>
                 </div>
             </div>
