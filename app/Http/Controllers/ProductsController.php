@@ -93,4 +93,10 @@ class ProductsController extends Controller
         $this->dataForView['Microdata'] = $Microdata;
         return view('products.view', $this->dataForView);
     }
+
+    // 产品文件下载链接
+    public function download_brochure($productId=null){
+        $product = Product::Fetch($productId);
+        return response()->download($product->Products_FileIntro);
+    }
 }

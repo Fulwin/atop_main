@@ -95,7 +95,7 @@
                         </ul>
                         <br>
                         <div class="download-btn">
-                            <a href="{{ $upload_files_prefix . $product->Products_FileIntro }}" target="_blank">
+                            <a href="{{ url('/download_brochure/'.$product->Products_ID) }}">
                                 Download a Data Sheet
                             </a>
                         </div>

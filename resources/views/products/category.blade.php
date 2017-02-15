@@ -81,7 +81,7 @@
                                         <td align="center">{{ $product->Products_ExFlag9 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag10 }}</td>
                                         <td align="center">
-                                            <a href="{{ $upload_files_prefix . $product->Products_FileIntro }}" target="_blank">
+                                            <a href="{{ url('/download_brochure/'.$product->Products_ID) }}">
                                                 <img src="{{ asset('mmm/pdficon.gif') }}" width="18" height="16" />
                                             </a>
                                         </td>
