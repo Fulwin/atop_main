@@ -5,12 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\QuoteRequest;
 
 class ProductsController extends Controller
 {
     public function __construct(){
         parent::__construct();
         $this->dataForView['isProducts'] = true;
+    }
+
+    public function quoto_request(Request $request){
+        $form = $request->all();
+        $product = Product::where('Products_CodeName',$form['code'])->first();
+        Mail::to('justinwang24@yahoo.com.au')
+              ->cc('sales@webmelbourne.com')
+              ->send(new QuoteRequest($product, $form));
+
+        $this->dataForView['product'] = $product;
+        $this->dataForView['category'] = $product->category();
+
+        return view('products.quote_success', $this->dataForView);
     }
 
     /**

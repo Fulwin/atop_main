@@ -6,6 +6,7 @@
     <meta name="description" content="{{ isset($seo) ? $seo['description'] : $site->description }}">
     <meta name="author" content="{{ $site->author }}">
     <meta name="keywords" content="{{ isset($seo) ? $seo['keywords'] : $site->keyword }}">
+    <meta name="csrf-token" content="{!! csrf_token() !!}">
     <title>{{ isset($seo) ? ($seo['title'].' - '.$site->title) : $site->title }}</title>
 
     <link rel="stylesheet" href="{{ url('jQuery/sexylightbox.css') }}" type="text/css" media="all" />
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="{{ url('css/css.css') }}">
     <link rel="stylesheet" href="{{ url('css/megafish.css') }}">
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/fix.css') }}">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
@@ -41,8 +43,10 @@
             SexyLightbox = new SexyLightBox({color:'white'});
         });
     </script>
-    <script type="text/javascript" src="{{ url('js/cn.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ url('js/cn.js') }}"></script> --}}
     <script type=text/javascript src="{{ url('images/scroll.js') }}"></script>
+    <script type=text/javascript src="{{ url('js/tingle.min.js') }}"></script>
+    <script type=text/javascript src="{{ url('js/utils.js') }}"></script>
 </head>
 <?php
 

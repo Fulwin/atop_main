@@ -35,7 +35,7 @@
       .unslider{
         .unslider-nav{
           ol{
-            width: 80px;
+            width: 140px;
             margin: 0 auto;
             padding-bottom: 30px;
             li{
@@ -159,6 +159,35 @@
         margin-bottom: 25px;
         color: rgb(104, 113, 114);
         font-weight: bold;
+      }
+    }
+  }
+}
+
+// Dialog
+#dialog-form{
+  display: none;
+}
+.dialog-wrap-wrap{
+  h3{
+    font-size: 16px;
+  }
+  form{
+    .quote-input-wrap{
+      margin-bottom: 14px;
+      label{
+        font-size: 14px;
+        display: block;
+      }
+      .quote-input{
+        padding: 10px;
+        width: 80%;
+        height: 30px;
+        line-height: 30px;
+      }
+      .quote-textarea{
+        padding: 10px;
+        width: 85%;
       }
     }
   }

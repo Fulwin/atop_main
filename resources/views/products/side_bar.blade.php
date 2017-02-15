@@ -102,8 +102,9 @@
                 <li>
                     <?php
                         $category = $item['data'];
+                        // 只适用两种颜色
                     ?>
-                    <a style="background: url('{{ asset('cate/65_11'.$theIndex.'.jpg') }}') left no-repeat #294162;"
+                    <a style="background: url('{{ asset('cate/65_11'.($theIndex%2).'.jpg') }}') left no-repeat #294162;"
                        href="{{ url('/products/'.$category->Cate_Id) }}" title="{{ $category->Cate_Title }}" id="aa90" class="fly">
                         {{ $category->Cate_Title }}
                     </a>

@@ -31,4 +31,8 @@ Route::group(['middleware' => 'web'], function () {
      * 加载产品单页的路径
      */
     Route::get('/products/{categoryId?}', 'ProductsController@load_category');
+    /**
+     * 处理提交 quote 的表单
+     */
+    Route::post('/quoto_request', 'ProductsController@quoto_request');
 });

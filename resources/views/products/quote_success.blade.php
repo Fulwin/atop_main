@@ -14,6 +14,9 @@
             </div>
 
             <div class="textcontentt">
+              <p style="color: green!">
+                Your quote has been handled successfully! One of our staff will contact with you soon.
+              </p>
             </div>
 
             <div class="product-wrap">
@@ -174,5 +177,4 @@
 
           </form>
         </div>
-    </div>
 @stop
