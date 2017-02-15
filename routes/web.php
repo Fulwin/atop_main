@@ -26,12 +26,12 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/switch_language/{lang}', 'PagesController@switch_language');
     Route::get('/products/search_ajax', 'AjaxController@search_ajax');
-    Route::get('/download_brochure/{productId}', 'ProductsController@download_brochure');
+    Route::get('/product/view/{productId?}', 'ProductsController@view');
     /**
      * 加载产品单页的路径
      */
     Route::get('/products/{categoryId?}', 'ProductsController@load_category');
-    Route::get('/products/{categoryId?}', 'ProductsController@load_category');
+    Route::get('/download_brochure/{productId?}', 'ProductsController@download_brochure');
     /**
      * 处理提交 quote 的表单
      */
