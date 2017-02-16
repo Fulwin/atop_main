@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Site;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\QuoteRequest;
 
@@ -17,8 +18,10 @@ class ProductsController extends Controller
 
     public function quoto_request(Request $request){
         $form = $request->all();
+        $site = $this->dataForView['site'];
+        $to = empty($site->quote_request_handler) ? 'sunbin@atoptechnology.com' : $site->quote_request_handler;
         $product = Product::where('Products_CodeName',$form['code'])->first();
-        Mail::to('justinwang24@yahoo.com.au')
+        Mail::to($to)
               ->cc('sales@webmelbourne.com')
               ->send(new QuoteRequest($product, $form));
 
