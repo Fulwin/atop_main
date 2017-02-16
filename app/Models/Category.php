@@ -25,12 +25,21 @@ class Category extends Model
      * @param string $lang
      * @return mixed
      */
-    public static function LoadCategoriesByParentId($id,$lang='EN') {
-        return self::where('Cate_ParentId',$id)
-            ->where('Cate_Lang',$lang)
-            ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
-            ->orderBy('Cate_Order','ASC')
-            ->get();
+    public static function LoadCategoriesByParentId($id,$lang='EN', $checkIsMenu=null) {
+        if(is_null($checkIsMenu)){
+          return self::where('Cate_ParentId',$id)
+              ->where('Cate_Lang',$lang)
+              ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
+              ->orderBy('Cate_Order','ASC')
+              ->get();
+        }else{
+          return self::where('Cate_ParentId',$id)
+              ->where('Cate_Lang',$lang)
+              ->where('Cate_IsMenu',$checkIsMenu)
+              ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1')
+              ->orderBy('Cate_Order','ASC')
+              ->get();
+        }
     }
 
     /**
