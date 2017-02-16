@@ -160,6 +160,21 @@
         color: rgb(104, 113, 114);
         font-weight: bold;
       }
+      .eye-diagram-img{
+        display: block;
+        float: left;
+        width: 30%;
+        margin-right: 3%;
+        p{
+          text-align: center;
+          height: 20px;
+          line-height: 20px;
+          font-size: 16px;
+        }
+        img{
+          width: 100%;
+        }
+      }
     }
   }
 }

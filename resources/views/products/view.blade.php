@@ -116,13 +116,23 @@
                         <h4>EYE DIAGRAM</h4>
                         <?php
                           $keys = range(1,3);
+                          $imageTitleEn = [
+                              'RT','LT','HT'
+                          ];
+                          $imageTitleCn = [
+                              '常温','低温','高温'
+                          ];
+                          $imageTitle = session('lang','EN')=='EN' ? $imageTitleEn : $imageTitleCn;
                         ?>
                         @foreach ($keys as $index)
                           <?php
                             $fieldName = 'Products_EyeDiagram' . $index;
                           ?>
                           @if(!empty(trim($product->$fieldName)))
-                            <img src="{{ asset($product->$fieldName) }}" alt="" style="width: 90%; margin-bottom: 10px;">
+                            <div class="eye-diagram-img">
+                              <p>{{ $imageTitle[$index-1] }}</p>
+                              <img src="{{ asset($product->$fieldName) }}">
+                            </div>
                           @endif
                         @endforeach
                     </div>
