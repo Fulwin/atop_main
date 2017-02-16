@@ -72,7 +72,7 @@
                                   </a>
                               </h2>
                               <ul class="sub-cate-wrap">
-                                  @if( isset($cateAvatars[$cateAvatarIndex]))  )
+                                  @if( isset($cateAvatars[$cateAvatarIndex]) )
                                       <li class="cate-avatar">
                                           <a href="{{ url('/products/'.$topCategoryId) }}">
                                               <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
