@@ -14,12 +14,12 @@
             </div>
 
             <div class="textcontentt">
-              <p style="color: green; font-size: 18px; margin: 8px;">
+              <p style="color: green; font-size: 18px; margin: 8px; padding-top: 10px;">
                 Your quote has been handled successfully! One of our staff will contact with you soon.
               </p>
             </div>
 
-            <div class="product-wrap">
+            <div class="product-wrap" style="margin-top:20px;">
                 <div class="row">
                     <div class="image-wrap">
                       <div class="product-slider">
