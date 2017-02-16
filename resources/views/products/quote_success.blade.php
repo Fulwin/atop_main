@@ -14,7 +14,7 @@
             </div>
 
             <div class="textcontentt">
-              <p style="color: green!">
+              <p style="color: green; font-size: 18px; margin: 8px;">
                 Your quote has been handled successfully! One of our staff will contact with you soon.
               </p>
             </div>
