@@ -71,9 +71,8 @@ class Controller extends BaseController
      */
     public function _getCategoriesTree($parentId = 0, $lang = 'EN'){
         $tree = [];
-        $isInMenu = '1';
 
-        $topLevelCategories = Category::LoadCategoriesByParentId($parentId,$lang,$isInMenu);
+        $topLevelCategories = Category::LoadCategoriesByParentId($parentId,$lang);
         foreach ($topLevelCategories as $topLevelCategory) {
             // 第一级目录循环
             $bean = [
@@ -81,7 +80,7 @@ class Controller extends BaseController
                 'subs' => []
             ];
 
-            $subs = Category::LoadCategoriesByParentId($topLevelCategory->Cate_Id, $lang, $isInMenu);
+            $subs = Category::LoadCategoriesByParentId($topLevelCategory->Cate_Id, $lang);
             if(count($subs)){
                 foreach ($subs as $secondLevelCategory) {
                     // 第二级目录循环
@@ -89,7 +88,7 @@ class Controller extends BaseController
                         'data' => $secondLevelCategory,
                         'subs' => []
                     ];
-                    $subsSubs = Category::LoadCategoriesByParentId($secondLevelCategory->Cate_Id,$lang,$isInMenu);
+                    $subsSubs = Category::LoadCategoriesByParentId($secondLevelCategory->Cate_Id,$lang);
                     if(count($subsSubs) > 0){
                         // 第三级目录循环
                         $subBeanThird = [];

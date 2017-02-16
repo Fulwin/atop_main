@@ -61,40 +61,42 @@
                             $topCategory = $item['data'];
                             $topSubs = $item['subs'];
                         ?>
-                        @if($cateAvatarIndex>0 && $cateAvatarIndex%4 == 0)
-                            <div class="cl"></div>
-                        @endif
-                        <div class="sf-mega-section">
-                            <h2 class="cate-title">
-                                <a href="{{ url('/products/'.$topCategoryId) }}">
-                                    {{ $topCategory->Cate_Title }}
-                                </a>
-                            </h2>
-                            <ul class="sub-cate-wrap">
-                                @if( !empty($topCategory->Cate_Image) )
-                                    <li class="cate-avatar">
-                                        <a href="{{ url('/products/'.$topCategoryId) }}">
-                                            <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
-                                        </a>
-                                    </li>
-                                @elseif( isset($cateAvatars[$cateAvatarIndex])) )
-                                    <li class="cate-avatar">
-                                        <a href="{{ url('/products/'.$topCategoryId) }}">
-                                            <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
-                                        </a>
-                                    </li>
-                                @endif
+                        @if($topCategory['Cate_IsMenu'] == '1')
+                          @if($cateAvatarIndex>0 && $cateAvatarIndex%4 == 0)
+                              <div class="cl"></div>
+                          @endif
+                          <div class="sf-mega-section">
+                              <h2 class="cate-title">
+                                  <a href="{{ url('/products/'.$topCategoryId) }}">
+                                      {{ $topCategory->Cate_Title }}
+                                  </a>
+                              </h2>
+                              <ul class="sub-cate-wrap">
+                                  @if( isset($cateAvatars[$cateAvatarIndex]))  )
+                                      <li class="cate-avatar">
+                                          <a href="{{ url('/products/'.$topCategoryId) }}">
+                                              <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
+                                          </a>
+                                      </li>
+                                  @elseif( !empty($topCategory->Cate_Image) )
+                                      <li class="cate-avatar">
+                                          <a href="{{ url('/products/'.$topCategoryId) }}">
+                                              <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
+                                          </a>
+                                      </li>
+                                  @endif
 
-                                @foreach($topSubs as $subId=>$subCategory)
-                                    <li class="sub-cate">
-                                        <a class="sub-cate-item" href="{{ url('/products/'.$subId) }}">
-                                            {{ $subCategory['data']->Cate_Title }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <?php $cateAvatarIndex++; ?>
+                                  @foreach($topSubs as $subId=>$subCategory)
+                                      <li class="sub-cate">
+                                          <a class="sub-cate-item" href="{{ url('/products/'.$subId) }}">
+                                              {{ $subCategory['data']->Cate_Title }}
+                                          </a>
+                                      </li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                          <?php $cateAvatarIndex++; ?>
+                        @endif
                     @endforeach
                 </div>
             </li>
@@ -172,4 +174,3 @@
 </div>
 
 <div style="clear:both"></div>
-
