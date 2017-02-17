@@ -47,11 +47,11 @@
                     <div class="desc-wrap mb40">
                         <h2>
                             <span class="name" itemprop="name">
-                                Name: {{ $product->Products_Title }}
+                                {{ $product->Products_Title }}
                             </span>
                         </h2>
                         <p class="code" itemprop="sku">
-                            Product Code: {{ $product->Products_CodeName }}
+                            Part Number: {{ $product->Products_CodeName }}
                         </p>
                         <p class="general">
                             Description
@@ -99,7 +99,7 @@
                                 Download a Data Sheet
                             </a>
                         </div>
-                        <div class="request-btn">
+                        <div class="download-btn">
                             <a href="#" id="request-btn-trigger">
                                 Request a Quote
                             </a>
