@@ -11,8 +11,8 @@ use App\Mail\QuoteRequest;
 
 class ProductsController extends Controller
 {
-    public function __construct(){
-        parent::__construct();
+    public function __construct(Request $request){
+        parent::__construct($request);
         $this->dataForView['isProducts'] = true;
     }
 
