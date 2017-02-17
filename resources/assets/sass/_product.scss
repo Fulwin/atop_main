@@ -129,6 +129,9 @@
           height: 36px;
           line-height: 36px;
           font-size: 17px;
+          &:hover{
+            color: #333;
+          }
         }
       }
       .request-btn{
