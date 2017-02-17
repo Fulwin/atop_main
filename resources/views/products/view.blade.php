@@ -157,7 +157,7 @@
 
     <div id="dialog-form">
         <div class="dialog-wrap-wrap">
-          <h3>Request A Quote</h3>
+          <h3>Request A Quote For Product: {{ $product->Products_Title }} (Code: {{ $product->Products_CodeName }})</h3>
           <form method="POST" action="/quoto_request" id="request-quote-form">
             {{ csrf_field() }}
             <input type="hidden" name="code" value="{{ $product->Products_CodeName }}" id="quote-product-code">

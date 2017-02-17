@@ -558,11 +558,13 @@ img { border:0}
     text-align:right;
     width:450px;
     float: right;
-    color:#ccc;
+    color:#f78500;
 }
 .newscate .cateposition a{
-
-    color:#ccc;
+    color:#f78500;
+}
+.newscate .cateposition a:hover{
+    color:#333333;
 }
 .newsli {width:880px; height:42px; background:url(../images/ab2_08.jpg) left repeat-x; display:block; clear:both}
 .textcontentt {
