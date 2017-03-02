@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ url('css/megafish.css') }}">
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/atop_icons.css') }}">
     <link rel="stylesheet" href="{{ url('css/fix.css') }}">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>

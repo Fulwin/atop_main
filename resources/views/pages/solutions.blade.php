@@ -1,18 +1,95 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="bannarspicculture"
-         style="background:url('{{ asset('/Upload/catebannar/solutionsbanner-17475279305.jpg') }}') center top no-repeat;">
+    <div class="solution-banner">
+      <p>
+        <img src="{{ asset('/solutions_image/solution_banner.jpg')}}" alt="">
+      </p>
     </div>
-    <div class="middle">
-        @foreach($downloads as $download)
-            <section class="sec content2" style="position: relative;">
-                <div>
-                    <img id="dsImg" width="100%" src="{{ $download->Down_Image }}">
-                    <a style="width: 7%;height: 25px;position: absolute;bottom: 5%;left: 50%;margin-left: -4%;border-radius:5px; background:#fff;box-shadow:0 0 5px #ccc; font-size:14px; text-align:center;"
-                       href="{{ url('/solutions/'.$download->Down_ID) }}" >More</a>
+    <div class="middle solutions-content">
+        <h2>
+          SOLUTIONS
+        </h2>
+        <p class="divider-wrap">
+          <span class="divider"></span>
+        </p>
+        <p class="subtitle">
+          Enjoy reliable full series smart optical fiber solutions
+        </p>
+        <div class="solutions-row">
+          @foreach($downloads as $download)
+              <div class="solution-card">
+                <div class="solution-avatar">
+                  <a href="{{ url('/solutions/'.$download->Down_ID) }}">
+                    <img src="http://atop_admin.webmelbourne.local{{ $download->Down_Image }}" alt="">
+                  </a>
                 </div>
-            </section>
-        @endforeach
+                <div class="solution-content">
+                  <a href="{{ url('/solutions/'.$download->Down_ID) }}">
+                    <h2 class="title">{{ $download->Down_Title }}</h2>
+                  </a>
+                  <p class="solution-desc">
+                    {{ $download->Down_Content }}
+                  </p>
+                </div>
+                <div class="card-btn">
+                  <a href="{{ url('/solutions/'.$download->Down_ID) }}">
+                    READ MORE
+                  </a>
+                </div>
+              </div>
+          @endforeach
+        </div>
+        <div class="solutions-row solutions-extra-row">
+          <div class="extra">
+            <h3>ABOUT US</h3>
+            <p class="subtitle">Local &amp; Innovation</p>
+            <div class="the-box">
+              <div class="box-icon">
+                <span class="icon-about-us"></span>
+              </div>
+              <div class="box-content">
+                <p>ATOP Corporation is a leading manufacturer of optical transceivers. ATOP is proficient in R&D, production and sales of optical components, transceivers and sub-system.</p>
+              </div>
+            </div>
+          </div>
+          <div class="extra">
+            <h3>WHY US</h3>
+            <p class="subtitle">Quality &amp; Budget</p>
+            <div class="the-box">
+              <div class="box-icon">
+                <span class="icon-why-us">
+                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+                </span>
+              </div>
+              <div class="box-content">
+                <p>
+                  ATOP Corporation is a leading manufacturer
+                  of optical transceivers. ATOP’s professional
+                  research and production capabilities/capacity
+                  is one of our key advantages. With many years
+                  of experience in high speed transceivers design
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="extra">
+            <h3>PRODUCTS</h3>
+            <p class="subtitle">High Quality</p>
+            <div class="the-box">
+              <div class="box-icon" style="padding-top:10px;">
+                <span class="icon-products" style="font-size: 50px;"></span>
+              </div>
+              <div class="box-content">
+                <p>
+ATOP's optical transceiver solutions cover a
+wide range of applications including data
+communication, SDH, FTTX, Data center and
+cloud computing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 @stop

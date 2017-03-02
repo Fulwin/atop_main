@@ -36,7 +36,6 @@ class PagesController extends Controller
                 $this->getCategoryTitle('Solution')
             );
             $this->dataForView['downloads'] = $solutionCategory->downloads();
-
             $this->dataForView['seo'] = [
               'keywords' => $solutionCategory->Cate_Title,
               'title' => $solutionCategory->Cate_Title,
