@@ -28,9 +28,9 @@
                   <a href="{{ url('/solutions/'.$download->Down_ID) }}">
                     <h2 class="title">{{ $download->Down_Title }}</h2>
                   </a>
-                  <p class="solution-desc">
+                  <div class="solution-desc">
                     {!! $download->Down_Content !!}
-                  </p>
+                  </div>
                 </div>
                 <div class="card-btn">
                   <a href="{{ url('/solutions/'.$download->Down_ID) }}">
