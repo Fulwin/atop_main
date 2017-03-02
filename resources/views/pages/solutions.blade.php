@@ -21,7 +21,7 @@
               <div class="solution-card">
                 <div class="solution-avatar">
                   <a href="{{ url('/solutions/'.$download->Down_ID) }}">
-                    <img src="http://atop_admin.webmelbourne.local{{ $download->Down_Image }}" alt="">
+                    <img src="{{ $download->Down_Image }}" alt="">
                   </a>
                 </div>
                 <div class="solution-content">
