@@ -88,11 +88,9 @@
                         <h4>
                             APPLICATIONS
                         </h4>
-                        <ul>
-                            <li>
-                                Product feature
-                            </li>
-                        </ul>
+                        <div class="applications-content">
+                          {!! $product->Products_Feature !!}
+                        </div>
                         <br>
                         <div class="download-btn">
                             <a href="{{ url('/download_brochure/'.$product->Products_ID) }}">
