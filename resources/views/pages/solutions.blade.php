@@ -29,7 +29,7 @@
                     <h2 class="title">{{ $download->Down_Title }}</h2>
                   </a>
                   <div class="solution-desc">
-                    {!! $download->Down_Content !!}
+                    {!! $download->excerpt !!}
                   </div>
                 </div>
                 <div class="card-btn">
