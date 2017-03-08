@@ -80,8 +80,12 @@ class Category extends Model
         return Product::where('Products_CateId',$this->Cate_Id)->orderBy('Products_Order','Desc')->get();
     }
 
-    public function downloads(){
-        return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->get();
+    public function downloads($limit = null){
+        if($limit){
+            return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->take($limit);
+        }else{
+            return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->get();
+        }
     }
 
     public function solutions(){

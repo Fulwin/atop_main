@@ -257,7 +257,7 @@ class PagesController extends Controller
             $this->getCategoryTitle('Solution'),
             session('lang', 'EN')
         );
-        $this->dataForView['downloads'] = $solutionCategory->downloads();
+        $this->dataForView['downloads'] = $solutionCategory->downloads(4);
 
         return view('pages.home',$this->dataForView);
     }

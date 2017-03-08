@@ -127,20 +127,6 @@
                             <img src="{{ asset('/Upload/Honor/Solution-10245893871.jpg') }}" width="385" height="165" alt="">
                         </a>
                     </li>
-                    <?php
-                        $downloadsContent = [
-                            'ATOP QSFP+ SR4 supports 100m transmission over OM3 Multimode fiber, the power consumption …',
-                            'ATOP 10GEPON optical transceivers support a downstream at 10Gbps and upstream at 10Gbps or…',
-                            'The smart phone and other mobile device has been taken a more and more important roll in t…',
-                            'ATOP offers full line optical transmission products for FTTx applications.'
-                        ];
-                        $downloadsIcon = [
-                            'Upload/quality/111-17153658513.jpg',
-                            'Upload/quality/111111-17153658513.jpg',
-                            'Upload/quality/11111-17153678361.jpg',
-                            'Upload/quality/1111-17153682330.jpg'
-                        ];
-                    ?>
                     @foreach($downloads as $key=>$download)
                         <li class="litexthhhhhhhhh">
                             <div style="float:left; width:320px;">
