@@ -147,9 +147,9 @@
                                 <a href="{{ url('/solutions/'.$download->Down_ID) }}">
                                     <h3>{{ $download->Down_Title }}</h3>
                                 </a>
-                                {{ $downloadsContent[$key] }}
+                                {{ $download->Down_Content }}
                             </div>
-                            <div style="float: right;"><img src="{{ $downloadsIcon[$key] }}" width="50" height="50" alt=""></div>
+                            <div style="float: right;"><img src="{{ $download->Down_Image }}" width="50" height="50" alt=""></div>
                         </li>
                     @endforeach
                 </ul>
