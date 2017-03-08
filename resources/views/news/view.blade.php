@@ -27,7 +27,7 @@
                 </h1>
 
                 <div style="float: left; width: 100%; text-align: center; margin-top: 20px; margin-bottom: 50px; color:#ccc; border-bottom:#ccc dashed 1px;">
-                    Date：{{ $news->AddTime }}
+                    Date：{{ $news->News_AddTime }}
                 </div>
                 <div style="float: left; width: 100%; text-align: left">
                     {!! $news->News_Content !!}
