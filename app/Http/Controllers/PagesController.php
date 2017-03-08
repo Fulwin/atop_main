@@ -286,7 +286,6 @@ class PagesController extends Controller
         } else {
             // 新闻的细节页面, ID
             $newsArticle = News::Fetch($titleUrl);
-            dd($newsArticle->toArray());
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;
