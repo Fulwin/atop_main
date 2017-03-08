@@ -82,7 +82,7 @@ class Category extends Model
 
     public function downloads($limit = null){
         if($limit){
-            return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->take($limit);
+            return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->take($limit)->get();
         }else{
             return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->get();
         }
