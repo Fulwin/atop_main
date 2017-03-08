@@ -24,7 +24,11 @@
                                         </a>
                                     </ul>
                                     <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 55px;overflow: hidden;margin-bottom: 20px;">
-                                        {!! $article->News_Content !!}
+                                        @if(empty($article->excerpt))
+                                            {!! $article->News_Content !!}
+                                        @else
+                                            {{ $article->excerpt }}
+                                        @endif
                                     </ul>
                                 </li>
                             @else
