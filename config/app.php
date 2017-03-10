@@ -179,7 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // Debug Bar
-//        Barryvdh\Debugbar\ServiceProvider::class,
+      //  Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*

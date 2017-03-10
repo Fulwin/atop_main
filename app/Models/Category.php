@@ -59,7 +59,7 @@ class Category extends Model
     }
 
     public static function FetchByTitle($title,$lang='EN'){
-        return self::where('Cate_Title',$title)->first();
+        return self::where('Cate_Title',$title)->where('Cate_Lang', $lang)->first();
     }
 
     public function news($limit = null){

@@ -47,7 +47,8 @@ class Controller extends BaseController
 
     public function getLinks($title){
         $category = Category::FetchByTitle(
-            $this->getCategoryTitle($title)
+            $this->getCategoryTitle($title),
+            session('lang','EN')
         );
 
         if($title=='Solution'){
