@@ -160,7 +160,7 @@ class PagesController extends Controller
         $subs = $newsCategory->hasChild();
 
         // 企业文化
-        $corporateCultureCategory = Category::FetchByTitle($this->getCategoryTitle('Corporate Culture'));
+        $corporateCultureCategory = Category::FetchByTitle($this->getCategoryTitle('Corporate Culture'),session('lang'));
         $this->dataForView['aboutCategories'] = $subs;
         $this->dataForView['corporateCultureCategory'] = $corporateCultureCategory;
 
