@@ -33,7 +33,8 @@ class PagesController extends Controller
     public function solutions($downId = null){
         if(is_null($downId)){
             $solutionCategory = Category::FetchByTitle(
-                $this->getCategoryTitle('Solution')
+                $this->getCategoryTitle('Solution'),
+                session('lang')
             );
             $this->dataForView['downloads'] = $solutionCategory->downloads();
             $this->dataForView['seo'] = [
@@ -86,10 +87,12 @@ class PagesController extends Controller
     public function services($techId = null){
         if(is_null($techId)){
             $techCategory = Category::FetchByTitle(
-                $this->getCategoryTitle('Technology Support')
+                $this->getCategoryTitle('Technology Support'),
+                session('lang')
             );
             $downloadCategory = Category::FetchByTitle(
-                $this->getCategoryTitle('Download')
+                $this->getCategoryTitle('Download'),
+                session('lang')
             );
             $techs = $techCategory->downloads();
             $this->dataForView['techs'] = $techs;
@@ -118,10 +121,12 @@ class PagesController extends Controller
 
     public function contact_us(){
         $contactUsCategory = Category::FetchByTitle(
-            $this->getCategoryTitle('Contact')
+            $this->getCategoryTitle('Contact'),
+            session('lang')
         );
         $joinUsCategory = Category::FetchByTitle(
-            $this->getCategoryTitle('Join Us')
+            $this->getCategoryTitle('Join Us'),
+            session('lang')
         );
         $contactSubsCategories = $contactUsCategory->hasChild();
 
@@ -149,7 +154,8 @@ class PagesController extends Controller
 
     public function about_us(Request $request){
         $newsCategory = Category::FetchByTitle(
-            $this->getCategoryTitle('About')
+            $this->getCategoryTitle('About'),
+            session('lang')
         );
         $subs = $newsCategory->hasChild();
 
@@ -271,7 +277,8 @@ class PagesController extends Controller
         if($titleUrl == 'company' || is_null($titleUrl)){
             // 公司新闻
             $category = Category::FetchByTitle(
-                $this->getCategoryTitle('Company News')
+                $this->getCategoryTitle('Company News'),
+                session('lang')
             );
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
