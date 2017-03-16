@@ -45,6 +45,13 @@ class PagesController extends Controller
             return view('pages.solutions',$this->dataForView);
         }else{
             $download = Download::Fetch($downId);
+            // 根据产品的目录取得所有被标识为 recommend 的产品
+            $relatedCategory = Category::Fetch($download->related_category_name);
+            $products = [];
+            if($relatedCategory){
+                $products = $relatedCategory->recommendProducts();
+            }
+            $this->dataForView['products'] = $products;
             $this->dataForView['download'] = $download;
 
             $this->dataForView['seo'] = [

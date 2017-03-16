@@ -30,6 +30,10 @@ class Product extends Model
         return str_replace(' ','__', $this->Products_Title);
     }
 
+    public function getIdString(){
+        return $this->id;
+    }
+
     /**
      * 根据指定的 News Id 来删除一个记录
      * @param $news_Id

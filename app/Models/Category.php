@@ -80,6 +80,16 @@ class Category extends Model
         return Product::where('Products_CateId',$this->Cate_Id)->orderBy('Products_Order','Desc')->get();
     }
 
+    /**
+     * 取得推荐产品
+     * @return mixed
+     */
+    public function recommendProducts(){
+        return Product::where('Products_CateId',$this->Cate_Id)
+                ->where('Products_recommend',1)
+                ->orderBy('Products_Order','Desc')->get();
+    }
+
     public function downloads($limit = null){
         if($limit){
             return Download::where('Down_CateId',$this->Cate_Id)->orderBy('Down_Order','Desc')->take($limit)->get();

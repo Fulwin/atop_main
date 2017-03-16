@@ -23,7 +23,7 @@
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-
+    <script src="https://use.fontawesome.com/b09516297f.js"></script>
     {{-- Super fish --}}
     <script src="{{ asset('js/hoverIntent.js') }}"></script>
     <script src="{{ asset('js/superfish.min.js') }}"></script>

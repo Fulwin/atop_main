@@ -25,6 +25,20 @@
                     </div>
                 </section>
             </article>
+
+            @foreach($products as $product)
+                <div class="col_one_third border-hover-red">
+                    <img src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+                    <div class="border-dotted-box">
+                        <a class="pro-name" href="{{ url('/product/view/'.$product->getIdString()) }}">
+                            {{ $product->Products_Title }}
+                        </a>
+                        <a class="pro-arrow" href="{{ url('/product/view/'.$product->getIdString()) }}">
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 @stop

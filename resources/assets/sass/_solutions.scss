@@ -149,3 +149,48 @@
     }
   }
 }
+
+.col_one_third{
+  width: 31%;
+  float: left;
+  border: solid 1px #ccc;
+  display: block;
+  position: relative;
+  margin-right: 2%;
+  margin-bottom: 23px;
+  margin-top: 10px;
+  img{
+    width: 100%;
+  }
+  .border-dotted-box{
+    border-top: dotted 1px #ccc;
+    display: flex;
+    justify-content: space-around;
+    .pro-name{
+      flex: 1 auto;
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+    }
+    .pro-arrow{
+      flex: auto;
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+      line-height: 40px;
+      text-align: right;
+      padding-right: 16px;
+      .fa{
+        margin-top: 7px;
+      }
+    }
+  }
+}
+
+.border-hover-red{
+  &:hover{
+    border-color: #ff0000;
+  }
+}
