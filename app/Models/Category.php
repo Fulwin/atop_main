@@ -27,13 +27,13 @@ class Category extends Model
      */
     public static function LoadCategoriesByParentId($id,$lang='EN', $checkIsMenu=null) {
         if(is_null($checkIsMenu)){
-          return self::where('Cate_ParentId',$id)
+            return self::where('Cate_ParentId',$id)
               ->where('Cate_Lang',$lang)
               ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1','Cate_IsMenu')
               ->orderBy('Cate_Order','ASC')
               ->get();
         }else{
-          return self::where('Cate_ParentId',$id)
+            return self::where('Cate_ParentId',$id)
               ->where('Cate_Lang',$lang)
               ->where('Cate_IsMenu',$checkIsMenu)
               ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1','Cate_IsMenu')
@@ -86,13 +86,14 @@ class Category extends Model
      */
     public function recommendProducts(){
         $subs = $this->hasChild();
+//        dd($subs);
         if($subs){
             $ids = [];
             foreach ($subs as $sub) {
-                $ids[] = $subs->CateId;
+                $ids[] = $sub->Cate_Id;
             }
 
-            return Product::whereIn('Products_CateId',$this->$ids)
+            return Product::whereIn('Products_CateId',$ids)
                 ->where('Products_recommend',1)
                 ->orderBy('Products_Order','Desc')->get();
         }else{
