@@ -85,9 +85,19 @@ class Category extends Model
      * @return mixed
      */
     public function recommendProducts(){
-        return Product::where('Products_CateId',$this->Cate_Id)
+        $subs = $this->hasChild();
+        if($subs){
+            $ids = [];
+            foreach ($subs as $sub) {
+                $ids[] = $subs->CateId;
+            }
+
+            return Product::whereIn('Products_CateId',$this->$ids)
                 ->where('Products_recommend',1)
                 ->orderBy('Products_Order','Desc')->get();
+        }else{
+            return [];
+        }
     }
 
     public function downloads($limit = null){
