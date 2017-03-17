@@ -29,12 +29,14 @@ class Category extends Model
         if(is_null($checkIsMenu)){
             return self::where('Cate_ParentId',$id)
               ->where('Cate_Lang',$lang)
+              ->where('Cate_State',1)
               ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1','Cate_IsMenu')
               ->orderBy('Cate_Order','ASC')
               ->get();
         }else{
             return self::where('Cate_ParentId',$id)
               ->where('Cate_Lang',$lang)
+              ->where('Cate_State',1)
               ->where('Cate_IsMenu',$checkIsMenu)
               ->select('Cate_Id','Cate_Title','Cate_Image','Cate_Intro','Cate_ExField1','Cate_IsMenu')
               ->orderBy('Cate_Order','ASC')
