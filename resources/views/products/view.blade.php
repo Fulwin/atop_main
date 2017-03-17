@@ -57,7 +57,7 @@
                             Description
                         </p>
                         <div class="line"></div>
-                        <div class="short" itemprop="description">
+                        <div class="short" itemprop="description" style="padding-top: 15px;">
                             {!! $product->Products_Introduction !!}
                         </div>
                     </div>
