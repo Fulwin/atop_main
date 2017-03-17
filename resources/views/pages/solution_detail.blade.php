@@ -27,6 +27,7 @@
             </article>
 
             @foreach($products as $product)
+                @if(!empty($product->Products_BigImage))
                 <div class="col_one_third border-hover-red">
                     <img src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
                     <div class="border-dotted-box">
@@ -38,6 +39,7 @@
                         </a>
                     </div>
                 </div>
+                @endif
             @endforeach
         </div>
     </div>
