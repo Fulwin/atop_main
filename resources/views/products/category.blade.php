@@ -135,7 +135,7 @@
                                         @foreach($products as $product)
                                             <tr>
                                                 <td align="center">
-                                                    <a href="{{ url('/product/view/'.$product->Products_ID) }}">
+                                                    <a href="{{ url('/product/view/'.$product->getIdString()) }}">
                                                         {{ $product->Products_CodeName }}
                                                     </a>
                                                 </td>

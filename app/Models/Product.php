@@ -31,7 +31,7 @@ class Product extends Model
     }
 
     public function getIdString(){
-        return $this->id;
+        return $this->Products_ID;
     }
 
     /**
