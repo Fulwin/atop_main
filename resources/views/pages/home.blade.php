@@ -168,7 +168,11 @@
                         @else
                         <li style="line-height:26px; width:380px; font-size:14px; font-weight:bold; ">A Short Words About Us</li>
                         <li style="line-height:26px; width:380px; ">ATOP Corporation is a leading manufacturer of optical transceivers. ATOP is proficient in R&amp;D, production and sales of optical components, transceivers and sub-systems. ATOP no…</li>
-                        <li style="line-height:26px; width:380px; padding-top:50px; "><a href="{{ url('/about_us') }}"><img src="images/413_57.jpg" width="119" height="32" alt=""></a></li>
+                        <li style="line-height:26px; width:380px; padding-top:50px; ">
+                            <a href="{{ url('/about_us') }}" style="display: block;background:#f78500;width: 119px;height: 32px;line-height: 32px;text-align: center;color:#fff;">
+                                Learn More
+                            </a>
+                        </li>
                         @endif
                     </ul>
                 </li>
