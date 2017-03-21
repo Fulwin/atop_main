@@ -20,10 +20,17 @@ class Product extends Model
     }
 
     public static function GetNew($limit=null){
+        $lang = session('lang','EN');
+        $cats = Category::where('Cate_Lang',$lang)->select('Cate_Id')->get();
+        $catsArray = [];
+        foreach ($cats as $cat) {
+            $catsArray[] = $cat->Cate_Id;
+        }
+
         if($limit)
-            return self::where('Products_IsNew',1)->take($limit)->get();
+            return self::where('Products_IsNew',1)->whereIn('Products_CateID',$catsArray)->take($limit)->get();
         else
-            return self::where('Products_IsNew',1)->get();
+            return self::where('Products_IsNew',1)->whereIn('Products_CateID',$catsArray)->get();
     }
 
     public function getTitleUrl(){
