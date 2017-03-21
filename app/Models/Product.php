@@ -24,12 +24,7 @@ class Product extends Model
         $cats = Category::where('Cate_Lang',$lang)->select('Cate_Id')->get();
         $catsArray = [];
         foreach ($cats as $cat) {
-            $children = $cat->hasChild();
-            if($children){
-                foreach ($children as $child) {
-                    $catsArray[] = $child->Cate_Id;
-                }
-            }
+            $catsArray[] = $cat->Cate_Id;
         }
 
         if($limit)
