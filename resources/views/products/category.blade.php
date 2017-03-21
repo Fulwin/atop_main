@@ -66,7 +66,7 @@
                                     @foreach($products as $product)
                                     <tr>
                                         <td align="center">
-                                            <a href="{{ url('/product/view/'.$product->Products_ID) }}">
+                                            <a href="{{ url('/product/view/'.$product->Products_ID) }}" style="text-decoration: underline;color: #294162;">
                                                 {{ $product->Products_CodeName }}
                                             </a>
                                         </td>
