@@ -155,9 +155,21 @@
                 <li style=" width:385px; padding-right:22px;"><a href="{{ url('/about_us') }}"><img src="{{$upload_files_prefix}}Upload/catebannar/413_5418475490113-10495845248.jpg" width="385" height="209" alt=""></a></li>
                 <li style=" width:380px; ">
                     <ul>
+                        @if(session('lang') != 'EN')
+                            <li style="line-height:26px; width:380px; font-size:14px; font-weight:bold; ">关于我们</li>
+                            <li style="line-height:26px; width:380px; ">
+                                华拓光通信股份有限公司是光模块行业领先的制造商，拥有自上而下从研发、生产到销售的完整产业链，产品涵盖当前主流应用速率和各种封装，从155M到100G，从SFF到QSFP28。。。
+                            </li>
+                            <li style="line-height:26px; width:380px; padding-top:50px; ">
+                                <a href="{{ url('/about_us') }}" style="background:#f78500;width: 119px;height: 32px;line-height: 32px;text-align: center;color:#fff;">
+                                    了解详情
+                                </a>
+                            </li>
+                        @else
                         <li style="line-height:26px; width:380px; font-size:14px; font-weight:bold; ">A Short Words About Us</li>
                         <li style="line-height:26px; width:380px; ">ATOP Corporation is a leading manufacturer of optical transceivers. ATOP is proficient in R&amp;D, production and sales of optical components, transceivers and sub-systems. ATOP no…</li>
                         <li style="line-height:26px; width:380px; padding-top:50px; "><a href="{{ url('/about_us') }}"><img src="images/413_57.jpg" width="119" height="32" alt=""></a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>
