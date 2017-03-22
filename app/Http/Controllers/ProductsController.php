@@ -71,7 +71,8 @@ class ProductsController extends Controller
                 'description' => $category->Cate_Title,
             ];
 
-            return view('products.category', $this->dataForView);
+            $postfix = session('lang','EN') == 'EN' ? '' : 'CN';
+            return view('products.category'.$postfix, $this->dataForView);
         }
     }
 
@@ -94,7 +95,8 @@ class ProductsController extends Controller
 //            'category' => 'category' // <div class="value" itemprop="sku">SFP-1000BASE-T</div>
         ];
         $this->dataForView['Microdata'] = $Microdata;
-        return view('products.view', $this->dataForView);
+        $postfix = session('lang','EN') == 'EN' ? '' : 'CN';
+        return view('products.view'.$postfix, $this->dataForView);
     }
 
     // 产品文件下载链接
