@@ -25,16 +25,16 @@ $(document).ready(function(){
 
     modal.addFooterBtn('Submit', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
         // here goes some logic
-        let code = $("#quote-product-code").val();
-        let name = $("#quote-name").val();
-        let email = $("#quote-email").val();
-        let message = $("#quote-message").val();
+        var code = $("#quote-product-code").val();
+        var name = $("#quote-name").val();
+        var email = $("#quote-email").val();
+        var message = $("#quote-message").val();
         //
         console.log(code);
         console.log(name);
         console.log(email);
         console.log(message);
-        let data = {
+        var data = {
           code: code,
           name: name,
           email: email,
