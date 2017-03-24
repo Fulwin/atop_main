@@ -195,7 +195,13 @@
                                         <em class="bold">{{ $article->News_AddTime }}</em>
                                     </div>
                                     <div class="items_comment fr">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">Learn more</a>
+                                        <a href="{{ url('/news/'.$article->News_Id) }}">
+                                            @if(session('lang') == 'CN')
+                                                详情
+                                            @else
+                                                Learn more
+                                            @endif
+                                        </a>
                                     </div>
                                 </div>
                             </div>
