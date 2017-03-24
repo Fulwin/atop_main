@@ -30,7 +30,7 @@
                     a,img{border:0;}
                     em{font-style:normal;}
                     a{text-decoration:none;cursor:pointer;color:#666666;}
-                    a:hover{color:#FF6699;}
+                    a:hover{color:#00367c;}
                     body{background:url("{{ url('/') }}images/bodybg.jpg") repeat #fff;color:#666666;font-family:Arial;font-size:12px;}
                     .fl{float:left;}.fr{float:right;}
                     .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
