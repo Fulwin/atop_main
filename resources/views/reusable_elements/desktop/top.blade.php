@@ -54,7 +54,7 @@
                 $cateAvatarIndex = 0;
             ?>
             <li class="menu-level-first">
-                <a href="{{ url('/products') }}">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</a>
+                <a href="{{ url('/products') }}">{{ session('lang','EN')=='EN' ? 'Products' : '产品中心' }}</a>
                 <div class="sf-mega">
                     @foreach($tree as $topCategoryId=>$item)
                         <?php
@@ -100,11 +100,11 @@
                     @endforeach
                 </div>
             </li>
-            <li class="menu-level-first"><a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a></li>
-            <li class="menu-level-first"><a style=" width:150px;" href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Service & Support' : '服务与支持' }}</a> </li>
-            <li class="menu-level-first"><a href="{{ url('/news') }}">{{ session('lang')=='EN' ? 'News' : '新闻中心' }}</a> </li>
-            <li class="menu-level-first"><a href="{{ url('/about_us') }}">{{ session('lang')=='EN' ? 'About Us' : '关于我们' }}</a> </li>
-            <li class="menu-level-first"><a href="{{ url('/contact_us') }}">{{ session('lang')=='EN' ? 'Contact Us' : '联系我们' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/solutions') }}">{{ session('lang','EN')=='EN' ? 'Solution' : '解决方案' }}</a></li>
+            <li class="menu-level-first"><a style=" width:150px;" href="{{ url('/services') }}">{{ session('lang','EN')=='EN' ? 'Service & Support' : '服务与支持' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/news') }}">{{ session('lang','EN')=='EN' ? 'News' : '新闻中心' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/about_us') }}">{{ session('lang','EN')=='EN' ? 'About Us' : '关于我们' }}</a> </li>
+            <li class="menu-level-first"><a href="{{ url('/contact_us') }}">{{ session('lang','EN')=='EN' ? 'Contact Us' : '联系我们' }}</a> </li>
         </ul>
         <script>
 
