@@ -33,6 +33,24 @@ class Product extends Model
             return self::where('Products_IsNew',1)->whereIn('Products_CateID',$catsArray)->get();
     }
 
+    public static function Search($keyword, $limit=10){
+        $lang = session('lang','EN');
+        $cats = Category::where('Cate_Lang',$lang)->select('Cate_Id')->get();
+        $catsArray = [];
+        foreach ($cats as $cat) {
+            $catsArray[] = $cat->Cate_Id;
+        }
+
+        if($keyword)
+            return self::where('Products_Title','like','%'.$keyword.'%')
+                            ->where('Products_State',1)
+                            ->whereIn('Products_CateID',$catsArray)
+                            ->take($limit)
+                            ->get();
+        else
+            return [];
+    }
+
     public function getTitleUrl(){
         return str_replace(' ','__', $this->Products_Title);
     }

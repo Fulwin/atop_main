@@ -10,7 +10,7 @@ class AjaxController extends Controller
     //
     public function search_ajax(Request $request){
         $keyword = $request->get('term');
-        $products = Product::where('Products_Title','like','%'.$keyword.'%')->where('Products_State',1)->take(10)->get();
+        $products = Product::Search($keyword);
         $result = [];
         if($products){
             foreach ($products as $product) {
