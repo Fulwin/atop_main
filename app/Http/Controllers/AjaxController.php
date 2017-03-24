@@ -15,7 +15,7 @@ class AjaxController extends Controller
         if($products){
             foreach ($products as $product) {
                 $result[] = [
-                    'id' => $product->Products_ID,
+                    'id' => $product->getIdString(),
                     'label' => $product->Products_Title,
                     'value' => $product->Products_Title
                 ];
