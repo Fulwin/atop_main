@@ -82,7 +82,7 @@
                                                             <div class="MT_details">
                                                                 <h6>{{ $member->BaseInfo_Title }}</h6>
                                                                 <span></span>
-
+                                                                {!! $member->BaseInfo_Content !!}
                                                             </div>
                                                         </div>
                                                 </div>
