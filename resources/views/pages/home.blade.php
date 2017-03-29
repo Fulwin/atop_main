@@ -94,8 +94,9 @@
                             'Transmission',
                             'Data Center',
                             'CPRI',
-                            '传输',
-                            '数据中心'
+                            '传输领域',
+                            '数据中心',
+                            '无线应用'
                         ];
                     ?>
 
@@ -128,7 +129,7 @@
                 <ul>
                     <li style="padding-top:10px; padding-bottom:20px;">
                         <a href="{{ url('/solutions') }}">
-                            <img src="{{ asset('/Upload/Honor/Solution-10245893871.jpg') }}" width="385" height="165" alt="">
+                            <img src="{{ asset('/Upload/Honor/Solution-Home.jpg') }}" width="385" height="165" alt="">
                         </a>
                     </li>
                     @foreach($downloads as $key=>$download)
