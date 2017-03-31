@@ -82,6 +82,8 @@ class ProductsController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function view($productId=null){
+        $temp = explode('__',$productId);
+        $productId = isset($temp[1]) ? $temp[1] : $productId;
         $product = Product::Fetch($productId);
         $this->dataForView['product'] = $product;
         $this->dataForView['category'] = $product->category();
