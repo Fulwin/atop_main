@@ -8,7 +8,7 @@
                 <ul class="about_tabul" style="width:590px;">
                     @foreach($tree as $item)
                         <li class="no2" style="padding: 0 10px;">
-                            <a href="{{ url('/products/'.$item['data']->Cate_Id) }}">
+                            <a href="{{ url('/products/'.$item['data']->getIdString()) }}">
                                 {{ $item['data']->Cate_Title }}
                             </a>
                         </li>
