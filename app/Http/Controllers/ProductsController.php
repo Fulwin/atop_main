@@ -37,6 +37,12 @@ class ProductsController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function load_category($categoryId=null){
+        $temp = explode('__',$categoryId);
+        $categoryId = isset($temp[1]) ? $temp[1] : $categoryId;
+        if($categoryId == 98){
+            $categoryId = null;
+        }
+
         if(is_null($categoryId) || $categoryId == 89 || $categoryId == 157){
             // 加载产品的根目录的请求
             $category = Category::Fetch($this->getRootCategoryId());

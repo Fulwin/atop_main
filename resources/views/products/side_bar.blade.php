@@ -105,7 +105,7 @@
                         // 只适用两种颜色
                     ?>
                     <a style="background: url('{{ asset('cate/65_11'.($theIndex%2).'.jpg') }}') left no-repeat #294162;"
-                       href="{{ url('/products/'.$category->Cate_Id) }}" title="{{ $category->Cate_Title }}" id="aa90" class="fly">
+                       href="{{ url('/products/'.$category->getIdString()) }}" title="{{ $category->Cate_Title }}" id="aa90" class="fly">
                         {{ $category->Cate_Title }}
                     </a>
                     <ul style="" id="uu{{ $category->Cate_Id }}" abid="{{ $category->Cate_Id }}" class="yb">
@@ -114,7 +114,7 @@
                         ?>
                         @foreach($subs as $categoryId=>$subItem)
                             <li>
-                                <a href="{{ url('/products/'.$categoryId) }}"
+                                <a href="{{ url('/products/'.$subItem['data']->getIdString()) }}"
                                    title="{{ $subItem['data']->Cate_Title }}" id="bb{{$categoryId  }}" class="xiala">
                                     {{ $subItem['data']->Cate_Title }}
                                 </a>

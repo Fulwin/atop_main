@@ -67,20 +67,20 @@
                           @endif
                           <div class="sf-mega-section">
                               <h2 class="cate-title">
-                                  <a href="{{ url('/products/'.$topCategoryId) }}">
+                                  <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
                                       {{ $topCategory->Cate_Title }}
                                   </a>
                               </h2>
                               <ul class="sub-cate-wrap">
                                   @if( isset($cateAvatars[$cateAvatarIndex]) )
                                       <li class="cate-avatar">
-                                          <a href="{{ url('/products/'.$topCategoryId) }}">
+                                          <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
                                               <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
                                           </a>
                                       </li>
                                   @elseif( !empty($topCategory->Cate_Image) )
                                       <li class="cate-avatar">
-                                          <a href="{{ url('/products/'.$topCategoryId) }}">
+                                          <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
                                               <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
                                           </a>
                                       </li>
@@ -88,7 +88,7 @@
 
                                   @foreach($topSubs as $subId=>$subCategory)
                                       <li class="sub-cate">
-                                          <a class="sub-cate-item" href="{{ url('/products/'.$subId) }}">
+                                          <a class="sub-cate-item" href="{{ url('/products/'.$subCategory['data']->getIdString()) }}">
                                               {{ $subCategory['data']->Cate_Title }}
                                           </a>
                                       </li>

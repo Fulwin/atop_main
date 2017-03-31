@@ -11,7 +11,7 @@
                         {{ $category->Cate_Title }}
                     </li>
                     <li class="cateposition">您正在浏览：<a href="{{ url('/') }}">首页</a> >
-                        <a href="{{ url('/products/'.$parent->Cate_Id) }}">{{ $parent->Cate_Title }}</a>&nbsp; >&nbsp;
+                        <a href="{{ url('/products/'.$parent->getIdString()) }}">{{ $parent->Cate_Title }}</a>&nbsp; >&nbsp;
                         <a href="#">{{ $category->Cate_Title }}</a>&nbsp; >&nbsp;
                     </li>
                 </ul>

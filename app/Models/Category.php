@@ -114,4 +114,14 @@ class Category extends Model
     public function solutions(){
         return $this->baseInfos();
     }
+
+    /**
+     * Generate Category uri
+     * 产生
+     * @return string
+     */
+    public function getIdString(){
+        $uri = str_replace(' ','-',$this->Cate_Title).'__'.$this->Cate_Id;
+        return $uri;
+    }
 }
