@@ -5,9 +5,9 @@
             <li class="language" >
                 <ul>
                     @if($_SERVER['SERVER_NAME'] == 'www.atoptechnology.com')
-                        <li class="langhome"><a href="www.atoptechnology.com.cn" >简体中文</a></li>
+                        <li class="langhome"><a href="http://www.atoptechnology.com.cn" >简体中文</a></li>
                     @else
-                        <li class="langhomecc"><a href="www.atoptechnology.com" >English</a></li>
+                        <li class="langhomecc"><a href="http://www.atoptechnology.com" >English</a></li>
                     @endif
                     <li class="socil">
                         <a href="https://twitter.com/ATOPCorporation" target="_blank">
