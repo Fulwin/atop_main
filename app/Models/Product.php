@@ -57,6 +57,7 @@ class Product extends Model
 
     public function getIdString(){
         $uri = str_replace(' ','-',$this->Products_Title).'__'.$this->Products_ID;
+        $uri = str_replace('/','--',$uri);
         return $uri;
     }
 
