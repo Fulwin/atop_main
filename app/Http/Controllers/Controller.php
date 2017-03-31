@@ -23,6 +23,7 @@ class Controller extends BaseController
     public $productsRootCategoryId = 89;
 
     public function __construct(){
+        session(['lang'=>'EN']);
         $this->currentLanguage = session('lang') ? session('lang','EN') : 'EN';
         $this->dataForView['currentLanguage'] = $this->currentLanguage;
 

@@ -4,10 +4,10 @@
             <li style="float:left; "><a href="{{ url('/') }}"><img src="{{ url('images/logo.jpg') }}" width="385" height="108" alt=""></a></li>
             <li class="language" >
                 <ul>
-                    @if(session('lang') == 'EN')
-                        <li class="langhome"><a href="{{ url('/switch_language/CN') }}" >简体中文</a></li>
+                    @if($_SERVER['SERVER_NAME'] == 'www.atoptechnology.com')
+                        <li class="langhome"><a href="www.atoptechnology.com.cn" >简体中文</a></li>
                     @else
-                        <li class="langhomecc"><a href="{{ url('/switch_language/EN') }}" >English</a></li>
+                        <li class="langhomecc"><a href="www.atoptechnology.com" >English</a></li>
                     @endif
                     <li class="socil">
                         <a href="https://twitter.com/ATOPCorporation" target="_blank">
