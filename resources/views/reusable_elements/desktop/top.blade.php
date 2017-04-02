@@ -52,6 +52,7 @@
                     '/Upload/catebannar/4-11420223281.jpg'
                 ];
                 $cateAvatarIndex = 0;
+                // <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
             ?>
             <li class="menu-level-first">
                 <a href="{{ url('/products') }}">{{ session('lang','EN')=='EN' ? 'Products' : '产品中心' }}</a>
@@ -72,19 +73,14 @@
                                   </a>
                               </h2>
                               <ul class="sub-cate-wrap">
-                                  @if( isset($cateAvatars[$cateAvatarIndex]) )
+                                  @if( !empty($topCategory->Cate_ExField1) )
                                       <li class="cate-avatar">
                                           <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
-                                              <img src="{{ $cateAvatars[$cateAvatarIndex] }}" width="182" height="130" />
-                                          </a>
-                                      </li>
-                                  @elseif( !empty($topCategory->Cate_Image) )
-                                      <li class="cate-avatar">
-                                          <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
-                                              <img src="{{ $topCategory->Cate_Image }}" width="182" height="130" />
+                                              <img src="{{ asset($topCategory->Cate_ExField1) }}" width="182" height="130" />
                                           </a>
                                       </li>
                                   @endif
+
 
                                   @foreach($topSubs as $subId=>$subCategory)
                                       <li class="sub-cate">

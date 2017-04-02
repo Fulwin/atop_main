@@ -14,7 +14,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public $dataForView = [
-        'upload_files_prefix' => 'http://atop_admin.webmelbourne.com/',
+        'upload_files_prefix' => 'http://www.atoptechnology.com/',
         'currentLanguage'=>null,
         'isHome' => false
     ];
