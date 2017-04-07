@@ -23,7 +23,13 @@ class Controller extends BaseController
     public $productsRootCategoryId = 89;
 
     public function __construct(){
-        session(['lang'=>'EN']);
+        if($_SERVER['SERVER_NAME']=='www.atoptechnology.com.cn'){
+            session(['lang'=>'CN']);
+        }else{
+            session(['lang'=>'EN']);
+        }
+
+
         $this->currentLanguage = session('lang') ? session('lang','EN') : 'EN';
         $this->dataForView['currentLanguage'] = $this->currentLanguage;
 
