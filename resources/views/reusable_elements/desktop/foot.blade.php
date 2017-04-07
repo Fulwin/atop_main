@@ -82,7 +82,7 @@
             <a href="{{ url('/solutions') }}">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a> |
             <a href="{{ url('/services') }}">{{ session('lang')=='EN' ? 'Services & Support' : '服务与支持' }}</a> |
             {{ session('lang')=='EN' ? 'Copyright © ATOP Corporation' : 'Copyright © 四川华拓光通信股份有限公司深圳分公司' }}
-            {{ session('lang')=='CN' ? '<a target="_blank" href="http://www.miibeian.gov.cn">粤ICP备13084473号</a>' : null }}
+            {!! session('lang')=='CN' ? '<a target="_blank" href="http://www.miibeian.gov.cn">粤ICP备13084473号</a>' : null !!}
         </li>
     </ul>
 </div>
