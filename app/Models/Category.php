@@ -122,6 +122,7 @@ class Category extends Model
      */
     public function getIdString(){
         $uri = str_replace(' ','-',$this->Cate_Title).'__'.$this->Cate_Id;
+        $uri = str_replace('/','-',$uri);
         return $uri;
     }
 }
