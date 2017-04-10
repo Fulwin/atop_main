@@ -1,6 +1,12 @@
-<div class="bannarspicculture"
-     style="background:url('{{ $upload_files_prefix }}Upload/catebannar/productbanner-18352997197.jpg') center top no-repeat;">
-</div>
+@if(session('lang')=='EN')
+    <div class="bannarspicculture"
+         style="background:url('{{ asset('/page_banner/products-1680.jpg') }}') center top no-repeat;height: 389px;">
+    </div>
+@else
+    <div class="bannarspicculture"
+         style="background:url('{{ $upload_files_prefix }}Upload/catebannar/productbanner-18352997197.jpg') center top no-repeat;">
+    </div>
+@endif
 <div class="middle">
     <section class="tab">
         <div class="tab_nav">
