@@ -4,7 +4,15 @@
     <?php
         // dd($aboutCategories->toArray());
     ?>
-    <div class="bannarspicculture" style="background:url('{{ $upload_files_prefix }}Upload/catebannar/aboutus_banner-18421822329.jpg') center top no-repeat;"></div>
+    @if(session('lang')=='EN')
+        <div class="bannarspicculture"
+             style="background:url('{{ asset('/page_banner/aboutus-1680.jpg') }}') center top no-repeat;height: 389px;">
+        </div>
+    @else
+        <div class="bannarspicculture"
+             style="background:url('{{ $upload_files_prefix }}Upload/catebannar/aboutus_banner-18421822329.jpg') center top no-repeat;">
+        </div>
+    @endif
     <div class="maincontent">
         <div class="middle">
             <article class="wrap">
