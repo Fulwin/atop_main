@@ -77,7 +77,8 @@ class ProductsController extends Controller
                 'description' => $category->Cate_Title,
             ];
 
-            $postfix = session('lang','EN') == 'EN' ? '' : 'CN';
+            // 检查当前应该使用的语言并添加后缀
+            $postfix = $this->_Get_Language()=='CN' ? 'CN':null;
             return view('products.category'.$postfix, $this->dataForView);
         }
     }

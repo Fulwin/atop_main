@@ -136,4 +136,11 @@ class Controller extends BaseController
         ];
         return $data[$titleInEn];
     }
+
+    /**
+     * 检查当前应该使用的语言
+     */
+    public function _Get_Language(){
+        return $_SERVER['SERVER_NAME']=='www.atoptechnology.com.cn' ? 'CN' : 'EN';
+    }
 }
