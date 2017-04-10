@@ -3,7 +3,11 @@
 @section('content')
     <div class="solution-banner">
       <p>
-        <img src="{{ asset('/solutions_image/solution_banner.jpg')}}" alt="">
+          @if(session('lang')=='EN')
+              <img src="{{ asset('/page_banner/solution-1280.jpg')}}" alt="Solutions">
+          @else
+            <img src="{{ asset('/solutions_image/solution_banner.jpg')}}" alt="解决方案">
+          @endif
       </p>
     </div>
     <div class="middle solutions-content">
