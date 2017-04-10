@@ -18,7 +18,7 @@
                     <a href="#">{{ $parent ? $parent->Cate_Title :null }}</a>&nbsp; >&nbsp;
                     <a href="{{ url('/news/'.$category->getTitleUrl()) }}">
                         {{ $category->Cate_Title }}
-                    </a>&nbsp; >&nbsp;
+                    </a>
                 </li>
             </ul>
         </div>
