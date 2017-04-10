@@ -1,6 +1,13 @@
 @extends('layout_desktop')
 
 @section('content')
+    @if(session('lang')=='EN')
+        <div class="bannarspicculture"
+             style="background:url('{{ asset('/page_banner/contact-1680.jpg') }}') center top no-repeat;height: 389px;">
+        </div>
+    @else
+
+    @endif
     <div class="middle">
     <article class="wrap contact-page-wrap">
         <section class="tab">
