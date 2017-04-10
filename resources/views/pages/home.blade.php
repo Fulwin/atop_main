@@ -3,7 +3,14 @@
 @section('content')
     <div class="maincontent">
         <div class="hovv">
-            <li class="ccvv">News<span><a href="{{ url('/news/company') }}">Learn More</a></span></li>
+            <li class="ccvv">
+                {{ session('lang')=='EN'? 'News' : '公司新闻' }}
+                <span>
+                    <a href="{{ url('/news/company') }}">
+                        {{ session('lang')=='EN'? 'Learn More' : '查看更多' }}
+                    </a>
+                </span>
+            </li>
             <li style="margin:0 auto; width:385px; float:none; ">
                 <ul>
                     <?php
@@ -42,7 +49,12 @@
             </li>
         </div>
         <div class="hovv">
-            <li class="ccvv2">Products <span><a href="{{ url('/products') }}">Learn More</a></span></li>
+            <li class="ccvv2">
+                {{ session('lang')=='EN'? 'Products' : '产品中心' }}
+                <span>
+                    <a href="{{ url('/products') }}">{{ session('lang')=='EN'? 'Learn More' : '查看更多' }}</a>
+                </span>
+            </li>
             <li style="margin:0 auto; width:385px; float:none;">
                 <ul>
                     <li style=" padding-bottom:20px;">
@@ -124,7 +136,7 @@
             </li>
         </div>
         <div class="hovv2">
-            <li class="ccvv2">Solution  <span><a href="{{ url('/solutions') }}">Learn More</a></span></li>
+            <li class="ccvv2">{{ session('lang')=='EN'? 'Solution' : '解决方案' }}  <span><a href="{{ url('/solutions') }}">{{ session('lang')=='EN'? 'Learn More' : '查看更多' }}</a></span></li>
             <li style="margin:0 auto; width:385px; float:none;">
                 <ul>
                     <li style="padding-top:10px; padding-bottom:20px;">
