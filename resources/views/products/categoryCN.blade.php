@@ -115,18 +115,18 @@
                             <div style="float:left; width:100%; " class="table-c">
                                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                     <tr class="mm">
-                                        <td width="110" align="center">Part No.</td>
-                                        <td width="56" align="center" class="mm">Package</td>
-                                        <td width="74" align="center" class="mm">Data Rate</td>
-                                        <td width="60" align="center" class="mm">Wavelength</td>
-                                        <td width="60" align="center" class="mm">Component</td>
-                                        <td width="30" align="center" class="mm">Output Power</td>
-                                        <td width="50" align="center" class="mm">Rec. Sens</td>
-                                        <td width="50" align="center" class="mm">Connector</td>
-                                        <td width="40" align="center" class="mm">Case Temp.</td>
-                                        <td width="70" align="center" class="mm">Reach</td>
-                                        <td width="70" align="center" class="mm">Multi-rate</td>
-                                        <td width="70" align="center" class="mm">Download</td>
+                                        <td width="110" align="center">产品编码</td>
+                                        <td width="56" align="center" class="mm">封装</td>
+                                        <td width="74" align="center" class="mm">传输速率</td>
+                                        <td width="60" align="center" class="mm">波长</td>
+                                        <td width="60" align="center" class="mm">光器件</td>
+                                        <td width="50" align="center" class="mm">发光范围</td>
+                                        <td width="50" align="center" class="mm">收端灵敏度</td>
+                                        <td width="50" align="center" class="mm">接口</td>
+                                        <td width="40" align="center" class="mm">工作温度范围</td>
+                                        <td width="70" align="center" class="mm">传输距离</td>
+                                        <td width="70" align="center" class="mm">多速率兼容</td>
+                                        <td width="70" align="center" class="mm">下载</td>
                                     </tr>
 
                                     @if(count($products)==0)
