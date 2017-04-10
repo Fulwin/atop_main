@@ -1,9 +1,15 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="bannarspicculture"
-         style="background:url('{{ asset('/Upload/catebannar/solutionsbanner-17475279305.jpg') }}') center top no-repeat;">
-    </div>
+    @if(session('lang')=='EN')
+        <div class="bannarspicculture"
+             style="background:url('{{ asset('/page_banner/services-1680.jpg') }}') center top no-repeat;height: 389px;">
+        </div>
+    @else
+        <div class="bannarspicculture"
+             style="background:url('{{ asset('/Upload/catebannar/solutionsbanner-17475279305.jpg') }}') center top no-repeat;">
+        </div>
+    @endif
 
     <div class="middle">
         <article class="wrap">
