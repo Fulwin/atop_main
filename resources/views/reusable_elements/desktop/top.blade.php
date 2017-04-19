@@ -29,11 +29,13 @@
                             <img src="{{ asset('images/wechat.jpg') }}" width="25" height="25" alt="">
                         </a>
                     </li>
+                    @if($_SERVER['SERVER_NAME'] !== 'www.atoptechnology.com')
                     <li class="socil">
                         <a href="http://weibo.com/u/2650817513" target="_blank">
                             <img src="{{ asset('images/weibo.jpg') }}" width="25" height="25" alt="">
                         </a>
                     </li>
+                    @endif
                 </ul>
 
             </li>
