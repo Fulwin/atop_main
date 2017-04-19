@@ -21,7 +21,7 @@
                             @if($key===0)
                                 <li style="padding-top:10px; padding-bottom:20px;">
                                     <a href="{{ url('news/'.$article->News_Id) }}">
-                                        <img src="{{ $upload_files_prefix.$article->News_Image }}" width="385" height="165" alt="">
+                                        <img src="{{ $article->News_Image }}" width="385" height="165" alt="">
                                     </a>
                                 </li>
                                 <li style="width: 385px;">
@@ -88,7 +88,7 @@
                                 <ul class="focus-bar">
                                     @foreach($products as $p)
                                         <li><a href="{{ url('/product/'.$p->getTitleUrl()) }}">
-                                                <img src="{{ $upload_files_prefix.$p->Products_MinImage }}"></a>
+                                                <img src="{{ $p->Products_MinImage }}"></a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -165,7 +165,7 @@
     <div class="maincontent" >
         <div style=" width:814px; float:left;">
             <ul>
-                <li style=" width:385px; padding-right:22px;"><a href="{{ url('/about_us') }}"><img src="{{$upload_files_prefix}}Upload/catebannar/413_5418475490113-10495845248.jpg" width="385" height="209" alt=""></a></li>
+                <li style=" width:385px; padding-right:22px;"><a href="{{ url('/about_us') }}"><img src="/Upload/catebannar/413_5418475490113-10495845248.jpg" width="385" height="209" alt=""></a></li>
                 <li style=" width:380px; ">
                     <ul>
                         @if(session('lang') != 'EN')
@@ -199,7 +199,7 @@
                     so.addParam("wmode","opaque");
                     so.addParam("quality","high");
                     so.addParam("salign","lt");
-                    so.addVariable("CuPlayerFile","{{ $upload_files_prefix }}Upload/Honor/jieshao.flv");
+                    so.addVariable("CuPlayerFile","/Upload/Honor/jieshao.flv");
                     so.addVariable("CuPlayerImage","Images/413_56.jpg");
                     so.addVariable("CuPlayerShowImage","true");
                     so.addVariable("CuPlayerWidth","385");
@@ -208,7 +208,7 @@
                     so.addVariable("CuPlayerAutoRepeat","true");
                     so.addVariable("CuPlayerShowControl","true");
                     so.addVariable("CuPlayerAutoHideControl","false");
-                    if("{{ $upload_files_prefix }}Upload/Honor/jieshao.flv"!=""&&"{{ $upload_files_prefix }}Upload/Honor/jieshao.flv"!=" ")
+                    if("/Upload/Honor/jieshao.flv"!=""&&"/Upload/Honor/jieshao.flv"!=" ")
                     {
                         so.write("CuPlayer");
                     }

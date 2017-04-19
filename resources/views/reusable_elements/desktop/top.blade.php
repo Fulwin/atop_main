@@ -5,9 +5,9 @@
             <li class="language" >
                 <ul>
                     @if($_SERVER['SERVER_NAME'] == 'www.atoptechnology.com')
-                        <li class="langhome"><a href="http://www.atoptechnology.com.cn" >简体中文</a></li>
+                        <li class="langhome"><a href="www.atoptechnology.com.cn" >简体中文</a></li>
                     @else
-                        <li class="langhomecc"><a href="http://www.atoptechnology.com" >English</a></li>
+                        <li class="langhomecc"><a href="https://www.atoptechnology.com" >English</a></li>
                     @endif
                     <li class="socil">
                         <a href="https://twitter.com/ATOPCorporation" target="_blank">
@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li class="socil">
-                        <a href="http://www.linkedin.com/company/atop-technology-co.-ltd?trk=top_nav_home" target="_blank">
+                        <a href="https://www.linkedin.com/company/atop-technology-co.-ltd?trk=top_nav_home" target="_blank">
                             <img src="{{ asset('images/linkedin.jpg') }}" width="24" height="25" alt="">
                         </a>
                     </li>
