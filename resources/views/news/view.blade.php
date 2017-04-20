@@ -14,7 +14,7 @@
                     </li>
                     <li class="cateposition">Your current location is：<a href="{{ url('/') }}">Home</a> >
                         <a href="#">{{ $parent ? $parent->Cate_Title :null }}</a>&nbsp; >&nbsp;
-                        <a href="{{ url('/news/'.$category->getTitleUrl()) }}">
+                        <a href="{{ url('/news') }}">
                             {{ $category->Cate_Title }}
                         </a>&nbsp; >&nbsp;
                     </li>
