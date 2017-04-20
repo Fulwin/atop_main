@@ -5,12 +5,7 @@
             <li class="language" >
                 <ul>
                     @if($_SERVER['SERVER_NAME'] == 'www.atoptechnology.com')
-                        <script>
-                            function go_to_cn(){
-                                window.href.location = 'http://www.atoptechnology.com.cn';
-                            }
-                        </script>
-                        <li class="langhome"><a onclick="go_to_cn();" >简体中文</a></li>
+                        <li class="langhome"><a href="http://www.atoptechnology.com.cn" >简体中文</a></li>
                     @else
                         <li class="langhomecc"><a href="https://www.atoptechnology.com" >English</a></li>
                     @endif
