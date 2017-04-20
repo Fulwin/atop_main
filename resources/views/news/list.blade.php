@@ -181,7 +181,7 @@
                                 <div class="item_t">
                                     <div class="img">
                                         <a href="{{ url('/news/'.$article->News_Id) }}">
-                                            <img width="250" src="{{ $upload_files_prefix.$article->News_Image }}" />
+                                            <img width="250" src="{{ $article->News_Image }}" />
                                         </a>
                                     </div>
                                     <div class="title">
