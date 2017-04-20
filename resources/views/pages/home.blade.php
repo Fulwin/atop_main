@@ -199,7 +199,7 @@
                     so.addParam("wmode","opaque");
                     so.addParam("quality","high");
                     so.addParam("salign","lt");
-                    so.addVariable("CuPlayerFile","/Upload/Honor/jieshao.flv");
+                    so.addVariable("CuPlayerFile","{{ $videoFile }}");
                     so.addVariable("CuPlayerImage","Images/413_56.jpg");
                     so.addVariable("CuPlayerShowImage","true");
                     so.addVariable("CuPlayerWidth","385");
@@ -208,7 +208,7 @@
                     so.addVariable("CuPlayerAutoRepeat","true");
                     so.addVariable("CuPlayerShowControl","true");
                     so.addVariable("CuPlayerAutoHideControl","false");
-                    if("/Upload/Honor/jieshao.flv"!=""&&"/Upload/Honor/jieshao.flv"!=" ")
+                    if(true)
                     {
                         so.write("CuPlayer");
                     }

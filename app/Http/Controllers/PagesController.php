@@ -263,6 +263,17 @@ class PagesController extends Controller
         $tree = $this->_getCategoriesTree($this->getRootCategoryId(), session('lang', 'EN'));
         $this->dataForView['tree'] = $tree;
 
+        /**
+         * 视频文件
+         */
+
+        if($this->_Get_Language()=='EN'){
+            $videoFile = '/Upload/Honor/jieshao.flv';
+        }else{
+            $videoFile = '/Upload/Honor/atop_cn_intro.flv';
+        }
+        $this->dataForView['videoFile'] = $videoFile;
+
         /*
          *  Solutions 部分
          */
