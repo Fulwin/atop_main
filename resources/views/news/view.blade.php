@@ -22,7 +22,7 @@
             </div>
             <div class="textcontentt2"></div>
             <div class="contenttext2">
-                <h1 style="float: left; width: 100%; text-align: center">
+                <h1 style="float: left; width: 100%; text-align: center;font-size: 25px;">
                     {{ $news->News_Title }}
                 </h1>
 
