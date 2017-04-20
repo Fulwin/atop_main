@@ -10,7 +10,7 @@
         </div>
     @else
         <div class="bannarspicculture"
-             style="background:url('{{ $upload_files_prefix }}Upload/catebannar/aboutus_banner-18421822329.jpg') center top no-repeat;">
+             style="background:url('/Upload/ATOPTechnology/about_us/about_us.jpg') center top no-repeat;">
         </div>
     @endif
     <div class="maincontent">
