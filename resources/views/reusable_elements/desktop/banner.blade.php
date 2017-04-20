@@ -11,7 +11,7 @@
           $banner = '/Upload/ATOPTechnology/news/news.jpg';
      }
      ?>
-     <div class="bannarspicculture"
-          style="background:url('{{ $banner }}') center top no-repeat;">
+     <div>
+          <img src="{{ asset($banner) }}" alt="新闻图片" style="width: 100%;">
      </div>
 @endif
