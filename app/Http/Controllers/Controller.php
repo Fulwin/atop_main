@@ -16,7 +16,8 @@ class Controller extends BaseController
     public $dataForView = [
         'upload_files_prefix' => 'https://www.atoptechnology.com/',
         'currentLanguage'=>null,
-        'isHome' => false
+        'isHome' => false,
+        'special_banner_image' => false  // 用来显示特殊的 banner
     ];
     public $sessionData = null;
     public $currentLanguage = 'EN';
@@ -142,5 +143,20 @@ class Controller extends BaseController
      */
     public function _Get_Language(){
         return $_SERVER['SERVER_NAME']=='www.atoptechnology.com.cn' ? 'CN' : 'EN';
+    }
+
+    /**
+     * 设置特殊 banner 图片的方法
+     * @param $title
+     */
+    public function _Set_Special_Banner($title){
+        if($this->_Get_Language()=='EN'){
+            $locationBase = '/var/www/html/atop/Upload/ATOPTechnology/news/';
+        }else{
+            $locationBase = '/var/www/html/atop_main/Upload/ATOPTechnology/news/';
+        }
+        if(file_exists($locationBase.'news'.$title.'.jpg')){
+            $this->dataForView['special_banner_image'] = '/Upload/ATOPTechnology/news/news'.$title.'.jpg';
+        }
     }
 }

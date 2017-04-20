@@ -311,6 +311,10 @@ class PagesController extends Controller
         } else {
             // 新闻的细节页面, ID
             $newsArticle = News::Fetch($titleUrl);
+
+            // 新闻单页可能有特殊的 banner
+            $this->_Set_Special_Banner($titleUrl);
+
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
             $this->dataForView['news'] = $newsArticle;
