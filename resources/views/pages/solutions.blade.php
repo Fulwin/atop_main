@@ -1,7 +1,7 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="solution-banner" style="height: 389px;">
+    <div class="solution-banner" style="height:{{ session('lang')=='EN'? 389 : 166 }}px;">
       <p>
           @if(session('lang')=='EN')
               <img src="{{ asset('/page_banner/solution-1280.jpg')}}" alt="Solutions">
