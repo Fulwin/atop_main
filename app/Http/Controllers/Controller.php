@@ -151,9 +151,9 @@ class Controller extends BaseController
      */
     public function _Set_Special_Banner($title){
         if($this->_Get_Language()=='EN'){
-            $locationBase = '/var/www/html/atop/Upload/ATOPTechnology/news/';
+            $locationBase = '/var/www/html/atop/public/Upload/ATOPTechnology/news/';
         }else{
-            $locationBase = '/var/www/html/atop_main/Upload/ATOPTechnology/news/';
+            $locationBase = '/var/www/html/atop_main/public/Upload/ATOPTechnology/news/';
         }
         if(file_exists($locationBase.'news'.$title.'.jpg')){
             $this->dataForView['special_banner_image'] = '/Upload/ATOPTechnology/news/news'.$title.'.jpg';
