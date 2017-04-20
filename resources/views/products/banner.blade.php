@@ -4,7 +4,7 @@
     </div>
 @else
     <div class="bannarspicculture"
-         style="background:url('{{ $upload_files_prefix }}Upload/catebannar/productbanner-18352997197.jpg') center top no-repeat;">
+         style="background:url('/Upload/ATOPTechnology/products/products.jpg') center top no-repeat;">
     </div>
 @endif
 <div class="middle">
