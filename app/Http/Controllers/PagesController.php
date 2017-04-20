@@ -313,7 +313,7 @@ class PagesController extends Controller
             $newsArticle = News::Fetch($titleUrl);
 
             // 新闻单页可能有特殊的 banner
-            $this->_Set_Special_Banner($titleUrl);
+//            $this->_Set_Special_Banner($titleUrl);
 
             $this->dataForView['category'] = $newsArticle->category();
             $this->dataForView['isNews'] = true;
