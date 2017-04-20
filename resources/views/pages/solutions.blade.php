@@ -6,19 +6,20 @@
           @if(session('lang')=='EN')
               <img src="{{ asset('/page_banner/solution-1280.jpg')}}" alt="Solutions">
           @else
-            <img src="{{ asset('/solutions_image/solution_banner.jpg')}}" alt="解决方案">
+            <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案">
           @endif
       </p>
     </div>
     <div class="middle solutions-content">
         <h2>
-          SOLUTIONS
+          {{ session('lang')=='EN' ? 'SOLUTIONS': '解决方案中心' }}
         </h2>
         <p class="divider-wrap">
           <span class="divider"></span>
         </p>
         <p class="subtitle">
-          Enjoy reliable full series smart optical fiber solutions
+
+            {{ session('lang')=='EN' ? 'Enjoy reliable full series smart optical fiber solutions': '请感受我们高可靠性的全系列智能光纤解决方案' }}
         </p>
         <div class="solutions-row">
           @foreach($downloads as $download)
@@ -38,7 +39,7 @@
                 </div>
                 <div class="card-btn">
                   <a href="{{ url('/solutions/'.$download->Down_ID) }}">
-                    READ MORE
+                      {{ session('lang')=='EN' ? 'READ MORE': '了解详情' }}
                   </a>
                 </div>
               </div>
