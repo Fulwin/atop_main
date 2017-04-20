@@ -6,8 +6,11 @@
              style="background:url('{{ asset('/page_banner/contact-1680.jpg') }}') center top no-repeat;height: 389px;">
         </div>
     @else
-
+        <div class="bannarspicculture"
+             style="background:url('/Upload/ATOPTechnology/contact_us/contact_us.jpg') center top no-repeat;">
+        </div>
     @endif
+
     <div class="middle">
     <article class="wrap contact-page-wrap">
         <section class="tab">
