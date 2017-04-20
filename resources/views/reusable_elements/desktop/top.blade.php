@@ -10,7 +10,7 @@
                                 window.href.location = 'http://www.atoptechnology.com.cn';
                             }
                         </script>
-                        <li class="langhome"><a href="#" onclick="go_to_cn();" >简体中文</a></li>
+                        <li class="langhome"><a onclick="go_to_cn();" >简体中文</a></li>
                     @else
                         <li class="langhomecc"><a href="https://www.atoptechnology.com" >English</a></li>
                     @endif
