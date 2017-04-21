@@ -1,3 +1,3 @@
 <div>
-     <img src="{{ asset($banner) }}" alt="新闻图片" style="width: 100%;">
+     <img src="{{ asset('/Upload/ATOPTechnology/news/news.jpg') }}" alt="新闻图片" style="width: 100%;">
 </div>
