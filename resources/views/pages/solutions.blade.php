@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案">
+        <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案" style="width: 100%;">
     </div>
     <div class="middle solutions-content">
         <h2>
