@@ -1,9 +1,6 @@
 @extends('layout_desktop')
 
 @section('content')
-    <?php
-        // dd($aboutCategories->toArray());
-    ?>
     @if(session('lang')=='EN')
         <div class="bannarspicculture"
              style="background:url('{{ asset('/page_banner/aboutus-1680.jpg') }}') center top no-repeat;height: 389px;">

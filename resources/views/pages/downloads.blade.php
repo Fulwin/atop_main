@@ -1,9 +1,15 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="bannarspicculture"
-         style="background:url('{{ asset('/Upload/catebannar/service&support-18444026038.jpg') }}') center top no-repeat;">
-    </div>
+    @if(session('lang')=='EN')
+        <div class="bannarspicculture"
+             style="background:url('{{ asset('/Upload/catebannar/service&support-18444026038.jpg') }}') center top no-repeat;height: 389px;">
+        </div>
+    @else
+        <div class="bannarspicculture"
+             style="background:url('/Upload/ATOPTechnology/downloads/downloads.jpg') center top no-repeat;">
+        </div>
+    @endif
     <div class="middle">
         <div class="wrap">
             <a name="Download"></a>
