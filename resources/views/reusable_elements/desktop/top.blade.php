@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li class="socil">
-                        <a href="{{ url('/load_wechat_image') }}" rel="sexylightbox">
+                        <a href="{{ asset('/Upload/catebannar/eeee-09375498874.jpg') }}" rel="sexylightbox">
                             <img src="{{ asset('images/wechat.jpg') }}" width="25" height="25" alt="">
                         </a>
                     </li>
