@@ -17,7 +17,7 @@
                 <div class="inner" style="min-height: 1000px;">
                     <div class="line" style="background:none;">
                         <div class="MC_title" style="text-align:center; margin:0 auto; color:#fff; font-size:50px; border-left:0px; ">
-                            <h2>Download</h2>
+                            <h2>{{ session('lang')=='EN' ? 'Download' : '文件下载' }}</h2>
                         </div>
                     </div>
 
