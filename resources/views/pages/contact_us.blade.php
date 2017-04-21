@@ -1,15 +1,14 @@
 @extends('layout_desktop')
 
 @section('content')
-    @if(session('lang')=='EN')
-        <div class="bannarspicculture"
-             style="background:url('{{ asset('/page_banner/contact-1680.jpg') }}') center top no-repeat;height: 389px;">
-        </div>
-    @else
-        <div class="bannarspicculture"
-             style="background:url('/Upload/ATOPTechnology/contact_us/contact_us.jpg') center top no-repeat;">
-        </div>
-    @endif
+
+    <div>
+        @if(session('lang')=='EN')
+            <img src="{{ asset('/page_banner/contact-1680.jpg') }}" alt="华拓光通信" style="width: 100%;">
+        @else
+            <img src="{{ asset('/Upload/ATOPTechnology/contact_us/contact_us.jpg') }}" alt="华拓光通信" style="width: 100%;">
+        @endif
+    </div>
 
     <div class="middle">
     <article class="wrap contact-page-wrap">
