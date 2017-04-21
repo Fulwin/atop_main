@@ -80,14 +80,14 @@
                             <div class="hd">
                                 <div class="focus-title" id="focus-title">
                                     @foreach($products as $p)
-                                        <a href="{{ url('/product/'.$p->getTitleUrl()) }}"><span class="title">{{ $p->Products_Title }}</span></a>
+                                        <a href="{{ url('/product/view/'.$p->getIdString()) }}"><span class="title">{{ $p->Products_Title }}</span></a>
                                     @endforeach
                                 </div>
                             </div>
                             <div class="focus-bar-box" id="focus-bar-box">
                                 <ul class="focus-bar">
                                     @foreach($products as $p)
-                                        <li><a href="{{ url('/product/'.$p->getTitleUrl()) }}">
+                                        <li><a href="{{ url('/product/view/'.$p->getIdString()) }}">
                                                 <img src="{{ $p->Products_MinImage }}"></a>
                                         </li>
                                     @endforeach
