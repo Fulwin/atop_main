@@ -1,8 +1,12 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="bannarspicculture"
-         style="background:url('{{ url('/Upload/catebannar/solutionsbanner-17475279305.jpg') }}') center top no-repeat;">
+    <div>
+        @if(session('lang')=='EN')
+            <img src="{{ asset('/page_banner/solution-1280.jpg') }}" alt="华拓光通信" style="width: 100%;">
+        @else
+            <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg') }}" alt="华拓光通信" style="width: 100%;">
+        @endif
     </div>
 
     <div class="middle">
