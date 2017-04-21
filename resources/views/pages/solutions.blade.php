@@ -1,14 +1,8 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="solution-banner" style="height:{{ session('lang')=='EN'? 389 : 166 }}px;">
-      <p>
-          @if(session('lang')=='EN')
-              <img src="{{ asset('/page_banner/solution-1280.jpg')}}" alt="Solutions">
-          @else
-            <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案">
-          @endif
-      </p>
+    <div>
+        <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案">
     </div>
     <div class="middle solutions-content">
         <h2>

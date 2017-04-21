@@ -1,8 +1,8 @@
 @extends('layout_desktop')
 
 @section('content')
-    <div class="bannarspicculture"
-         style="background:url('{{ asset('/Upload/catebannar/service&support-18444026038.jpg') }}') center top no-repeat;">
+    <div>
+        <img src="{{ asset('/Upload/ATOPTechnology/services/services.jpg') }}" alt="华拓光通信" style="width: 100%;">
     </div>
     <div class="middle">
         <div style="margin:0 auto; width:1200px; padding:25px;">

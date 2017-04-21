@@ -1,9 +1,5 @@
 <div>
-    @if(session('lang')=='EN')
-        <img src="{{ asset('/page_banner/products-1680.jpg') }}" alt="华拓光通信" style="width: 100%;">
-    @else
-        <img src="{{ asset('/Upload/ATOPTechnology/products/products.jpg') }}" alt="华拓光通信" style="width: 100%;">
-    @endif
+    <img src="{{ asset('/Upload/ATOPTechnology/products/products.jpg') }}" alt="华拓光通信" style="width: 100%;">
 </div>
 <div class="middle">
     <section class="tab">

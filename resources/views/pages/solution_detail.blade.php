@@ -2,11 +2,7 @@
 
 @section('content')
     <div>
-        @if(session('lang')=='EN')
-            <img src="{{ asset('/page_banner/solution-1280.jpg') }}" alt="华拓光通信" style="width: 100%;">
-        @else
-            <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg') }}" alt="华拓光通信" style="width: 100%;">
-        @endif
+        <img src="{{ asset('/Upload/ATOPTechnology/solutions/solutions.jpg')}}" alt="解决方案">
     </div>
 
     <div class="middle">
