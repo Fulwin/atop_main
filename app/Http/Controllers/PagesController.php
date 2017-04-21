@@ -80,7 +80,8 @@ class PagesController extends Controller
      * 下载页面
      */
     public function downloads(){
-        $downloadCategory = Category::FetchByTitle('Download',session('lang', 'EN'));
+        $title = $this->getCategoryTitle('Download');
+        $downloadCategory = Category::FetchByTitle($title,$this->_Get_Language());
         $downloads = $downloadCategory->downloads();
         $this->dataForView['downloads'] = $downloads;
         return view('pages.downloads',$this->dataForView);
