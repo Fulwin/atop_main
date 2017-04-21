@@ -7,27 +7,15 @@
 
     <div class="middle">
         <article class="wrap">
+            @foreach($techs as $tech)
             <section class="sec content2" style="position: relative;">
                 <div>
-                    <img id="dsImg" width="100%" src="{{ session('lang')=='EN'? '/Upload/quality/3years-13393491834.jpg':'/Upload/ATOPTechnology/services/warranty declaration.jpg' }}">
+                    <img id="dsImg" width="100%" src="{{ asset($tech->Down_Image) }}">
                     <a style="width: 7%;height: 25px;position: absolute;bottom: 5%;left: 50%;margin-left: -4%;border-radius:5px; background:#fff;box-shadow:0 0 5px #ccc; font-size:14px; text-align:center;"
-                       href="{{ url('/services/1001') }}" >{{ session('lang')=='EN' ? 'More' : '了解详情' }}</a>
+                       href="{{ url('/services/'.$tech->Down_ID) }}" >{{ session('lang')=='EN' ? 'More' : '了解详情' }}</a>
                 </div>
             </section>
-            <section class="sec content2" style="position: relative;">
-                <div>
-                    <img id="dsImg" width="100%" src="{{ session('lang')=='EN' ? '/Upload/quality/caveats-10061914047.jpg' : '/Upload/ATOPTechnology/services/caveats.jpg' }}">
-                    <a style="width: 7%;height: 25px;position: absolute;bottom: 5%;left: 50%;margin-left: -4%;border-radius:5px; background:#fff;box-shadow:0 0 5px #ccc; font-size:14px; text-align:center;"
-                       href="{{ url('/services/1002') }}" >{{ session('lang')=='EN' ? 'More' : '了解详情' }}</a>
-                </div>
-            </section>
-            <section class="sec content2" style="position: relative;">
-                <div>
-                    <img id="dsImg" width="100%" src="{{ session('lang')=='EN' ? '/Upload/factory-10462143571.jpg' : '/Upload/ATOPTechnology/services/factory tour.jpg' }}">
-                    <a style="width: 7%;height: 25px;position: absolute;bottom: 5%;left: 50%;margin-left: -4%;border-radius:5px; background:#fff;box-shadow:0 0 5px #ccc; font-size:14px; text-align:center;"
-                       href="{{ url('/services/1003') }}" >{{ session('lang')=='EN' ? 'More' : '了解详情' }}</a>
-                </div>
-            </section>
+            @endforeach
 
             <a name="{{ $downloadCategory->Cate_Title }}"></a>
             <section class="CorporateCulture" style=" background:#737373;">

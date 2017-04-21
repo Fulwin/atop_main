@@ -103,6 +103,7 @@ class PagesController extends Controller
                 session('lang')
             );
             $techs = $techCategory->downloads();
+//            dd($techs);
             $this->dataForView['techs'] = $techs;
             $this->dataForView['downloadCategory'] = $downloadCategory;
             $this->dataForView['downloads'] = $downloadCategory->downloads();
