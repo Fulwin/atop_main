@@ -11,7 +11,7 @@
                     <li class="catename">
                         {{ $tech->Down_Title }}
                     </li>
-                    <li class="cateposition">Your current location is：<a href="{{ url('/') }}">{{ session('lang'=='EN') ? 'Home' : '首页' }}</a> >
+                    <li class="cateposition">Your current location is：<a href="{{ url('/') }}">{{ session('lang','EN') ? 'Home' : '首页' }}</a> >
                         <a href="">{{ session('lang')=='EN' ? 'Solution' : '解决方案' }}</a>&nbsp; >&nbsp;
                     </li>
                 </ul>
