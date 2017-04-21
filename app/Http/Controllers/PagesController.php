@@ -297,7 +297,7 @@ class PagesController extends Controller
             // 公司新闻
             $category = Category::FetchByTitle(
                 $this->getCategoryTitle('Company News'),
-                session('lang')
+                $this->_Get_Language()
             );
             $this->dataForView['category'] = $category;
             $this->dataForView['isNews'] = true;
