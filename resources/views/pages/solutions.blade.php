@@ -35,6 +35,7 @@
                   <a href="{{ url('/solutions/'.$download->Down_ID) }}">
                       {{ session('lang')=='EN' ? 'READ MORE': '了解详情' }}
                   </a>
+                    <br>
                 </div>
               </div>
           @endforeach
