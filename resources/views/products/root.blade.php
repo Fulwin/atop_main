@@ -10,7 +10,9 @@
                     <li class="catename">
                         {{ $category->Cate_Title }}
                     </li>
-                    <li class="cateposition">Your current location is：<a href="{{ url('/') }}">Home</a> >
+                    <li class="cateposition">
+                        {{ session('lang')=='EN' ? 'Your current location is' : '您正在浏览' }}：
+                        <a href="{{ url('/') }}">{{ session('lang')=='EN' ? 'Home' : '首页' }}</a> >
                         <a href="#">{{ $category->Cate_Title }}</a>&nbsp; >&nbsp;
                     </li>
                 </ul>
