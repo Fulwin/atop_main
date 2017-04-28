@@ -19,11 +19,26 @@ class ProductsController extends Controller
     public function quoto_request(Request $request){
         $form = $request->all();
         $site = $this->dataForView['site'];
+        $cc = 'sales@webmelbourne.com';
+        $cc2 = null;
+        if(empty($site->quote_request_handler)){
+            $to = 'sunbin@atoptechnology.com';
+        }else{
+            $temp = explode(';',$site->quote_request_handler);
+            if(count($temp)>0){
+                $to = $temp[0];
+                $cc = isset($temp[1]) ? $temp[1] : 'sales@webmelbourne.com';
+                $cc2 = isset($temp[2]) ? $temp[2] : null;
+            }
+        }
         $to = empty($site->quote_request_handler) ? 'sunbin@atoptechnology.com' : $site->quote_request_handler;
         $product = Product::where('Products_CodeName',$form['code'])->first();
-        Mail::to($to)
-              ->cc('sales@webmelbourne.com')
-              ->send(new QuoteRequest($product, $form));
+        Mail::to($to);
+        Mail::cc($cc);
+        if($cc2){
+            Mail::cc($cc2);
+        }
+        Mail::send(new QuoteRequest($product, $form));
 
         $this->dataForView['product'] = $product;
         $this->dataForView['category'] = $product->category();
