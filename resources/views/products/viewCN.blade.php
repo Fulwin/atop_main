@@ -193,8 +193,9 @@
               </label>
               <textarea id="quote-message" class="quote-textarea" name="message" rows="8" cols="80" placeholder="请说明..."></textarea>
             </div>
-
           </form>
         </div>
     </div>
+    <div id="submitTxt" data-txt="{{ session('lang')=='EN' ? 'Submit' : '提交' }}"></div>
+    <div id="cancelTxt" data-txt="{{ session('lang')=='EN' ? 'Cancel' : '取消' }}"></div>
 @stop

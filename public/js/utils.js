@@ -1,5 +1,7 @@
 $(document).ready(function(){
   if($('#dialog-form').length > 0) {
+    var submitTxt = $('#submitTxt').data('txt');
+    var cancelTxt = $('#cancelTxt').data('txt');
     var modal = new tingle.modal({
         footer: true,
         stickyFooter: false,
@@ -23,7 +25,7 @@ $(document).ready(function(){
     var requireForm = $('#dialog-form').html();
     modal.setContent(requireForm);
 
-    modal.addFooterBtn('Submit', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+    modal.addFooterBtn(submitTxt, 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
         // here goes some logic
         var code = $("#quote-product-code").val();
         var name = $("#quote-name").val();
@@ -43,7 +45,7 @@ $(document).ready(function(){
         $("#request-quote-form").submit();
     });
 
-    modal.addFooterBtn('Cancel', 'tingle-btn tingle-btn--default tingle-btn--pull-right', function(e) {
+    modal.addFooterBtn(cancelTxt, 'tingle-btn tingle-btn--default tingle-btn--pull-right', function(e) {
         // here goes some logic
         e.preventDefault();
         modal.close();

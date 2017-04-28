@@ -197,4 +197,6 @@
           </form>
         </div>
     </div>
+    <div id="submitTxt" data-txt="{{ session('lang')=='EN' ? 'Submit' : '提交' }}"></div>
+    <div id="cancelTxt" data-txt="{{ session('lang')=='EN' ? 'Cancel' : '取消' }}"></div>
 @stop
