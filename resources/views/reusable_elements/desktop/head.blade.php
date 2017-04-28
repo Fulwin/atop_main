@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="{{ url('css/unslider.css') }}">
     <link rel="stylesheet" href="{{ url('css/unslider-dots.css') }}">
     <link rel="stylesheet" href="{{ url('css/css.css') }}">
-    <link rel="stylesheet" href="{{ url('css/megafish.css') }}">
+    <link rel="stylesheet" href="{{ url('css/megafish.css') }}?version=1">
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/atop_icons.css') }}">
-    <link rel="stylesheet" href="{{ url('css/fix.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fix.css') }}?version=1">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

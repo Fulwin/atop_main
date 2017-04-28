@@ -65,7 +65,7 @@
                             $topSubs = $item['subs'];
                         ?>
                         @if($topCategory['Cate_IsMenu'] == '1')
-                          @if($cateAvatarIndex>0 && $cateAvatarIndex%4 == 0)
+                          @if($cateAvatarIndex>0 && $cateAvatarIndex%6 == 0)
                               <div class="cl"></div>
                           @endif
                           <div class="sf-mega-section">

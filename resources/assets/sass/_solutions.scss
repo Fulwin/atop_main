@@ -44,7 +44,7 @@
     clear: both;
     .solution-card{
       display: inline-block;
-      width: 230px;
+      width: 30%;
       margin-right:14px;
       float: left;
       background-color: rgb(244,244,244);
@@ -85,6 +85,7 @@
           background-color: #cfcfcf;
           font-size: 14px;
           color: #ffffff;
+          margin-bottom: 15px;
           &:hover{
             background-color: #f78500;
           }
