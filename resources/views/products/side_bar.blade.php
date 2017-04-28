@@ -1,5 +1,5 @@
 <div class="leftpage">
-    <div class="catemm">Products</div>
+    <div class="catemm">{{ session('lang')=='EN' ? 'Products' : '产品中心' }}</div>
     <div style="text-align:center; margin:0 auto; width:100%;">
         <img src="{{ asset('/cate/producp.jpg') }}" width="21" height="10" />
     </div>
