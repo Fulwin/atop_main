@@ -47,7 +47,7 @@
     {{-- <script type="text/javascript" src="{{ url('js/cn.js') }}"></script> --}}
     <script type=text/javascript src="{{ url('images/scroll.js') }}"></script>
     <script type=text/javascript src="{{ url('js/tingle.min.js') }}"></script>
-    <script type=text/javascript src="{{ url('js/utils.js') }}"></script>
+    <script type=text/javascript src="{{ url('js/utils.js') }}?version=1"></script>
 </head>
 <?php
 
