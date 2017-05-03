@@ -52,11 +52,9 @@
                                     <td width="60" align="center" class="mm">Wavelength</td>
                                     <td width="60" align="center" class="mm">Component</td>
                                     <td width="30" align="center" class="mm">Output Power</td>
-                                    <td width="50" align="center" class="mm">Rec. Sens</td>
                                     <td width="50" align="center" class="mm">Connector</td>
                                     <td width="40" align="center" class="mm">Case Temp.</td>
                                     <td width="70" align="center" class="mm">Reach</td>
-                                    <td width="70" align="center" class="mm">Multi-rate</td>
                                     <td width="70" align="center" class="mm">Download</td>
                                 </tr>
 
@@ -75,11 +73,9 @@
                                         <td align="center">{{ $product->Products_ExFlag3 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag4 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag5 }}</td>
-                                        <td align="center">{{ $product->Products_ExFlag6 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag7 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag8 }}</td>
                                         <td align="center">{{ $product->Products_ExFlag9 }}</td>
-                                        <td align="center">{{ $product->Products_ExFlag10 }}</td>
                                         <td align="center">
                                             <a href="{{ url('/download_brochure/'.$product->Products_ID) }}">
                                                 <img src="{{ asset('mmm/pdficon.gif') }}" width="18" height="16" />
