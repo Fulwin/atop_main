@@ -78,7 +78,7 @@
                                   @if( !empty($topCategory->Cate_ExField1) )
                                       <li class="cate-avatar">
                                           <a href="{{ url('/products/'.$topCategory->getIdString()) }}">
-                                              <img src="{{ asset($topCategory->Cate_ExField1) }}" width="182" height="130" />
+                                              <img src="{{ asset($topCategory->Cate_ExField1) }}" width="170" />
                                           </a>
                                       </li>
                                   @endif

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ url('css/unslider.css') }}">
     <link rel="stylesheet" href="{{ url('css/unslider-dots.css') }}">
     <link rel="stylesheet" href="{{ url('css/css.css') }}">
-    <link rel="stylesheet" href="{{ url('css/megafish.css') }}?version=1">
+    <link rel="stylesheet" href="{{ url('css/megafish.css') }}?version=2">
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/atop_icons.css') }}">
