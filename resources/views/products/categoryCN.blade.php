@@ -52,7 +52,6 @@
                                     <td width="60" align="center" class="mm">低插入损耗</td>
                                     <td width="60" align="center" class="mm">标准插入损耗</td>
                                     <td width="50" align="center" class="mm">回波损耗</td>
-                                    <td width="50" align="center" class="mm">收端灵敏度</td>
                                     <td width="50" align="center" class="mm">接口类型</td>
                                     <td width="40" align="center" class="mm">工作温度范围</td>
                                     <td width="70" align="center" class="mm">光缆长度</td>
