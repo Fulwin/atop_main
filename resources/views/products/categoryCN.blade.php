@@ -54,6 +54,7 @@
                                     <td align="center" class="mm">发光范围</td>
                                     <td align="center" class="mm">收端灵敏度</td>
                                     <td align="center" class="mm">接口</td>
+                                    <td align="center" class="mm">温度</td>
                                     <td align="center" class="mm">传输距离</td>
                                     <td align="center" class="mm">多速率兼容</td>
                                     <td align="center" class="mm">下载</td>
@@ -122,6 +123,7 @@
                                         <td align="center" class="mm">发光范围</td>
                                         <td align="center" class="mm">收端灵敏度</td>
                                         <td align="center" class="mm">接口</td>
+                                        <td align="center" class="mm">温度</td>
                                         <td align="center" class="mm">传输距离</td>
                                         <td align="center" class="mm">多速率兼容</td>
                                         <td align="center" class="mm">下载</td>
