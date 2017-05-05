@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ url('style/cn.css') }}" type="text/css" media="screen, project, print">
     <link rel="stylesheet" href="{{ url('css/unslider.css') }}">
     <link rel="stylesheet" href="{{ url('css/unslider-dots.css') }}">
-    <link rel="stylesheet" href="{{ url('css/css.css') }}">
+    <link rel="stylesheet" href="{{ url('css/css.css') }}?version=2">
     <link rel="stylesheet" href="{{ url('css/megafish.css') }}?version=2">
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">

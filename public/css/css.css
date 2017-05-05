@@ -317,13 +317,10 @@ textarea{ outline:none;}
 .litext {
     width:380px;
     float:left;
-    height:28px;
-    background-image: url(../images/11000.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    line-height:28px;
+    height:23px;
+    line-height:14px;
     padding-left:0px;
-    border-bottom:#ccc dotted 0px;
+    margin-bottom: 5px;
 }
 .litexthhhhhhhhh {
     width:385px;
