@@ -66,9 +66,9 @@ class Category extends Model
 
     public function news($limit = null){
         if($limit)
-            return News::where('News_CateId',$this->Cate_Id)->orderBy('News_Order','Desc')->take($limit)->get();
+            return News::where('News_CateId',$this->Cate_Id)->orderBy('News_IsIndex','DESC')->orderBy('News_Order','Desc')->take($limit)->get();
         else
-            return News::where('News_CateId',$this->Cate_Id)->orderBy('News_Order','Desc')->get();
+            return News::where('News_CateId',$this->Cate_Id)->orderBy('News_IsIndex','DESC')->orderBy('News_Order','Desc')->get();
     }
 
     public function baseInfos(){
