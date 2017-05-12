@@ -73,17 +73,21 @@ class ProductsController extends Controller
             // 加载子目录
             $category = Category::Fetch($categoryId);
             $this->dataForView['category'] = $category;
-            $this->dataForView['parent'] = $category->parent();
+            $parentCategory = $category->parent();
+            $this->dataForView['parent'] = $parentCategory;
 
             // 针对 MPO 目录的特殊处理
             $this->dataForView['is_mpo'] = false;
-            if(strpos($category->Cate_Title, 'MPO')!==false || strpos($category->parent()->Cate_Title, 'MPO') !== false){
+            if(strpos($category->Cate_Title, 'MPO')!==false || strpos($parentCategory->Cate_Title, 'MPO') !== false){
                 $this->dataForView['is_mpo'] = true;
             }
 
             // 针对 波分 目录的特殊处理
             $this->dataForView['is_wdm'] = false;
-            if(strpos($category->Cate_Title, '波分')!==false || strpos($category->parent()->Cate_Title, '波分') !== false){
+            if(
+                strpos($category->Cate_Title, '波分')!==false || strpos($parentCategory->Cate_Title, '波分') !== false ||
+                strpos($category->Cate_Title, 'WDM')!==false || strpos($parentCategory->Cate_Title, 'WDM') !== false
+            ){
                 $this->dataForView['is_wdm'] = true;
             }
 
