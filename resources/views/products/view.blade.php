@@ -126,11 +126,12 @@
                 </div>
 
                 <div class="clearfix"></div>
-                <div class="textcontentt mt40">
-                </div>
+
                 @if( (isset($is_mpo) && $is_mpo) ||  (isset($is_wdm) && $is_wdm))
 
                 @else
+                    <div class="textcontentt mt40">
+                    </div>
                     <div class="row mt40">
                         <div class="eye-diagram-wrap">
                             <h4>EYE DIAGRAM</h4>
