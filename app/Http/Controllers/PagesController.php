@@ -184,11 +184,23 @@ class PagesController extends Controller
         $this->dataForView['aboutCategories'] = $subs;
         $this->dataForView['corporateCultureCategory'] = $corporateCultureCategory;
 
-        $this->dataForView['seo'] = [
-          'keywords' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
-          'title' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
-          'description' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
-        ];
+
+        if($this->_Get_Language()=='EN'){
+            $this->dataForView['seo'] = [
+                'page_h1'=>'A Leading Manufacturer of Optical Transceivers and Optic Fiber',
+                'page_h2'=>'Meet The Optical Field Experts',
+                'page_h2_second'=>'Optical Solution Offices in China, US, EU, and India',
+                'keywords' => 'optical transceivers, optic fiber, manufacturer, china, us, eu, india',
+                'title' => 'DOptical Transceiver & Optic Fiber Leading Manufacturer - ATOP',
+                'description'=>'ATOP Co. is a leading manufacturer of optical transceivers. ATOP is proficient in R&D, production and sales of optical components, transceivers and sub-systems',
+            ];
+        }else{
+            $this->dataForView['seo'] = [
+                'keywords' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+                'title' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+                'description' => $newsCategory->Cate_Title . ' ' . $corporateCultureCategory->Cate_Title,
+            ];
+        }
         return view('pages.about_us',$this->dataForView);
     }
 

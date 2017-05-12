@@ -7,7 +7,7 @@
     <meta name="author" content="{{ $site->author }}">
     <meta name="keywords" content="{{ isset($seo) ? $seo['keywords'] : $site->keyword }}">
     <meta name="csrf-token" content="{!! csrf_token() !!}">
-    <title>{{ isset($seo) ? ($seo['title'].' - '.$site->title) : $site->title }}</title>
+    <title>{{ isset($seo) ? ($seo['title']) : $site->title }}</title>
 
     <link rel="stylesheet" href="{{ url('jQuery/sexylightbox.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ url('style/cn.css') }}" type="text/css" media="screen, project, print">
