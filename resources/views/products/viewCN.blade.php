@@ -72,16 +72,37 @@
                             产品指标
                         </h4>
                         <ul>
-                            <li class="txt cl">封装: {{ $product->Products_ExFlag1 }}</li>
-                            <li class="txt cl">传输速率: {{ $product->Products_ExFlag2 }}</li>
-                            <li class="txt cl">波长: {{ $product->Products_ExFlag3 }}</li>
-                            <li class="txt cl">光器件: {{ $product->Products_ExFlag4 }}</li>
-                            <li class="txt cl">发光范围: {{ $product->Products_ExFlag5 }}</li>
-                            <li class="txt cl">收端灵敏度: {{ $product->Products_ExFlag6 }}</li>
-                            <li class="txt cl">接口: {{ $product->Products_ExFlag7 }}</li>
-                            <li class="txt cl">工作温度范围: {{ $product->Products_ExFlag8 }}</li>
-                            <li class="txt cl">传输距离: {{ $product->Products_ExFlag9 }}</li>
-                            <li class="txt cl">多速率兼容: {{ $product->Products_ExFlag10 }}</li>
+
+
+                            @if(isset($is_mpo) && $is_mpo)
+                                <li class="txt cl">连接器类型: {{ $product->mpo_connector_type }}</li>
+                                <li class="txt cl">光纤类型: {{ $product->mpo_fiber_type }}</li>
+                                <li class="txt cl">低插入损耗: {{ $product->mpo_low_il }}</li>
+                                <li class="txt cl">标准插入损耗: {{ $product->mpo_high_il }}</li>
+                                <li class="txt cl">回波损耗: {{ $product->mpo_return_loss }}</li>
+                                <li class="txt cl">接口类型: {{ $product->Products_ExFlag7 }}</li>
+                                <li class="txt cl">工作温度范围: {{ $product->Products_ExFlag8 }}</li>
+                                <li class="txt cl">光缆长度: {{ $product->Products_ExFlag9 }}</li>
+                            @elseif(isset($is_wdm) && $is_wdm)
+                                <li class="txt cl">封装: {{ $product->Products_ExFlag1 }}</li>
+                                <li class="txt cl">信道波长: {{ $product->Products_ExFlag3 }}</li>
+                                <li class="txt cl">相邻信道隔离度: {{ $product->wdm_adjacent_channel_isolation }}</li>
+                                <li class="txt cl">非相邻信道隔离度: {{ $product->wdm_non_adjacent_channel_isolation }}</li>
+                                <li class="txt cl">插入损耗: {{ $product->wdm_insertion_loss }}</li>
+                                <li class="txt cl">回波损耗: {{ $product->mpo_return_loss }}</li>
+                                <li class="txt cl">工作温度范围: {{ $product->Products_ExFlag8 }}</li>
+                            @else
+                                <li class="txt cl">封装: {{ $product->Products_ExFlag1 }}</li>
+                                <li class="txt cl">传输速率: {{ $product->Products_ExFlag2 }}</li>
+                                <li class="txt cl">波长: {{ $product->Products_ExFlag3 }}</li>
+                                <li class="txt cl">光器件: {{ $product->Products_ExFlag4 }}</li>
+                                <li class="txt cl">发光范围: {{ $product->Products_ExFlag5 }}</li>
+                                <li class="txt cl">收端灵敏度: {{ $product->Products_ExFlag6 }}</li>
+                                <li class="txt cl">接口: {{ $product->Products_ExFlag7 }}</li>
+                                <li class="txt cl">工作温度范围: {{ $product->Products_ExFlag8 }}</li>
+                                <li class="txt cl">传输距离: {{ $product->Products_ExFlag9 }}</li>
+                                <li class="txt cl">多速率兼容: {{ $product->Products_ExFlag10 }}</li>
+                            @endif
                         </ul>
                     </div>
                     <div class="application-wrap">

@@ -120,7 +120,21 @@ class ProductsController extends Controller
         $productId = isset($temp[1]) ? $temp[1] : $productId;
         $product = Product::Fetch($productId);
         $this->dataForView['product'] = $product;
-        $this->dataForView['category'] = $product->category();
+        $category = $product->category();
+        $parentCategory = $category->parent();
+        $this->dataForView['category'] = $category;
+
+        // 针对 MPO 目录的特殊处理
+        $this->dataForView['is_mpo'] = false;
+        if(strpos($category->Cate_Title, 'MPO')!==false || strpos($parentCategory->Cate_Title, 'MPO') !== false){
+            $this->dataForView['is_mpo'] = true;
+        }
+
+        // 针对 波分 目录的特殊处理
+        $this->dataForView['is_wdm'] = false;
+        if(strpos($category->Cate_Title, '波分')!==false || strpos($parentCategory->Cate_Title, '波分') !== false){
+            $this->dataForView['is_wdm'] = true;
+        }
 
         $Microdata = [
             'type' => 'http://schema.org/Product'
