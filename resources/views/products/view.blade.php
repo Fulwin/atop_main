@@ -72,16 +72,36 @@
                             PRODUCT FEATURES
                         </h4>
                         <ul>
-                            <li class="txt cl">Package: {{ $product->Products_ExFlag1 }}</li>
-                            <li class="txt cl">Data Rate: {{ $product->Products_ExFlag2 }}</li>
-                            <li class="txt cl">Wavelength: {{ $product->Products_ExFlag3 }}</li>
-                            <li class="txt cl">Component: {{ $product->Products_ExFlag4 }}</li>
-                            <li class="txt cl">Output Power: {{ $product->Products_ExFlag5 }}</li>
-                            <li class="txt cl">Rec. Sens: {{ $product->Products_ExFlag6 }}</li>
-                            <li class="txt cl">Connector: {{ $product->Products_ExFlag7 }}</li>
-                            <li class="txt cl">Case Temp.: {{ $product->Products_ExFlag8 }}</li>
-                            <li class="txt cl">Reach: {{ $product->Products_ExFlag9 }}</li>
-                            <li class="txt cl">Multi-rate: {{ $product->Products_ExFlag10 }}</li>
+
+                            @if(isset($is_mpo) && $is_mpo)
+                                <li class="txt cl">Connector Type: {{ $product->mpo_connector_type }}</li>
+                                <li class="txt cl">Fiber Type: {{ $product->mpo_fiber_type }}</li>
+                                <li class="txt cl">Low IL: {{ $product->mpo_low_il }}</li>
+                                <li class="txt cl">High IL: {{ $product->mpo_high_il }}</li>
+                                <li class="txt cl">Return Loss: {{ $product->mpo_return_loss }}</li>
+                                <li class="txt cl">Connector: {{ $product->Products_ExFlag7 }}</li>
+                                <li class="txt cl">Case Temp.: {{ $product->Products_ExFlag8 }}</li>
+                                <li class="txt cl">Reach: {{ $product->Products_ExFlag9 }}</li>
+                            @elseif(isset($is_wdm) && $is_wdm)
+                                <li class="txt cl">Package: {{ $product->Products_ExFlag1 }}</li>
+                                <li class="txt cl">Channel Wavelength: {{ $product->Products_ExFlag3 }}</li>
+                                <li class="txt cl">Adjacent channel isolation: {{ $product->wdm_adjacent_channel_isolation }}</li>
+                                <li class="txt cl">Non-Adjacent channel isolation: {{ $product->wdm_non_adjacent_channel_isolation }}</li>
+                                <li class="txt cl">Insertion Loss: {{ $product->wdm_insertion_loss }}</li>
+                                <li class="txt cl">Return Loss: {{ $product->mpo_return_loss }}</li>
+                                <li class="txt cl">Case Temp. : {{ $product->Products_ExFlag8 }}</li>
+                            @else
+                                <li class="txt cl">Package: {{ $product->Products_ExFlag1 }}</li>
+                                <li class="txt cl">Data Rate: {{ $product->Products_ExFlag2 }}</li>
+                                <li class="txt cl">Wavelength: {{ $product->Products_ExFlag3 }}</li>
+                                <li class="txt cl">Component: {{ $product->Products_ExFlag4 }}</li>
+                                <li class="txt cl">Output Power: {{ $product->Products_ExFlag5 }}</li>
+                                <li class="txt cl">Rec. Sens: {{ $product->Products_ExFlag6 }}</li>
+                                <li class="txt cl">Connector: {{ $product->Products_ExFlag7 }}</li>
+                                <li class="txt cl">Case Temp.: {{ $product->Products_ExFlag8 }}</li>
+                                <li class="txt cl">Reach: {{ $product->Products_ExFlag9 }}</li>
+                                <li class="txt cl">Multi-rate: {{ $product->Products_ExFlag10 }}</li>
+                            @endif
                         </ul>
                     </div>
                     <div class="application-wrap">
