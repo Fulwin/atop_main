@@ -31,29 +31,23 @@ class PagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function solutions($downId = null){
-        // page SEO
-        if($this->_Get_Language()=='EN'){
-            $this->dataForView['seo'] = [
-                'page_h1'=>'High speed optical transceiver and optic fiber solutions',
-                'page_h2'=>'We offer an extensive and diverse inventory of optic fiber',
-                'page_h2_second'=>'Look no further for high performance sfp transceivers, dac cables and more',
-                'keywords' => 'optic fibers, optical tranceivers, sfp, qsfp+, sfp28, pon, xpon',
-                'title' => 'Optic Fiber and Optical Transceiver Solutions | ATOP',
-                'description'=>'High performance optic fibers and optical transceivers, including SFP, QSFP+, SFP28, SR4, LR4, PON, XPON, manufactured by the optic fiber experts at ATOP.'
-            ];
-        }
-
         if(is_null($downId)){
             $solutionCategory = Category::FetchByTitle(
                 $this->getCategoryTitle('Solution'),
                 session('lang')
             );
             $this->dataForView['downloads'] = $solutionCategory->downloads();
-            $this->dataForView['seo'] = [
-              'keywords' => $solutionCategory->Cate_Title,
-              'title' => $solutionCategory->Cate_Title,
-              'description' => $solutionCategory->Cate_Title,
-            ];
+            // page SEO
+            if($this->_Get_Language()=='EN'){
+                $this->dataForView['seo'] = [
+                    'page_h1'=>'High speed optical transceiver and optic fiber solutions',
+                    'page_h2'=>'We offer an extensive and diverse inventory of optic fiber',
+                    'page_h2_second'=>'Look no further for high performance sfp transceivers, dac cables and more',
+                    'keywords' => 'optic fibers, optical tranceivers, sfp, qsfp+, sfp28, pon, xpon',
+                    'title' => 'Optic Fiber and Optical Transceiver Solutions | ATOP',
+                    'description'=>'High performance optic fibers and optical transceivers, including SFP, QSFP+, SFP28, SR4, LR4, PON, XPON, manufactured by the optic fiber experts at ATOP.'
+                ];
+            }
             return view('pages.solutions',$this->dataForView);
         }else{
             $download = Download::Fetch($downId);
@@ -105,17 +99,6 @@ class PagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function services($techId = null){
-        if($this->_Get_Language()=='EN'){
-            $this->dataForView['seo'] = [
-                'page_h1'=>'Services for data centers, broadband access, transmission, and wireless',
-                'page_h2'=>'Each optic fiber and optical transceiver is warranty protected',
-                'page_h2_second'=>'Quality tested optic fibers and optical transceivers',
-                'keywords' => 'optic fibers, optical transceiver, data centers, broadband access, transmission, wireless',
-                'title' => 'Data Center, Broadband, Transmission & CPRI Services - ATOP',
-                'description'=>'Quality and warranty assured optic fibers and optical transceivers for data centers, broadband access, transmission and wireless. ATOP, the optic fiber experts'
-            ];
-        }
-
         if(is_null($techId)){
             $techCategory = Category::FetchByTitle(
                 $this->getCategoryTitle('Technology Support'),
@@ -131,11 +114,16 @@ class PagesController extends Controller
             $this->dataForView['downloadCategory'] = $downloadCategory;
             $this->dataForView['downloads'] = $downloadCategory->downloads();
 
-            $this->dataForView['seo'] = [
-              'keywords' => $techCategory->Cate_Title,
-              'title' => $techCategory->Cate_Title,
-              'description' => $techCategory->Cate_Title,
-            ];
+            if($this->_Get_Language()=='EN'){
+                $this->dataForView['seo'] = [
+                    'page_h1'=>'Services for data centers, broadband access, transmission, and wireless',
+                    'page_h2'=>'Each optic fiber and optical transceiver is warranty protected',
+                    'page_h2_second'=>'Quality tested optic fibers and optical transceivers',
+                    'keywords' => 'optic fibers, optical transceiver, data centers, broadband access, transmission, wireless',
+                    'title' => 'Data Center, Broadband, Transmission & CPRI Services - ATOP',
+                    'description'=>'Quality and warranty assured optic fibers and optical transceivers for data centers, broadband access, transmission and wireless. ATOP, the optic fiber experts'
+                ];
+            }
             return view('pages.services',$this->dataForView);
         }else{
             // 查看 Technology 的具体内容
