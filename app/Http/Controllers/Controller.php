@@ -14,6 +14,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public $dataForView = [
+        // seo 相关
+        'page_title'=>'Atop Technology',
+        'page_h1'=>'',
+        'page_h2'=>'',
+        'page_h2_second'=>'',
+        'page_meta_description'=>'Atop Technology',
+        'page_meta_keywords'=>'Atop Technology',
         'upload_files_prefix' => 'https://www.atoptechnology.com/',
         'currentLanguage'=>null,
         'isHome' => false,

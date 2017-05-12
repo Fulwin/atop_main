@@ -249,6 +249,17 @@ class PagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function home(Request $request){
+        // Home page SEO
+        if($this->_Get_Language()=='EN'){
+            $this->dataForView['seo'] = [
+                'page_h1'=>'Optimize data communications with high speed optical transceivers',
+                'page_h2'=>'The optic fiber and optical transceiver experts',
+                'page_h2_second'=>'Buy wholesale sfp transceivers, dac cables, aoc cables and other optic fiber',
+                'keywords' => 'sfp transceivers, optical transceivers, fiber optics, dac cables, aoc cables',
+                'title' => 'SFP Transceivers - Optical Transceivers - DAC Cables | ATOP',
+                'description' => 'ATOP Co. has an extensive variety of optical transceivers and sfp transceivers. Our optic fiber, including our sfp fibers, are quality and warranty ensured.',
+            ];
+        }
         // 新闻
         $newsCategory = Category::FetchByTitle(
             $this->getCategoryTitle('Company News'),
