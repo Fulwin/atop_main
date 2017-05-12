@@ -21,43 +21,16 @@
             </div>
 
             @if(count($subs)>0)
-            <div class="contenttext">
-                <div style="width:100%; padding-bottom:20px;">
-                    {!! $category->Cate_Intro !!}
-                </div>
+                @if(isset($is_mpo) && $is_mpo)
+                    @include('products.tables.mpo_table')
+                @elseif(isset($is_wdm) && $is_wdm)
 
-                <style>
-                    .table-b table{border-right:1px solid #fff;border-bottom:1px solid #fff;background:#ddd;}
-                    .table-b table td{border-left:1px solid #fff;border-top:1px solid #fff}
-                    .table-c table{border-right:1px solid #fff;border-bottom:1px solid #fff;background:#eee;}
-                    .table-c table td{border-left:1px solid #fff;border-top:1px solid #fff; font-size:11px;}
-                    .table-c .mm {background:#ddd;}
-                </style>
+                    @include('products.tables.wdm_table')
+                @else
+                    @include('products.tables.general_table')
+                @enfif
 
-                @foreach($subs as $categoryId=>$item)
-                    <?php
-                        $category = $item['data'];
-                        $products = $category->products();
-                    ?>
-                    <a name="{{ $category->Cate_Title }}">
-                        <div style="float:left; width:150px; text-align:center; margin-top:10px; background:#e9720f; color:#fff;">{{ $category->Cate_Title }}</div>
-                    </a>
-                    <div style="float:left; width:100%; border-top:#e9720f solid 1px; margin-bottom:30px; padding-top:20px;">
-                        <div style="float:left; width:100%; " class="table-c">
-                            @if(isset($is_mpo) && $is_mpo)
-                                @include('products.tables.mpo_table')
-                            @elseif(isset($is_wdm) && $is_wdm)
 
-                                @include('products.tables.wdm_table')
-                            @else
-                                @include('products.tables.general_table')
-                            @enfif
-
-                        </div>
-                    </div>
-                @endforeach
-                <div style="clear:both"></div>
-            </div>
             @else
                 <?php
                     // 表示当前的目录没有下级目录了, 因此直接显示产品
