@@ -21,16 +21,13 @@
             </div>
 
             @if(count($subs)>0)
-                @if(isset($is_mpo) && $is_mpo)
+                @if (isset($is_mpo) && $is_mpo)
                     @include('products.tables.mpo_table')
-                @elseif(isset($is_wdm) && $is_wdm)
-
+                @elseif (isset($is_wdm) && $is_wdm)
                     @include('products.tables.wdm_table')
                 @else
                     @include('products.tables.general_table')
-                @enfif
-
-
+                @endif
             @else
                 <?php
                     // 表示当前的目录没有下级目录了, 因此直接显示产品
