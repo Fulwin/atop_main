@@ -75,6 +75,18 @@ class ProductsController extends Controller
             $this->dataForView['category'] = $category;
             $this->dataForView['parent'] = $category->parent();
 
+            // 针对 MPO 目录的特殊处理
+            $this->dataForView['is_mpo'] = false;
+            if(strpos($category->Cate_Title, 'MPO')!==false || strpos($category->parent()->Cate_Title, 'MPO') !== false){
+                $this->dataForView['is_mpo'] = true;
+            }
+
+            // 针对 波分 目录的特殊处理
+            $this->dataForView['is_wdm'] = false;
+            if(strpos($category->Cate_Title, '波分')!==false || strpos($category->parent()->Cate_Title, '波分') !== false){
+                $this->dataForView['is_wdm'] = true;
+            }
+
             // 当前目录所包含的产品
             $this->dataForView['products'] = $category->products();
 
