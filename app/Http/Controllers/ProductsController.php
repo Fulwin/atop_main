@@ -63,11 +63,23 @@ class ProductsController extends Controller
             $category = Category::Fetch($this->getRootCategoryId());
             $this->dataForView['category'] = $category;
 
-            $this->dataForView['seo'] = [
-              'keywords' => $category->Cate_Title,
-              'title' => $category->Cate_Title,
-              'description' => $category->Cate_Title,
-            ];
+
+            if($this->_Get_Language()=='EN'){
+                $this->dataForView['seo'] = [
+                    'page_h1'=>'Buy wholesale optical transceivers and optic fiber',
+                    'page_h2'=>'High speed SFP transceivers, SFP+, AOC and DAC cables',
+                    'page_h2_second'=>'Quality QSFP+ transceivers, xfp transceivers and more',
+                    'keywords' => 'optical transceivers, optic fiber, manufacturer, china, us, eu, india',
+                    'title' => 'Optical Transceivers - Optic Fiber - DAC Cables - SFP | ATOP',
+                    'description'=>'Optic fiber and Optical Transceivers, including SFP transceivers, QSFP+, DAC cable, AOC cable and more for transmission, data centers, CPRI and broadband access'
+                ];
+            }else{
+                $this->dataForView['seo'] = [
+                    'keywords' => $category->Cate_Title,
+                    'title' => $category->Cate_Title,
+                    'description' => $category->Cate_Title,
+                ];
+            }
             return view('products.root', $this->dataForView);
         } else {
             // 加载子目录

@@ -89,7 +89,7 @@
                                                 <div class="fl">
                                                     <ul class="right_people">
                                                 @else
-                                                        <li> <img src="{{ $upload_files_prefix . $member->BaseInfo_Image }}" alt="" width="182" height="220">
+                                                        <li> <img src="{{ url($member->BaseInfo_Image) }}" alt="{{ $member->BaseInfo_Title }}" width="182" height="220">
                                                             <div class="people_info">
                                                                 <div class="fl MT_nam">
                                                                     <p>{{ $member->BaseInfo_Title }}</p>
