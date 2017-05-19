@@ -183,7 +183,9 @@ class ProductsController extends Controller
 
         $this->dataForView['isProducts'] = true;
         $products = Product::where('Products_Title','like','%'.$keyword.'%')
-            ->whereIn('Products_CateID',$catsArray)->paginate();
+            ->whereIn('Products_CateID',$catsArray)
+            ->where('Products_State',1)
+            ->paginate();
         $products->appends('KeyWord',$keyword);
         $this->dataForView['products'] = $products;
 
