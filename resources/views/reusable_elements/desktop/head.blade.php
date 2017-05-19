@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/atop_icons.css') }}">
-    <link rel="stylesheet" href="{{ url('css/fix.css') }}?version=3">
+    <link rel="stylesheet" href="{{ url('css/fix.css') }}?version=4">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 
-    @if(true || session('lang') == 'CN')
+    @if(session('lang') == 'CN')
         <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
     @else
         <script src="https://use.fontawesome.com/b09516297f.js"></script>
