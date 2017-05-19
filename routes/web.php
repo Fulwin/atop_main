@@ -27,6 +27,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/switch_language/{lang}', 'PagesController@switch_language');
     Route::get('/products/search_ajax', 'AjaxController@search_ajax');
     Route::get('/product/view/{productId?}', 'ProductsController@view');
+
+    /**
+     * 菜单栏中的搜索表单提交后的响应
+     */
+    Route::get('/search_products', 'ProductsController@search');
+
     /**
      * 加载产品单页的路径
      */

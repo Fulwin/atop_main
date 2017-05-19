@@ -156,7 +156,7 @@
                     });
                 } );
             </script>
-            <form style="margin:0px;padding:0px;" action="{{ url('/search') }}" method="get" onsubmit="javascript:return search_OnSubmit(this);">
+            <form style="margin:0px;padding:0px;" action="{{ url('/search_products') }}" method="get" onsubmit="javascript:return search_OnSubmit(this);">
                 <table width="326" height="29" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td width="300" height="29" style="text-align: right;">

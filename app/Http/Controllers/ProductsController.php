@@ -170,4 +170,12 @@ class ProductsController extends Controller
         $product = Product::Fetch($productId);
         return response()->download('/var/www/html/atop-backend/public'.$product->Products_FileIntro);
     }
+
+    public function search(Request $request){
+        $keyword = $request->get('KeyWord');
+        $this->dataForView['isProducts'] = true;
+        $this->dataForView['products'] = Product::where('Products_Title','like','%'.$keyword.'%')->paginate();
+
+        return view('products.search',$this->dataForView);
+    }
 }

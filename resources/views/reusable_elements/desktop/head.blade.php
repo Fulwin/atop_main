@@ -23,7 +23,13 @@
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-    <script src="https://use.fontawesome.com/b09516297f.js"></script>
+
+    @if(true || session('lang') == 'CN')
+        <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+    @else
+        <script src="https://use.fontawesome.com/b09516297f.js"></script>
+    @endif
+
     {{-- Super fish --}}
     <script src="{{ asset('js/hoverIntent.js') }}"></script>
     <script src="{{ asset('js/superfish.min.js') }}"></script>
