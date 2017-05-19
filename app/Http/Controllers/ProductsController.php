@@ -173,8 +173,17 @@ class ProductsController extends Controller
 
     public function search(Request $request){
         $keyword = $request->get('KeyWord');
+
+        $lang = $this->_Get_Language();
+        $cats = Category::where('Cate_Lang',$lang)->select('Cate_Id')->get();
+        $catsArray = [];
+        foreach ($cats as $cat) {
+            $catsArray[] = $cat->Cate_Id;
+        }
+
         $this->dataForView['isProducts'] = true;
-        $this->dataForView['products'] = Product::where('Products_Title','like','%'.$keyword.'%')->paginate();
+        $this->dataForView['products'] = Product::where('Products_Title','like','%'.$keyword.'%')
+            ->whereIn('Products_CateID',$catsArray)->paginate();
 
         return view('products.search',$this->dataForView);
     }
