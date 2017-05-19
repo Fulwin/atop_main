@@ -16,7 +16,7 @@
                                     <img src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
                                 </a>
                                 @else
-                                    <div style="display: block;max-width: 200px;width: 20%;"></div>
+                                    <div style="display: block;max-width: 200px;width: 20%;height: 1px;"></div>
                                 @endif
 
                         </div>
