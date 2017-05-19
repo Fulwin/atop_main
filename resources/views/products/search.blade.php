@@ -11,7 +11,9 @@
                     <div class="result">
                         <div class="p-feature-image">
                             <a href="{{ url('/product/view/'.$product->getIdString()) }}">
-                                <img src="{{ $product->Products_BigImage1 }}" alt="{{ $product->Products_Title }}">
+                                @if(!empty($product->Products_BigImage))
+                                    <img src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+                                @endif
                             </a>
                         </div>
                         <div class="p-info">
