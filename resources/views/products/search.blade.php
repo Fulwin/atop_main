@@ -10,11 +10,15 @@
                     ?>
                     <div class="result">
                         <div class="p-feature-image">
-                            <a href="{{ url('/product/view/'.$product->getIdString()) }}">
+
                                 @if(!empty($product->Products_BigImage))
+                                <a href="{{ url('/product/view/'.$product->getIdString()) }}">
                                     <img src="{{ $product->Products_BigImage }}" alt="{{ $product->Products_Title }}">
+                                </a>
+                                @else
+                                    <div style="display: block;width: 200px;"></div>
                                 @endif
-                            </a>
+
                         </div>
                         <div class="p-info">
                             <div class="p-title">
