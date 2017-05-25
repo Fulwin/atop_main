@@ -50,7 +50,6 @@
             </ul>
         </li>
         <li class="homecase">
-            <ul>
                 <ul>
                     <?php
                         $category = $footerLinks['contact']['data'];
@@ -66,9 +65,23 @@
                     @endforeach
                 </ul>
 
-            </ul>
         </li>
-        <li class="homecase" style=" width:470px; float:right;">
+        @if(session('lang') == 'CN')
+            <li class="homecase">
+                <ul>
+                    <li class="sitesl">
+                        <a style="font-size:14px; font-weight:bold;" >
+                            微信公众号
+                        </a>
+                    </li>
+                    <li>
+                        <img src="{{ asset('img/atop_wechat.jpg') }}" width="180" alt="Wechat Atop">
+                        <br><br>
+                    </li>
+                </ul>
+            </li>
+        @endif
+        <li class="homecase" style=" width:100%; text-align: center;">
             <a href="{{ url('/contact') }}"><img src="{{ asset('img/nn.png') }}" width="470" height="243" /></a>
         </li>
     </ul>

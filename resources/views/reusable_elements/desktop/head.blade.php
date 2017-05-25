@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/tingle.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/atop_icons.css') }}">
-    <link rel="stylesheet" href="{{ url('css/fix.css') }}?version=5">
+    <link rel="stylesheet" href="{{ url('css/fix.css') }}?version=6">
 
     <script src="{{ asset('scripts/swfobject.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
