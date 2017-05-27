@@ -70,11 +70,11 @@
             <li class="homecase">
                 <ul>
                     <li>
-                        <img src="{{ asset('img/atop_wechat.jpg') }}" width="180" alt="Wechat Atop">
+                        <img src="{{ asset('img/atop_wechat.jpg') }}" width="150" alt="Wechat Atop">
                         <br><br>
                     </li>
                     <li class="sitesl" style="padding-right: 0;">
-                        <a style="font-size:14px; font-weight:bold;text-align: center;width: 180px;" >
+                        <a style="font-size:14px; font-weight:bold;text-align: center;width: 150px;" >
                             微信公众号
                         </a>
                     </li>
