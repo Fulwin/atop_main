@@ -81,7 +81,7 @@
                 </ul>
             </li>
         @endif
-        <li class="homecase" style=" width:100%; text-align: center;">
+        <li class="homecase" style=" width:100%; text-align: right;">
             <a href="{{ url('/contact') }}"><img src="{{ asset('img/nn.png') }}" width="470" height="243" /></a>
         </li>
     </ul>
