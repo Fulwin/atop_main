@@ -69,14 +69,14 @@
         @if(session('lang') == 'CN')
             <li class="homecase">
                 <ul>
-                    <li class="sitesl">
-                        <a style="font-size:14px; font-weight:bold;" >
-                            微信公众号
-                        </a>
-                    </li>
                     <li>
                         <img src="{{ asset('img/atop_wechat.jpg') }}" width="180" alt="Wechat Atop">
                         <br><br>
+                    </li>
+                    <li class="sitesl" style="padding-right: 0;">
+                        <a style="font-size:14px; font-weight:bold;text-align: center;width: 180px;" >
+                            微信公众号
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -86,7 +86,6 @@
         </li>
     </ul>
 </div>
-
 
 <div class="footer" style="">
     <ul style="margin:0 auto; width:1200px;">
