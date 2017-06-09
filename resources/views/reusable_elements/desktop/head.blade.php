@@ -58,4 +58,13 @@
 <?php
 
 ?>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7c62b368a4524edd38838cd57053abd6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <body {!! isset($Microdata)  ? ('itemscope itemtype="'.$Microdata['type'].'"') : null !!}>
