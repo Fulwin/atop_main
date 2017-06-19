@@ -177,36 +177,38 @@
                 <div class="demo clearfix">
                     <div class="item_list infinite_scroll">
                         @foreach($news as $article)
-                            <div class="item masonry_brick">
-                                <div class="item_t">
-                                    <div class="img">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">
-                                            <img width="250" src="{{ $article->News_Image }}" />
-                                        </a>
+                            @if($article->News_State == '1')
+                                <div class="item masonry_brick">
+                                    <div class="item_t">
+                                        <div class="img">
+                                            <a href="{{ url('/news/'.$article->News_Id) }}">
+                                                <img width="250" src="{{ $article->News_Image }}" />
+                                            </a>
+                                        </div>
+                                        <div class="title">
+                                            <span class="ccccc">{{ $article->News_Title }}</span>
+                                            <br> <br>
+                                            <div style="height: 70px; overflow: hidden; display: block;">
+                                                {!! $article->News_Content !!}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="title">
-                                        <span class="ccccc">{{ $article->News_Title }}</span>
-                                        <br> <br>
-                                        <div style="height: 70px; overflow: hidden; display: block;">
-                                            {!! $article->News_Content !!}
+                                    <div class="item_b clearfix">
+                                        <div class="items_likes fl">
+                                            <em class="bold">{{ $article->News_AddTime }}</em>
+                                        </div>
+                                        <div class="items_comment fr">
+                                            <a href="{{ url('/news/'.$article->News_Id) }}">
+                                                @if(session('lang') == 'CN')
+                                                    详情
+                                                @else
+                                                    Learn more
+                                                @endif
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item_b clearfix">
-                                    <div class="items_likes fl">
-                                        <em class="bold">{{ $article->News_AddTime }}</em>
-                                    </div>
-                                    <div class="items_comment fr">
-                                        <a href="{{ url('/news/'.$article->News_Id) }}">
-                                            @if(session('lang') == 'CN')
-                                                详情
-                                            @else
-                                                Learn more
-                                            @endif
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endif
                         @endforeach
                         <span id='DcmsPage_PageInfo' style='display:none;'>1|9</span>
 
