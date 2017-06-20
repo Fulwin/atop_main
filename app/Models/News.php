@@ -25,12 +25,14 @@ class News extends Model
     public function prevOne(){
         return self::where('News_CateId',$this->News_CateId)
             ->where('News_Order','<', intval($this->News_Order)-1)
+            ->where('News_State',1)
             ->first();
     }
 
     public function nextOne(){
         return self::where('News_CateId',$this->News_CateId)
             ->where('News_Order','>', intval($this->News_Order)+1)
+            ->where('News_State',1)
             ->first();
     }
 
