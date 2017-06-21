@@ -17,31 +17,33 @@
                         $newsIndex = 0;
                     ?>
                     @foreach($news as $key=>$article)
-                        @if($newsIndex < 5)
-                            @if($key===0)
-                                <li style="padding-top:10px; padding-bottom:20px;">
-                                    <a href="{{ url('news/'.$article->News_Id) }}">
-                                        <img src="{{ $article->News_Image }}" width="385" height="165" alt="">
-                                    </a>
-                                </li>
-                                <li style="width: 385px;">
-                                    <ul style="float:left; width:100%; text-align:left;height: 30px;overflow: hidden;">
-                                        <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
-                                            {{ $article->News_Title }}
+                        @if($article->News_State == '1')
+                            @if($newsIndex < 5)
+                                @if($key===0)
+                                    <li style="padding-top:10px; padding-bottom:20px;">
+                                        <a href="{{ url('news/'.$article->News_Id) }}">
+                                            <img src="{{ $article->News_Image }}" width="385" height="165" alt="">
                                         </a>
-                                    </ul>
-                                    <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 55px;overflow: hidden;margin-bottom: 20px;">
-                                        @if(empty($article->excerpt))
-                                            {!! $article->News_Content !!}
-                                        @else
-                                            {{ $article->excerpt }}
-                                        @endif
-                                    </ul>
-                                </li>
-                            @else
-                                <li class="litext">
-                                    <a href="{{ url('news/'.$article->News_Id) }}">{{ $article->News_Title }}</a>
-                                </li>
+                                    </li>
+                                    <li style="width: 385px;">
+                                        <ul style="float:left; width:100%; text-align:left;height: 30px;overflow: hidden;">
+                                            <a style=" font-size:18px; font-family:微软雅黑; color:#f78500;" href="{{ url('news/'.$article->News_Id) }}">
+                                                {{ $article->News_Title }}
+                                            </a>
+                                        </ul>
+                                        <ul style="float:left; width:100%; text-align:left; padding:10px 0px; color:#9c9b9b;height: 55px;overflow: hidden;margin-bottom: 20px;">
+                                            @if(empty($article->excerpt))
+                                                {!! $article->News_Content !!}
+                                            @else
+                                                {{ $article->excerpt }}
+                                            @endif
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li class="litext">
+                                        <a href="{{ url('news/'.$article->News_Id) }}">{{ $article->News_Title }}</a>
+                                    </li>
+                                @endif
                             @endif
                         @endif
                     @endforeach

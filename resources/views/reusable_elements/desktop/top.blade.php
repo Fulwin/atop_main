@@ -24,11 +24,11 @@
                             <img src="{{ asset('images/linkedin.jpg') }}" width="24" height="25" alt="">
                         </a>
                     </li>
-                    <li class="socil">
-                        <a href="{{ asset('/Upload/catebannar/eeee-09375498874.jpg') }}" rel="sexylightbox">
-                            <img src="{{ asset('images/wechat.jpg') }}" width="25" height="25" alt="">
-                        </a>
-                    </li>
+                    {{--<li class="socil">--}}
+                        {{--<a href="{{ asset('/Upload/catebannar/eeee-09375498874.jpg') }}" rel="sexylightbox">--}}
+                            {{--<img src="{{ asset('images/wechat.jpg') }}" width="25" height="25" alt="">--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                     @if($_SERVER['SERVER_NAME'] !== 'www.atoptechnology.com')
                     <li class="socil">
                         <a href="http://weibo.com/u/2650817513" target="_blank">
