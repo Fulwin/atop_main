@@ -22,6 +22,8 @@
       .sub-cate-wrap{
         .cate-avatar{
           padding-top: 10px;
+          overflow: hidden;
+          width: 100%;
           &:hover{
             opacity: 0.9;
           }
@@ -32,11 +34,11 @@
           text-align: left !important;
           padding-left: 0px;
           .sub-cate-item{
-            height: 36px;
-            line-height: 36px;
+            height: 32px;
+            line-height: 32px;
             margin-bottom: 8px;
             color: #333;
-            font-size: 15px;
+            font-size: 13px;
             &:hover{
               color: #f78500;
             }
