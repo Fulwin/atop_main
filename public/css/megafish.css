@@ -12,7 +12,7 @@
 }
 .sf-menu .sf-mega {
   position: absolute;
-  display: block;
+  display: flex;
   top: 100%;
   left: 0;
   z-index: 99;
@@ -22,7 +22,7 @@
 }
 .sf-menu li:hover > .sf-mega,
 .sf-menu li.sfHover > .sf-mega {
-  display: block;
+  display: flex;
 }
 
 .sf-menu > li > a {
