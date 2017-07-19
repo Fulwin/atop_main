@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 @foreach($subs as $sub)
-                    <li class="sitesl"><a href="{{ url('/products/'.$sub->getTitleUrl()) }}"> {{ $sub->Cate_Title }}</a></li>
+                    <li class="sitesl"><a href="{{ url('/products/'.$sub->getTitleUrl()).'__'.$sub->Cate_Id }}"> {{ $sub->Cate_Title }}</a></li>
                 @endforeach
             </ul>
         </li>
