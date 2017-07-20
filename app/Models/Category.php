@@ -11,7 +11,21 @@ class Category extends Model
 {
     //
     public function getTitleUrl(){
-        return str_replace(' ','__',$this->Cate_Title);
+        $tmpArr = ['Data Center', 'Broadband Access'];
+        $lang = $_SERVER['SERVER_NAME']=='www.atoptechnology.com.cn' ? 'CN' : 'EN';
+        if( $lang == 'EN' ){
+            if( !strpos($this->Cate_Title, '/') ){
+                if( in_array($this->Cate_Title, $tmpArr) ){
+                    return str_replace(' ','-',$this->Cate_Title);
+                }else{
+                    return str_replace(' ','__',$this->Cate_Title);
+                }
+            }else{
+                return str_replace('/','-',$this->Cate_Title);
+            }
+        }else{
+            return str_replace(' ','__',$this->Cate_Title);
+        }
     }
 
     public function parent(){
