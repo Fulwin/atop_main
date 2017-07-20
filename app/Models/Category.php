@@ -24,6 +24,9 @@ class Category extends Model
                 return str_replace('/','-',$this->Cate_Title);
             }
         }else{
+            if( strpos($this->Cate_Title, '/') ){
+                return str_replace('/','-',$this->Cate_Title);
+            }
             return str_replace(' ','__',$this->Cate_Title);
         }
     }
