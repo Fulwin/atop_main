@@ -80,6 +80,7 @@ class ProductsController extends Controller
                     'description' => $category->Cate_Title,
                 ];
             }
+            //$this->dataForView['HTTP_REFERER'] =substr($_SERVER['HTTP_REFERER'],0,-1);
             return view('products.root', $this->dataForView);
         } else {
             // 加载子目录

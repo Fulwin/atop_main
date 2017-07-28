@@ -25,12 +25,11 @@
                 <div style="width:100%; padding-bottom:20px;">
                     {!! $category->Cate_Intro !!}
                 </div>
-
                 @foreach($tree as $categoryId=>$item)
                     <div style="float:left; width:880px; margin-bottom:40px; ">
                         <div style="float:left; width:210px;">
                             <a href="{{ url('/products/'.$categoryId) }}">
-                                <img src="{{ $upload_files_prefix.$item['data']->Cate_ExField1 }}"
+                                <img src="{{ asset($item['data']->Cate_ExField1) }}"
                                      border="0" width="210"  height="150"/>
                             </a>
                         </div>
