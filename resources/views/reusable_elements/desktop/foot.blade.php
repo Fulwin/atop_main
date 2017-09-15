@@ -67,23 +67,23 @@
 
         </li>
         @if(session('lang') == 'CN')
-            {{--<li class="homecase">--}}
-                {{--<ul>--}}
-                    {{--<li>--}}
-                        {{--<img src="{{ asset('img/atop_wechat.jpg') }}" width="150" alt="Wechat Atop">--}}
-                        {{--<br><br>--}}
-                    {{--</li>--}}
-                    {{--<li class="sitesl" style="padding-right: 0;">--}}
-                        {{--<a style="font-size:14px; font-weight:bold;text-align: center;width: 150px;" >--}}
-                            {{--微信公众号--}}
-                        {{--</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+            <li class="homecase">
+                <ul>
+                    <li>
+                        <img src="{{ asset('img/atop_wechat.jpg') }}" width="150" alt="Wechat Atop">
+                        <br><br>
+                    </li>
+                    <li class="sitesl" style="padding-right: 0;">
+                        <a style="font-size:14px; font-weight:bold;text-align: center;width: 150px;" >
+                            微信公众号
+                        </a>
+                    </li>
+                </ul>
+            </li>
         @endif
-        {{--<li class="homecase" style=" width:100%; text-align: right;">--}}
-            {{--<a href="{{ url('/contact') }}"><img src="{{ asset('img/nn.png') }}" width="470" height="243" /></a>--}}
-        {{--</li>--}}
+        <li class="homecase" style=" width:100%; text-align: right;">
+            <a href="{{ url('/contact') }}"><img src="{{ asset('img/nn.png') }}" width="470" height="243" /></a>
+        </li>
     </ul>
 </div>
 
