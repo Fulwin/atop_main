@@ -3,7 +3,7 @@
         <ul class="">
             @foreach($banners as $key=>$banner)
                 <li>
-                    <img src="{{ $upload_files_prefix . $banner->BaseInfo_Image }}" alt="{{ $banner->BaseInfo_Title }}"/>
+                    <img src="{{ session('lang')=='EN' ? 'https://www.atoptechnology.com/' : 'http://www.atoptechnology.com.cn/'  }}{{ $banner->BaseInfo_Image }}" alt="{{ $banner->BaseInfo_Title }}"/>
                 </li>
             @endforeach
         </ul>
