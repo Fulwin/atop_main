@@ -3,7 +3,7 @@
         <ul class="">
             @foreach($banners as $key=>$banner)
                 <li>
-                    @if($banner->BaseInfo_Link != ''){
+                    @if($banner->BaseInfo_Link != '')
                         <a href="{{ $banner->BaseInfo_Link  }}"><img src="{{ session('lang')=='EN' ? 'https://www.atoptechnology.com/' : 'http://www.atoptechnology.com.cn/'  }}{{ $banner->BaseInfo_Image }}" alt="{{ $banner->BaseInfo_Title }}"/></a>
                     @else
                         <img src="{{ session('lang')=='EN' ? 'https://www.atoptechnology.com/' : 'http://www.atoptechnology.com.cn/'  }}{{ $banner->BaseInfo_Image }}" alt="{{ $banner->BaseInfo_Title }}"/>
