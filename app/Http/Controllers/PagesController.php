@@ -369,7 +369,6 @@ class PagesController extends Controller
 
     private function _getHomeBanner(){
         $homeBannerCategory = Category::FetchByTitle('HomeBannar',session('lang', 'EN'));
-        print_r($homeBannerCategory->baseInfos());
         return $homeBannerCategory->baseInfos();
     }
 
